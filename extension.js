@@ -1,5 +1,4 @@
 var vscode = require('vscode')
-// import { vscode } from 'vscode';
 var Chance = require('chance')
 
 const activate = (context) => {
@@ -31,7 +30,7 @@ const activate = (context) => {
 
 exports.activate = activate
 
-// function deactivate() {
-// }
+function deactivate () {
+}
 
-// exports.deactivate = deactivate;
+exports.deactivate = deactivate
