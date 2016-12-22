@@ -5,7 +5,13 @@ import { randomInteger } from './random'
 export const activate = (context) => {
   const chance = new Chance()
 
-  context.subscriptions.push(
-    commands.registerCommand('extension.randomInteger', () => randomInteger(chance))
-  )
+  const extensionCommands = [
+    { key: 'extension.randomInteger', callback: randomInteger }
+  ]
+
+  extensionCommands.map(cmd => {
+    context.subscriptions.push(
+      commands.registerCommand(cmd.key, () => cmd.callback(chance))
+    )
+  })
 }
