@@ -1,36 +1,11 @@
-var vscode = require('vscode')
-var Chance = require('chance')
+import { commands } from 'vscode'
+import Chance from 'chance'
+import { randomInteger } from './random'
 
-const activate = (context) => {
-  console.log('Congratulations, your extension "vscode-random" is now active!')
-  var chance = new Chance()
+export const activate = (context) => {
+  const chance = new Chance()
 
-  var disposable = vscode.commands.registerCommand('extension.sayHello', function () {
-    const randomNumber = chance.integer()
-    const insertText = `Hello World ${randomNumber}!`
-
-    const editor = vscode.window.activeTextEditor
-
-    if (!editor) {
-      vscode.window.showErrorMessage('No editor found!')
-      return
-    }
-
-    const cursorPosition = editor.selection.active
-
-    var startPosition = cursorPosition
-
-    editor.edit((builder) => {
-      builder.insert(startPosition, insertText)
-    })
-  })
-
-  context.subscriptions.push(disposable)
+  context.subscriptions.push(
+    commands.registerCommand('extension.randomInteger', () => randomInteger(chance))
+  )
 }
-
-exports.activate = activate
-
-function deactivate () {
-}
-
-exports.deactivate = deactivate
