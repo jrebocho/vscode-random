@@ -1,7 +1,6 @@
-import { editorInsert } from './vscodeHelpers'
+import Chance from 'chance'
+const chance = new Chance()
 
-export const randomInteger = (chanceInstance, outputStream = editorInsert) => {
-  const randomNumber = chanceInstance.integer().toString()
-
-  outputStream(randomNumber)
+export const randomByte = () => {
+  return chance.integer({min: 0, max: 255}).toString()
 }
