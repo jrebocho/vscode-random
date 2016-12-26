@@ -1,4 +1,4 @@
-import { commands, window } from 'vscode'
+import { commands, window, Position, Selection } from 'vscode'
 import { extensionCommands } from './commands'
 
 export const activate = (context) => {
@@ -13,13 +13,22 @@ const editorInsert = (text) => {
   const editor = window.activeTextEditor
 
   if (!editor) {
-    window.showErrorMessage('No editor found!')
+    window.showErrorMessage('No active text editor found!')
     return
   }
 
-  const cursorPosition = editor.selection.active
-
+  const newSelections = []
   editor.edit((builder) => {
-    builder.insert(cursorPosition, text)
+    editor.selections.map(selection => {
+      builder.replace(selection, text)
+      newSelections.push(getEndPosition(selection, text))
+    })
+  }).then(() => {
+    editor.selections = newSelections
   })
+}
+
+const getEndPosition = (selection, text) => {
+  var endPosition = new Position(selection.start.line, selection.start.character + text.length)
+  return new Selection(endPosition, endPosition)
 }
