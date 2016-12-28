@@ -5,6 +5,11 @@
   "icon": "images/vscode-random-icon.png",
   "version": "1.0.0",
   "publisher": "jrebocho",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jrebocho/vscode-random.git"
+  },
+  "license": "MIT",
   "engines": {
     "vscode": "^1.5.0"
   },
