@@ -1,7 +1,5 @@
 # Change Log
-All notable changes to the "vscode-random" extension will be documented in this file.
+All notable changes to the "vscode-random" extension are documented in this file.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
+## [1.0.0] - 2016-12-31
 - Initial release

@@ -1,7 +1,11 @@
 .vscode/**
 .vscode-test/**
-test/**
+images/*.gif
+src
+tests/**
+.babelrc
 .gitignore
+.vscodeignore
+CHANGELOG.md
 jsconfig.json
-vsc-extension-quickstart.md
-.eslintrc.json
+README.md
