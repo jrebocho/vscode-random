@@ -14,11 +14,12 @@ This extension can be installed with one the following methods:
 
 Launch the Command Pallete **(Cmd+Shift+P / Ctrl+Shift+P)** and type `random` to view all the available data generators. Select one of them and press **Enter**.
 
-![Screen](images/vscode-random-screen.gif)
+![Screen](https://raw.githubusercontent.com/jrebocho/vscode-random/master/images/vscode-random-screen.gif)
 
 # Available Commands
 
-* `extension.randomByte` : Random Byte - Generates an integer between 0 and 255 
+* `extension.randomByte` : Random byte - Generates an integer between 0 and 255 
+* `extension.randomStringCustomLength` : Random string with custom length - Generates a string with a length defined by user input
 
 # Change Log
 
