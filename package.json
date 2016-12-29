@@ -5,6 +5,11 @@
   "icon": "images/vscode-random-icon.png",
   "version": "1.0.0",
   "publisher": "jrebocho",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jrebocho/vscode-random.git"
+  },
+  "license": "MIT",
   "engines": {
     "vscode": "^1.5.0"
   },
@@ -12,7 +17,8 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:extension.randomByte"
+    "onCommand:extension.randomByte",
+    "onCommand:extension.randomStringCustomLength"
   ],
   "main": "./build/extension",
   "contributes": {
@@ -20,13 +26,18 @@
       {
         "command": "extension.randomByte",
         "title": "Random: Byte"
+      },
+      {
+        "command": "extension.randomStringCustomLength",
+        "title": "Random: String with custom length"
       }
     ]
   },
   "scripts": {
     "compile": "rimraf build & babel src --out-dir build",
     "postinstall": "node ./node_modules/vscode/bin/install",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "jest": {
     "testRegex": "(/tests/.*|(\\.|/)(test|spec))\\.js?$"    
