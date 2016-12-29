@@ -1,10 +1,25 @@
 import { commands, window, Position, Selection } from 'vscode'
-import { extensionCommands } from './commands'
+import { extensionCommands, extensionCommandsWithInput } from './commands'
 
 export const activate = (context) => {
   extensionCommands.map(cmd => {
     context.subscriptions.push(
       commands.registerCommand(cmd.key, () => editorInsert(cmd.callback()))
+    )
+  })
+
+  extensionCommandsWithInput.map(cmd => {
+    context.subscriptions.push(
+      commands.registerCommand(cmd.key, () =>
+        window.showInputBox({prompt: cmd.prompt})
+        .then(inputValue => {
+          if (cmd.validation(inputValue)) {
+            editorInsert(cmd.callback(inputValue))
+          } else {
+            window.showErrorMessage(cmd.errorMsg)
+          }
+        })
+      )
     )
   })
 }
