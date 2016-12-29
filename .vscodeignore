@@ -1,11 +1,8 @@
 .vscode/**
 .vscode-test/**
-images/*.gif
 src
 tests/**
 .babelrc
 .gitignore
 .vscodeignore
-CHANGELOG.md
 jsconfig.json
-README.md
