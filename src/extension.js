@@ -1,5 +1,6 @@
 import { commands, window, Position, Selection } from 'vscode'
 import { extensionCommands, extensionCommandsWithInput } from './commands'
+import { MSG_NO_ACTIVE_TEXT_EDITOR } from './constants'
 
 export const activate = (context) => {
   extensionCommands.map(cmd => {
@@ -28,7 +29,7 @@ const editorInsert = (text) => {
   const editor = window.activeTextEditor
 
   if (!editor) {
-    window.showErrorMessage('No active text editor found!')
+    window.showErrorMessage(MSG_NO_ACTIVE_TEXT_EDITOR)
     return
   }
 

@@ -1,12 +1,12 @@
 import Chance from 'chance'
-const chance = new Chance()
+import { VALUE_DEFAULT_STRING_LENGTH } from './constants'
 
-const DEFAULT_STRING_LENGTH = 10
+const chance = new Chance()
 
 export const randomByte = () => {
   return chance.integer({min: 0, max: 255}).toString()
 }
 
-export const randomString = (length = DEFAULT_STRING_LENGTH) => {
+export const randomString = (length = VALUE_DEFAULT_STRING_LENGTH) => {
   return chance.word({length})
 }
