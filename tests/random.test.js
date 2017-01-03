@@ -1,6 +1,7 @@
 import {
   randomByte,
   randomShort,
+  randomInt,
   randomString
 } from '../src/random'
 
@@ -15,11 +16,20 @@ describe('>>>>> Random Generators Tests', () => {
   })
 
   describe('.randomShort', () => {
-    it('generates a number between 0 and 255', () => {
+    it('generates a number between 0 and 65535', () => {
       const random = randomShort()
 
       expect(+random).toBeGreaterThan(0)
       expect(+random).toBeLessThan(65535)
+    })
+  })
+
+  describe('.randomInt', () => {
+    it('generates a number between 0 and 4294967295', () => {
+      const random = randomInt()
+
+      expect(+random).toBeGreaterThan(0)
+      expect(+random).toBeLessThan(4294967295)
     })
   })
 

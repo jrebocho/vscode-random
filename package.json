@@ -19,6 +19,7 @@
   "activationEvents": [
     "onCommand:extension.randomByte",
     "onCommand:extension.randomShort",
+    "onCommand:extension.randomInt",
     "onCommand:extension.randomStringCustomLength"
   ],
   "main": "./build/extension",
@@ -31,6 +32,10 @@
       {
         "command": "extension.randomShort",
         "title": "Random: Short"
+      },
+      {
+        "command": "extension.randomInt",
+        "title": "Random: Integer"
       },
       {
         "command": "extension.randomStringCustomLength",

@@ -2,6 +2,7 @@ import { extensionCommands, extensionCommandsWithInput } from '../src/commands'
 import {
   randomByte,
   randomShort,
+  randomInt,
   randomString
 } from '../src/random'
 import { isNumber } from '../src/validations'
@@ -9,7 +10,7 @@ import { isNumber } from '../src/validations'
 describe('>>>>> Extension Commands Tests', () => {
   describe('Simple extension commands', () => {
     it('has the expected number of commands', () => {
-      expect(extensionCommands).toHaveLength(2)
+      expect(extensionCommands).toHaveLength(3)
     })
 
     it('has the randomByte command in the list', () => {
@@ -18,6 +19,10 @@ describe('>>>>> Extension Commands Tests', () => {
 
     it('has the randomShort command in the list', () => {
       expect(extensionCommands).toContainEqual({ key: 'extension.randomShort', callback: randomShort })
+    })
+
+    it('has the randomInt command in the list', () => {
+      expect(extensionCommands).toContainEqual({ key: 'extension.randomInt', callback: randomInt })
     })
   })
 
