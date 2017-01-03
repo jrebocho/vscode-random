@@ -60,13 +60,15 @@
     "test:watch": "jest --watch"
   },
   "jest": {
-    "testRegex": "(/tests/.*|(\\.|/)(test|spec))\\.js?$"    
+    "testRegex": "(/tests/.*|(\\.|/)(test|spec))\\.js?$"
   },
   "standard": {
     "globals": [ 
       "describe", 
       "it",
-      "expect" 
+      "expect",
+      "jest",
+      "beforeEach"
     ]
   },
   "devDependencies": {    
