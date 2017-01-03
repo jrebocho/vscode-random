@@ -7,6 +7,10 @@ export const randomByte = () => {
   return chance.integer({min: 0, max: 255}).toString()
 }
 
+export const randomShort = () => {
+  return chance.integer({min: 0, max: 65535}).toString()
+}
+
 export const randomString = (length = VALUE_DEFAULT_STRING_LENGTH) => {
   return chance.word({length})
 }
