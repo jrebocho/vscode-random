@@ -1,3 +1,4 @@
+import { chance } from '../mocks/chance'
 import {
   randomByte,
   randomShort,
@@ -9,97 +10,104 @@ import {
 
 describe('>>>>> Random Generators Tests', () => {
   describe('.randomByte', () => {
-    it('generates a number between 0 and 255', () => {
-      const random = randomByte()
+    beforeEach(() => {
+      chance.natural.mockClear()
+    })
 
-      expect(+random).toBeGreaterThan(0)
-      expect(+random).toBeLessThan(256)
+    it('calls the lib natural function with the correct max param', () => {
+      randomByte({chance})
+
+      expect(chance.natural).toBeCalledWith({max: 255})
+    })
+
+    it('returns a string', () => {
+      const random = randomByte({chance})
+
+      expect(typeof (random) === 'string').toBeTruthy()
     })
   })
 
   describe('.randomShort', () => {
-    it('generates a number between 0 and 65535', () => {
-      const random = randomShort()
+    beforeEach(() => {
+      chance.natural.mockClear()
+    })
 
-      expect(+random).toBeGreaterThan(0)
-      expect(+random).toBeLessThan(65535)
+    it('calls the lib natural function with the correct max param', () => {
+      randomShort({chance})
+
+      expect(chance.natural).toBeCalledWith({max: 65535})
+    })
+
+    it('returns a string', () => {
+      const random = randomShort({chance})
+
+      expect(typeof (random) === 'string').toBeTruthy()
     })
   })
 
   describe('.randomInt', () => {
-    it('generates a number between 0 and 4294967295', () => {
-      const random = randomInt()
+    beforeEach(() => {
+      chance.natural.mockClear()
+    })
 
-      expect(+random).toBeGreaterThan(0)
-      expect(+random).toBeLessThan(4294967295)
+    it('calls the lib natural function with the correct max param', () => {
+      randomInt({chance})
+
+      expect(chance.natural).toBeCalledWith({max: 4294967295})
+    })
+
+    it('returns a string', () => {
+      const random = randomInt({chance})
+
+      expect(typeof (random) === 'string').toBeTruthy()
     })
   })
 
   describe('.randomLong', () => {
-    it('generates a number between 0 and 9007199254740992', () => {
-      const random = randomLong()
+    beforeEach(() => {
+      chance.natural.mockClear()
+    })
 
-      expect(+random).toBeGreaterThan(0)
-      expect(+random).toBeLessThan(9007199254740992)
+    it('calls the lib natural function with the correct max param', () => {
+      randomLong({chance})
+
+      expect(chance.natural).toBeCalledWith()
+    })
+
+    it('returns a string', () => {
+      const random = randomLong({chance})
+
+      expect(typeof (random) === 'string').toBeTruthy()
     })
   })
 
   describe('.randomGuid', () => {
-    it('generates a guid with five parts separated by a hifen', () => {
-      const random = randomGuid()
-      const guidParts = random.split('-')
-
-      expect(guidParts.length).toEqual(5)
+    beforeEach(() => {
+      chance.guid.mockClear()
     })
 
-    it('generates a guid with the correct length', () => {
-      const random = randomGuid()
+    it('calls the lib guid function', () => {
+      randomGuid({chance})
 
-      expect(random.length).toEqual(36)
-    })
-
-    it('generates a guid with all guid parts with the correct length', () => {
-      const random = randomGuid()
-      const guidParts = random.split('-')
-
-      expect(guidParts[0].length).toEqual(8)
-      expect(guidParts[1].length).toEqual(4)
-      expect(guidParts[2].length).toEqual(4)
-      expect(guidParts[3].length).toEqual(4)
-      expect(guidParts[4].length).toEqual(12)
-    })
-
-    it('generates a guid with hex numbers separated by a hifen', () => {
-      const random = randomGuid()
-      const guidParts = random.split('-')
-      const hexRegex = /[0-9A-Fa-f]/g
-
-      for (const hexNumber of guidParts) {
-        expect(hexRegex.test(hexNumber)).toBeTruthy()
-      }
+      expect(chance.guid).toBeCalledWith()
     })
   })
 
   describe('.randomString', () => {
-    it('generates a string with random characters of the expected length', () => {
-      const expectedLength = 32
-      const random = randomString(expectedLength)
-
-      expect(random.length).toEqual(expectedLength)
+    beforeEach(() => {
+      chance.word.mockClear()
     })
 
-    it('generates a string without blank spaces', () => {
-      const random = randomString(50)
+    it('calls the lib word function with the correct default length', () => {
+      randomString({chance})
 
-      expect(random).not.toContain(' ')
+      expect(chance.word).toBeCalledWith({length: 10})
     })
 
-    describe('when no length is passed as argument', () => {
-      it('generates a string with random characters with length equal to 10', () => {
-        const random = randomString()
+    it('calls the lib word function with the correct length param', () => {
+      randomString({chance, length: 32})
 
-        expect(random.length).toEqual(10)
-      })
+      expect(chance.word).toBeCalledWith({length: 32})
     })
   })
 })
