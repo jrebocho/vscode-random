@@ -21,6 +21,7 @@
     "onCommand:extension.randomShort",
     "onCommand:extension.randomInt",  
     "onCommand:extension.randomLong",
+    "onCommand:extension.randomGuid",
     "onCommand:extension.randomStringCustomLength"
   ],
   "main": "./build/extension",
@@ -41,6 +42,10 @@
       {
         "command": "extension.randomLong",
         "title": "Random: Long"
+      },
+      {
+        "command": "extension.randomGuid",
+        "title": "Random: Guid"
       },
       {
         "command": "extension.randomStringCustomLength",

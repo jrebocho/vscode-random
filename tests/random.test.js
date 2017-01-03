@@ -3,6 +3,7 @@ import {
   randomShort,
   randomInt,
   randomLong,
+  randomGuid,
   randomString
 } from '../src/random'
 
@@ -43,6 +44,42 @@ describe('>>>>> Random Generators Tests', () => {
     })
   })
 
+  describe('.randomGuid', () => {
+    it('generates a guid with five parts separated by a hifen', () => {
+      const random = randomGuid()
+      const guidParts = random.split('-')
+
+      expect(guidParts.length).toEqual(5)
+    })
+
+    it('generates a guid with the correct length', () => {
+      const random = randomGuid()
+
+      expect(random.length).toEqual(36)
+    })
+
+    it('generates a guid with all guid parts with the correct length', () => {
+      const random = randomGuid()
+      const guidParts = random.split('-')
+
+      expect(guidParts[0].length).toEqual(8)
+      expect(guidParts[1].length).toEqual(4)
+      expect(guidParts[2].length).toEqual(4)
+      expect(guidParts[3].length).toEqual(4)
+      expect(guidParts[4].length).toEqual(12)
+    })
+
+    it('generates a guid with hex numbers separated by a hifen', () => {
+      const random = randomGuid()
+      const guidParts = random.split('-')
+      const hexRegex = /[0-9A-Fa-f]/g
+
+      for (const hexNumber of guidParts) {
+        expect(hexRegex.test(hexNumber)).toBeTruthy()
+      }
+    })
+  })
+
   describe('.randomString', () => {
     it('generates a string with random characters of the expected length', () => {
       const expectedLength = 32
@@ -58,7 +95,7 @@ describe('>>>>> Random Generators Tests', () => {
     })
 
     describe('when no length is passed as argument', () => {
-      it('generates a string with random characters with length equal to 10', () => {      
+      it('generates a string with random characters with length equal to 10', () => {
         const random = randomString()
 
         expect(random.length).toEqual(10)
