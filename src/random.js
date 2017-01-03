@@ -15,6 +15,10 @@ export const randomInt = () => {
   return chance.integer({min: 0, max: 4294967295}).toString()
 }
 
+export const randomLong = () => {
+  return chance.integer({min: 0, max: 9007199254740992}).toString()
+}
+
 export const randomString = (length = VALUE_DEFAULT_STRING_LENGTH) => {
   return chance.word({length})
 }

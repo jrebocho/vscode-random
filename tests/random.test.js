@@ -2,6 +2,7 @@ import {
   randomByte,
   randomShort,
   randomInt,
+  randomLong,
   randomString
 } from '../src/random'
 
@@ -30,6 +31,15 @@ describe('>>>>> Random Generators Tests', () => {
 
       expect(+random).toBeGreaterThan(0)
       expect(+random).toBeLessThan(4294967295)
+    })
+  })
+
+  describe('.randomLong', () => {
+    it('generates a number between 0 and 9007199254740992', () => {
+      const random = randomLong()
+
+      expect(+random).toBeGreaterThan(0)
+      expect(+random).toBeLessThan(9007199254740992)
     })
   })
 
