@@ -105,7 +105,7 @@ describe('>>>>> Random Generators Tests', () => {
     })
 
     it('calls the lib word function with the correct length param', () => {
-      randomString({chance, length: 32})
+      randomString({chance, inputValue: 32})
 
       expect(chance.word).toBeCalledWith({length: 32})
     })

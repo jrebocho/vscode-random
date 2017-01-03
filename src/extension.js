@@ -15,7 +15,7 @@ export const activate = (context) => {
         window.showInputBox({prompt: cmd.prompt})
         .then(inputValue => {
           if (cmd.validation(inputValue)) {
-            editorInsert(cmd.callback(inputValue))
+            editorInsert(cmd.callback({inputValue}))
           } else {
             window.showErrorMessage(cmd.errorMsg)
           }
