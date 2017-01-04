@@ -1,12 +1,30 @@
 import {
   randomByte,
-  randomString
+  randomShort,
+  randomInt,
+  randomLong,
+  randomGuid,
+  randomString,
+  randomName,
+  randomCity,
+  randomStreetAddress,
+  randomPhoneNumber,
+  randomEmail
 } from './random'
 import { isNumber } from './validations'
 import * as constants from './constants'
 
 export const extensionCommands = [
-  { key: constants.CMD_KEY_RANDOM_BYTE, callback: randomByte }
+  { key: constants.CMD_KEY_RANDOM_BYTE, callback: randomByte },
+  { key: constants.CMD_KEY_RANDOM_SHORT, callback: randomShort },
+  { key: constants.CMD_KEY_RANDOM_INT, callback: randomInt },
+  { key: constants.CMD_KEY_RANDOM_LONG, callback: randomLong },
+  { key: constants.CMD_KEY_RANDOM_GUID, callback: randomGuid },
+  { key: constants.CMD_KEY_RANDOM_NAME, callback: randomName },
+  { key: constants.CMD_KEY_RANDOM_CITY, callback: randomCity },
+  { key: constants.CMD_KEY_RANDOM_STREET_ADDRESS, callback: randomStreetAddress },
+  { key: constants.CMD_KEY_RANDOM_PHONE_NUMBER, callback: randomPhoneNumber },
+  { key: constants.CMD_KEY_RANDOM_EMAIL, callback: randomEmail }
 ]
 
 export const extensionCommandsWithInput = [

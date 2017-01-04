@@ -1,38 +1,178 @@
+import { chance } from '../mocks/chance'
 import {
   randomByte,
-  randomString
+  randomShort,
+  randomInt,
+  randomLong,
+  randomGuid,
+  randomString,
+  randomName,
+  randomCity,
+  randomStreetAddress,
+  randomPhoneNumber,
+  randomEmail
 } from '../src/random'
 
 describe('>>>>> Random Generators Tests', () => {
   describe('.randomByte', () => {
-    it('generates a number between 0 and 255', () => {
-      const random = randomByte()
+    beforeEach(() => {
+      chance.natural.mockClear()
+    })
 
-      expect(+random).toBeGreaterThan(0)
-      expect(+random).toBeLessThan(256)
+    it('calls the lib natural function with the correct max param', () => {
+      randomByte({chance})
+
+      expect(chance.natural).toBeCalledWith({max: 255})
+    })
+
+    it('returns a string', () => {
+      const random = randomByte({chance})
+
+      expect(typeof (random) === 'string').toBeTruthy()
+    })
+  })
+
+  describe('.randomShort', () => {
+    beforeEach(() => {
+      chance.natural.mockClear()
+    })
+
+    it('calls the lib natural function with the correct max param', () => {
+      randomShort({chance})
+
+      expect(chance.natural).toBeCalledWith({max: 65535})
+    })
+
+    it('returns a string', () => {
+      const random = randomShort({chance})
+
+      expect(typeof (random) === 'string').toBeTruthy()
+    })
+  })
+
+  describe('.randomInt', () => {
+    beforeEach(() => {
+      chance.natural.mockClear()
+    })
+
+    it('calls the lib natural function with the correct max param', () => {
+      randomInt({chance})
+
+      expect(chance.natural).toBeCalledWith({max: 4294967295})
+    })
+
+    it('returns a string', () => {
+      const random = randomInt({chance})
+
+      expect(typeof (random) === 'string').toBeTruthy()
+    })
+  })
+
+  describe('.randomLong', () => {
+    beforeEach(() => {
+      chance.natural.mockClear()
+    })
+
+    it('calls the lib natural function with the correct max param', () => {
+      randomLong({chance})
+
+      expect(chance.natural).toBeCalledWith()
+    })
+
+    it('returns a string', () => {
+      const random = randomLong({chance})
+
+      expect(typeof (random) === 'string').toBeTruthy()
+    })
+  })
+
+  describe('.randomGuid', () => {
+    beforeEach(() => {
+      chance.guid.mockClear()
+    })
+
+    it('calls the lib guid function', () => {
+      randomGuid({chance})
+
+      expect(chance.guid).toBeCalledWith()
     })
   })
 
   describe('.randomString', () => {
-    it('generates a string with random characters of the expected length', () => {
-      const expectedLength = 32
-      const random = randomString(expectedLength)
-
-      expect(random.length).toEqual(expectedLength)
+    beforeEach(() => {
+      chance.word.mockClear()
     })
 
-    it('generates a string without blank spaces', () => {
-      const random = randomString(50)
+    it('calls the lib word function with the correct default length', () => {
+      randomString({chance})
 
-      expect(random).not.toContain(' ')
+      expect(chance.word).toBeCalledWith({length: 10})
     })
 
-    describe('when no length is passed as argument', () => {
-      it('generates a string with random characters with length equal to 10', () => {      
-        const random = randomString()
+    it('calls the lib word function with the correct length param', () => {
+      randomString({chance, inputValue: 32})
 
-        expect(random.length).toEqual(10)
-      })
+      expect(chance.word).toBeCalledWith({length: 32})
+    })
+  })
+
+  describe('.randomName', () => {
+    beforeEach(() => {
+      chance.name.mockClear()
+    })
+
+    it('calls the lib name function', () => {
+      randomName({chance})
+
+      expect(chance.name).toBeCalledWith()
+    })
+  })
+
+  describe('.randomStreetAddress', () => {
+    beforeEach(() => {
+      chance.address.mockClear()
+    })
+
+    it('calls the lib address function', () => {
+      randomStreetAddress({chance})
+
+      expect(chance.address).toBeCalledWith()
+    })
+  })
+
+  describe('.randomCity', () => {
+    beforeEach(() => {
+      chance.city.mockClear()
+    })
+
+    it('calls the lib city function', () => {
+      randomCity({chance})
+
+      expect(chance.city).toBeCalledWith()
+    })
+  })
+
+  describe('.randomPhoneNumber', () => {
+    beforeEach(() => {
+      chance.phone.mockClear()
+    })
+
+    it('calls the lib phone function', () => {
+      randomPhoneNumber({chance})
+
+      expect(chance.phone).toBeCalledWith()
+    })
+  })
+
+  describe('.randomEmail', () => {
+    beforeEach(() => {
+      chance.email.mockClear()
+    })
+
+    it('calls the lib email function', () => {
+      randomEmail({chance})
+
+      expect(chance.email).toBeCalledWith()
     })
   })
 })

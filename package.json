@@ -18,7 +18,16 @@
   ],
   "activationEvents": [
     "onCommand:extension.randomByte",
-    "onCommand:extension.randomStringCustomLength"
+    "onCommand:extension.randomShort",
+    "onCommand:extension.randomInt",  
+    "onCommand:extension.randomLong",
+    "onCommand:extension.randomGuid",
+    "onCommand:extension.randomStringCustomLength",
+    "onCommand:extension.randomName",
+    "onCommand:extension.randomStreetAddress",
+    "onCommand:extension.randomCity",
+    "onCommand:extension.randomPhoneNumber",
+    "onCommand:extension.randomEmail"
   ],
   "main": "./build/extension",
   "contributes": {
@@ -28,8 +37,44 @@
         "title": "Random: Byte"
       },
       {
+        "command": "extension.randomShort",
+        "title": "Random: Short"
+      },
+      {
+        "command": "extension.randomInt",
+        "title": "Random: Integer"
+      },
+      {
+        "command": "extension.randomLong",
+        "title": "Random: Long"
+      },
+      {
+        "command": "extension.randomGuid",
+        "title": "Random: Guid"
+      },
+      {
         "command": "extension.randomStringCustomLength",
         "title": "Random: String with custom length"
+      },
+      {
+        "command": "extension.randomName",
+        "title": "Random: Name"
+      },
+      {
+        "command": "extension.randomStreetAddress",
+        "title": "Random: Street Address"
+      },
+      {
+        "command": "extension.randomCity",
+        "title": "Random: City"
+      },
+      {
+        "command": "extension.randomPhoneNumber",
+        "title": "Random: Phone number"
+      },
+      {
+        "command": "extension.randomEmail",
+        "title": "Random: Email"
       }
     ]
   },
@@ -40,13 +85,15 @@
     "test:watch": "jest --watch"
   },
   "jest": {
-    "testRegex": "(/tests/.*|(\\.|/)(test|spec))\\.js?$"    
+    "testRegex": "(/tests/.*|(\\.|/)(test|spec))\\.js?$"
   },
   "standard": {
     "globals": [ 
       "describe", 
       "it",
-      "expect" 
+      "expect",
+      "jest",
+      "beforeEach"
     ]
   },
   "devDependencies": {    

@@ -5,7 +5,7 @@ import { MSG_NO_ACTIVE_TEXT_EDITOR } from './constants'
 export const activate = (context) => {
   extensionCommands.map(cmd => {
     context.subscriptions.push(
-      commands.registerCommand(cmd.key, () => editorInsert(cmd.callback()))
+      commands.registerCommand(cmd.key, () => editorInsert(cmd.callback({})))
     )
   })
 
@@ -15,7 +15,7 @@ export const activate = (context) => {
         window.showInputBox({prompt: cmd.prompt})
         .then(inputValue => {
           if (cmd.validation(inputValue)) {
-            editorInsert(cmd.callback(inputValue))
+            editorInsert(cmd.callback({inputValue}))
           } else {
             window.showErrorMessage(cmd.errorMsg)
           }

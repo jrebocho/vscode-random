@@ -1,19 +1,63 @@
 import { extensionCommands, extensionCommandsWithInput } from '../src/commands'
 import {
   randomByte,
-  randomString
+  randomShort,
+  randomInt,
+  randomLong,
+  randomGuid,
+  randomString,
+  randomName,
+  randomCity,
+  randomStreetAddress,
+  randomPhoneNumber,
+  randomEmail
 } from '../src/random'
 import { isNumber } from '../src/validations'
 
 describe('>>>>> Extension Commands Tests', () => {
-
   describe('Simple extension commands', () => {
     it('has the expected number of commands', () => {
-      expect(extensionCommands).toHaveLength(1)
+      expect(extensionCommands).toHaveLength(10)
     })
 
     it('has the randomByte command in the list', () => {
       expect(extensionCommands).toContainEqual({ key: 'extension.randomByte', callback: randomByte })
+    })
+
+    it('has the randomShort command in the list', () => {
+      expect(extensionCommands).toContainEqual({ key: 'extension.randomShort', callback: randomShort })
+    })
+
+    it('has the randomInt command in the list', () => {
+      expect(extensionCommands).toContainEqual({ key: 'extension.randomInt', callback: randomInt })
+    })
+
+    it('has the randomLong command in the list', () => {
+      expect(extensionCommands).toContainEqual({ key: 'extension.randomLong', callback: randomLong })
+    })
+
+    it('has the randomGuid command in the list', () => {
+      expect(extensionCommands).toContainEqual({ key: 'extension.randomGuid', callback: randomGuid })
+    })
+
+    it('has the randomName command in the list', () => {
+      expect(extensionCommands).toContainEqual({ key: 'extension.randomName', callback: randomName })
+    })
+
+    it('has the randomCity command in the list', () => {
+      expect(extensionCommands).toContainEqual({ key: 'extension.randomCity', callback: randomCity })
+    })
+
+    it('has the randomStreetAddress command in the list', () => {
+      expect(extensionCommands).toContainEqual({ key: 'extension.randomStreetAddress', callback: randomStreetAddress })
+    })
+
+    it('has the randomPhoneNumber command in the list', () => {
+      expect(extensionCommands).toContainEqual({ key: 'extension.randomPhoneNumber', callback: randomPhoneNumber })
+    })
+
+    it('has the randomEmail command in the list', () => {
+      expect(extensionCommands).toContainEqual({ key: 'extension.randomEmail', callback: randomEmail })
     })
   })
 
