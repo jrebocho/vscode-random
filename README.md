@@ -16,6 +16,8 @@ Launch the Command Pallete **(Cmd+Shift+P / Ctrl+Shift+P)** and type `random` to
 
 ![Screen](https://raw.githubusercontent.com/jrebocho/vscode-random/master/images/vscode-random-screen.gif)
 
+Random values generation is also supported when using __multiple editors__.
+
 # Available Commands
 
 * `extension.randomByte` : Random byte - Generates an integer between 0 and 255 
