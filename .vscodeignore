@@ -2,6 +2,7 @@
 .vscode-test/**
 images/*.gif
 src
+mocks/**
 tests/**
 .babelrc
 .gitignore
