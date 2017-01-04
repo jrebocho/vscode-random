@@ -1,114 +1,114 @@
 {
-  "name": "vscode-random",
-  "displayName": "vscode-random",
-  "description": "Generates random data directly into VS Code",
-  "icon": "images/vscode-random-icon.png",
-  "version": "1.0.0",
-  "publisher": "jrebocho",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jrebocho/vscode-random.git"
-  },
-  "license": "MIT",
-  "engines": {
-    "vscode": "^1.5.0"
-  },
-  "categories": [
-    "Other"
-  ],
-  "activationEvents": [
-    "onCommand:extension.randomByte",
-    "onCommand:extension.randomShort",
-    "onCommand:extension.randomInt",  
-    "onCommand:extension.randomLong",
-    "onCommand:extension.randomGuid",
-    "onCommand:extension.randomStringCustomLength",
-    "onCommand:extension.randomName",
-    "onCommand:extension.randomStreetAddress",
-    "onCommand:extension.randomCity",
-    "onCommand:extension.randomPhoneNumber",
-    "onCommand:extension.randomEmail"
-  ],
-  "main": "./build/extension",
-  "contributes": {
-    "commands": [
-      {
-        "command": "extension.randomByte",
-        "title": "Random: Byte"
-      },
-      {
-        "command": "extension.randomShort",
-        "title": "Random: Short"
-      },
-      {
-        "command": "extension.randomInt",
-        "title": "Random: Integer"
-      },
-      {
-        "command": "extension.randomLong",
-        "title": "Random: Long"
-      },
-      {
-        "command": "extension.randomGuid",
-        "title": "Random: Guid"
-      },
-      {
-        "command": "extension.randomStringCustomLength",
-        "title": "Random: String with custom length"
-      },
-      {
-        "command": "extension.randomName",
-        "title": "Random: Name"
-      },
-      {
-        "command": "extension.randomStreetAddress",
-        "title": "Random: Street Address"
-      },
-      {
-        "command": "extension.randomCity",
-        "title": "Random: City"
-      },
-      {
-        "command": "extension.randomPhoneNumber",
-        "title": "Random: Phone number"
-      },
-      {
-        "command": "extension.randomEmail",
-        "title": "Random: Email"
-      }
-    ]
-  },
-  "scripts": {
-    "compile": "rimraf build & babel src --out-dir build",
-    "postinstall": "node ./node_modules/vscode/bin/install",
-    "test": "jest",
-    "test:watch": "jest --watch"
-  },
-  "jest": {
-    "testRegex": "(/tests/.*|(\\.|/)(test|spec))\\.js?$"
-  },
-  "standard": {
-    "globals": [ 
-      "describe", 
-      "it",
-      "expect",
-      "jest",
-      "beforeEach"
-    ]
-  },
-  "devDependencies": {    
-    "babel-cli": "^6.18.0",
-    "babel-jest": "^18.0.0",
-    "babel-polyfill": "^6.20.0",
-    "babel-preset-es2015": "^6.18.0",
-    "eslint": "^3.6.0",
-    "jest": "^18.0.0",
-    "mocha": "^2.3.3",
-    "rimraf": "^2.5.4",
-    "standard": "^8.6.0",
-    "vscode": "^1.0.0"
-  },
-  "dependencies": {
-    "chance": "^1.0.4"
-  }
+    "name": "vscode-random",
+    "displayName": "vscode-random",
+    "description": "Generates random data directly into VS Code",
+    "icon": "images/vscode-random-icon.png",
+    "version": "1.0.1",
+    "publisher": "jrebocho",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jrebocho/vscode-random.git"
+    },
+    "license": "MIT",
+    "engines": {
+        "vscode": "^1.5.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.randomByte",
+        "onCommand:extension.randomShort",
+        "onCommand:extension.randomInt",
+        "onCommand:extension.randomLong",
+        "onCommand:extension.randomGuid",
+        "onCommand:extension.randomStringCustomLength",
+        "onCommand:extension.randomName",
+        "onCommand:extension.randomStreetAddress",
+        "onCommand:extension.randomCity",
+        "onCommand:extension.randomPhoneNumber",
+        "onCommand:extension.randomEmail"
+    ],
+    "main": "./build/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.randomByte",
+                "title": "Random: Byte"
+            },
+            {
+                "command": "extension.randomShort",
+                "title": "Random: Short"
+            },
+            {
+                "command": "extension.randomInt",
+                "title": "Random: Integer"
+            },
+            {
+                "command": "extension.randomLong",
+                "title": "Random: Long"
+            },
+            {
+                "command": "extension.randomGuid",
+                "title": "Random: Guid"
+            },
+            {
+                "command": "extension.randomStringCustomLength",
+                "title": "Random: String with custom length"
+            },
+            {
+                "command": "extension.randomName",
+                "title": "Random: Name"
+            },
+            {
+                "command": "extension.randomStreetAddress",
+                "title": "Random: Street Address"
+            },
+            {
+                "command": "extension.randomCity",
+                "title": "Random: City"
+            },
+            {
+                "command": "extension.randomPhoneNumber",
+                "title": "Random: Phone number"
+            },
+            {
+                "command": "extension.randomEmail",
+                "title": "Random: Email"
+            }
+        ]
+    },
+    "scripts": {
+        "compile": "rimraf build & babel src --out-dir build",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "jest",
+        "test:watch": "jest --watch"
+    },
+    "jest": {
+        "testRegex": "(/tests/.*|(\\.|/)(test|spec))\\.js?$"
+    },
+    "standard": {
+        "globals": [
+            "describe",
+            "it",
+            "expect",
+            "jest",
+            "beforeEach"
+        ]
+    },
+    "devDependencies": {
+        "babel-cli": "^6.18.0",
+        "babel-jest": "^18.0.0",
+        "babel-polyfill": "^6.20.0",
+        "babel-preset-es2015": "^6.18.0",
+        "eslint": "^3.6.0",
+        "jest": "^18.0.0",
+        "mocha": "^2.3.3",
+        "rimraf": "^2.5.4",
+        "standard": "^8.6.0",
+        "vscode": "^1.0.0"
+    },
+    "dependencies": {
+        "chance": "^1.0.4"
+    }
 }
