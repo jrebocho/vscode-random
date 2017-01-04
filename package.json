@@ -23,7 +23,11 @@
     "onCommand:extension.randomLong",
     "onCommand:extension.randomGuid",
     "onCommand:extension.randomStringCustomLength",
-    "onCommand:extension.randomName"
+    "onCommand:extension.randomName",
+    "onCommand:extension.randomStreetAddress",
+    "onCommand:extension.randomCity",
+    "onCommand:extension.randomPhoneNumber",
+    "onCommand:extension.randomEmail"
   ],
   "main": "./build/extension",
   "contributes": {
@@ -55,6 +59,22 @@
       {
         "command": "extension.randomName",
         "title": "Random: Name"
+      },
+      {
+        "command": "extension.randomStreetAddress",
+        "title": "Random: Street Address"
+      },
+      {
+        "command": "extension.randomCity",
+        "title": "Random: City"
+      },
+      {
+        "command": "extension.randomPhoneNumber",
+        "title": "Random: Phone number"
+      },
+      {
+        "command": "extension.randomEmail",
+        "title": "Random: Email"
       }
     ]
   },

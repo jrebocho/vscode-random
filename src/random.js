@@ -30,3 +30,19 @@ export const randomString = ({chance = chanceInstance, inputValue = VALUE_DEFAUL
 export const randomName = ({chance = chanceInstance}) => {
   return chance.name()
 }
+
+export const randomStreetAddress = ({chance = chanceInstance}) => {
+  return chance.address()
+}
+
+export const randomCity = ({chance = chanceInstance}) => {
+  return chance.city()
+}
+
+export const randomPhoneNumber = ({chance = chanceInstance}) => {
+  return chance.phone()
+}
+
+export const randomEmail = ({chance = chanceInstance}) => {
+  return chance.email()
+}

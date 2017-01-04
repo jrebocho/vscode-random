@@ -19,7 +19,16 @@ Launch the Command Pallete **(Cmd+Shift+P / Ctrl+Shift+P)** and type `random` to
 # Available Commands
 
 * `extension.randomByte` : Random byte - Generates an integer between 0 and 255 
+* `extension.randomShort` : Random short - Generates an integer between 0 and 65535
+* `extension.randomInt` : Random integer - Generates an integer between 0 and 4294967295
+* `extension.randomLong` : Random long - Generates an integer between 0 and 9007199254740992
+* `extension.randomGuid` : Random guid - Generates a guid
 * `extension.randomStringCustomLength` : Random string with custom length - Generates a string with a length defined by user input
+* `extension.randomName` : Random name - Generates a random name (first and last name)
+* `extension.randomStreetAddress` : Random street address - Generates a random street address
+* `extension.randomCity` : Random city - Generates a random city name
+* `extension.randomPhoneNumber` : Random phone number - Generates a random phone number
+* `extension.randomEmail` : Random email - Generates a random email with a random domain
 
 # Change Log
 

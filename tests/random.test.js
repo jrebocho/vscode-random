@@ -6,7 +6,11 @@ import {
   randomLong,
   randomGuid,
   randomString,
-  randomName
+  randomName,
+  randomCity,
+  randomStreetAddress,
+  randomPhoneNumber,
+  randomEmail
 } from '../src/random'
 
 describe('>>>>> Random Generators Tests', () => {
@@ -121,6 +125,54 @@ describe('>>>>> Random Generators Tests', () => {
       randomName({chance})
 
       expect(chance.name).toBeCalledWith()
+    })
+  })
+
+  describe('.randomStreetAddress', () => {
+    beforeEach(() => {
+      chance.address.mockClear()
+    })
+
+    it('calls the lib address function', () => {
+      randomStreetAddress({chance})
+
+      expect(chance.address).toBeCalledWith()
+    })
+  })
+
+  describe('.randomCity', () => {
+    beforeEach(() => {
+      chance.city.mockClear()
+    })
+
+    it('calls the lib city function', () => {
+      randomCity({chance})
+
+      expect(chance.city).toBeCalledWith()
+    })
+  })
+
+  describe('.randomPhoneNumber', () => {
+    beforeEach(() => {
+      chance.phone.mockClear()
+    })
+
+    it('calls the lib phone function', () => {
+      randomPhoneNumber({chance})
+
+      expect(chance.phone).toBeCalledWith()
+    })
+  })
+
+  describe('.randomEmail', () => {
+    beforeEach(() => {
+      chance.email.mockClear()
+    })
+
+    it('calls the lib email function', () => {
+      randomEmail({chance})
+
+      expect(chance.email).toBeCalledWith()
     })
   })
 })

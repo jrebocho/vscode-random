@@ -6,14 +6,18 @@ import {
   randomLong,
   randomGuid,
   randomString,
-  randomName
+  randomName,
+  randomCity,
+  randomStreetAddress,
+  randomPhoneNumber,
+  randomEmail
 } from '../src/random'
 import { isNumber } from '../src/validations'
 
 describe('>>>>> Extension Commands Tests', () => {
   describe('Simple extension commands', () => {
     it('has the expected number of commands', () => {
-      expect(extensionCommands).toHaveLength(6)
+      expect(extensionCommands).toHaveLength(10)
     })
 
     it('has the randomByte command in the list', () => {
@@ -38,6 +42,22 @@ describe('>>>>> Extension Commands Tests', () => {
 
     it('has the randomName command in the list', () => {
       expect(extensionCommands).toContainEqual({ key: 'extension.randomName', callback: randomName })
+    })
+
+    it('has the randomCity command in the list', () => {
+      expect(extensionCommands).toContainEqual({ key: 'extension.randomCity', callback: randomCity })
+    })
+
+    it('has the randomStreetAddress command in the list', () => {
+      expect(extensionCommands).toContainEqual({ key: 'extension.randomStreetAddress', callback: randomStreetAddress })
+    })
+
+    it('has the randomPhoneNumber command in the list', () => {
+      expect(extensionCommands).toContainEqual({ key: 'extension.randomPhoneNumber', callback: randomPhoneNumber })
+    })
+
+    it('has the randomEmail command in the list', () => {
+      expect(extensionCommands).toContainEqual({ key: 'extension.randomEmail', callback: randomEmail })
     })
   })
 
