@@ -1,7 +1,7 @@
 {
   "name": "vscode-random",
   "displayName": "vscode-random",
-  "description": "An extension to generate random stuff",
+  "description": "Generates random data directly into VS Code",
   "icon": "images/vscode-random-icon.png",
   "version": "1.0.0",
   "publisher": "jrebocho",
