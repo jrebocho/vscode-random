@@ -4,6 +4,7 @@ export const CMD_KEY_RANDOM_INT = 'extension.randomInt'
 export const CMD_KEY_RANDOM_LONG = 'extension.randomLong'
 export const CMD_KEY_RANDOM_GUID = 'extension.randomGuid'
 export const CMD_KEY_RANDOM_STRING_CUSTOM_LENGTH = 'extension.randomStringCustomLength'
+export const CMD_KEY_RANDOM_NAME = 'extension.randomName'
 
 export const MSG_NO_ACTIVE_TEXT_EDITOR = 'No active text editor found!'
 export const MSG_ENTER_STRING_LENGTH = 'Enter the length of the string'

@@ -5,7 +5,8 @@ import {
   randomInt,
   randomLong,
   randomGuid,
-  randomString
+  randomString,
+  randomName
 } from '../src/random'
 
 describe('>>>>> Random Generators Tests', () => {
@@ -108,6 +109,18 @@ describe('>>>>> Random Generators Tests', () => {
       randomString({chance, inputValue: 32})
 
       expect(chance.word).toBeCalledWith({length: 32})
+    })
+  })
+
+  describe('.randomName', () => {
+    beforeEach(() => {
+      chance.name.mockClear()
+    })
+
+    it('calls the lib name function', () => {
+      randomName({chance})
+
+      expect(chance.name).toBeCalledWith()
     })
   })
 })

@@ -5,14 +5,15 @@ import {
   randomInt,
   randomLong,
   randomGuid,
-  randomString
+  randomString,
+  randomName
 } from '../src/random'
 import { isNumber } from '../src/validations'
 
 describe('>>>>> Extension Commands Tests', () => {
   describe('Simple extension commands', () => {
     it('has the expected number of commands', () => {
-      expect(extensionCommands).toHaveLength(5)
+      expect(extensionCommands).toHaveLength(6)
     })
 
     it('has the randomByte command in the list', () => {
@@ -33,6 +34,10 @@ describe('>>>>> Extension Commands Tests', () => {
 
     it('has the randomGuid command in the list', () => {
       expect(extensionCommands).toContainEqual({ key: 'extension.randomGuid', callback: randomGuid })
+    })
+
+    it('has the randomName command in the list', () => {
+      expect(extensionCommands).toContainEqual({ key: 'extension.randomName', callback: randomName })
     })
   })
 

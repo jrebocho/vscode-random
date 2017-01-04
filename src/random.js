@@ -26,3 +26,7 @@ export const randomGuid = ({chance = chanceInstance}) => {
 export const randomString = ({chance = chanceInstance, inputValue = VALUE_DEFAULT_STRING_LENGTH}) => {
   return chance.word({length: inputValue})
 }
+
+export const randomName = ({chance = chanceInstance}) => {
+  return chance.name()
+}
