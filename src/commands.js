@@ -43,6 +43,7 @@ export const extensionExecCommands = [
     key: constants.CMD_KEY_RESET_SEED,
     callback: resetSeed,
     prompt: constants.MSG_ENTER_SEED,
+    placeHolder: constants.MSG_LEAVE_EMPTY_FOR_DEFAULT,
     errorMsg: constants.MSG_SEED_RESET_ERROR,
     infoMsg: constants.MSG_SEED_RESET
   }

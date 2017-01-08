@@ -10,7 +10,10 @@ export const registerCommandsOutput = (context, cmd) => {
 export const registerCommandsInputOutput = (context, cmd) => {
   context.subscriptions.push(
     commands.registerCommand(cmd.key, () =>
-      window.showInputBox({prompt: cmd.prompt})
+      window.showInputBox({
+        prompt: cmd.prompt,
+        placeHolder: !cmd.placeHolder ? '' : cmd.placeHolder
+      })
       .then(inputValue => {
         if (!cmd.validation || cmd.validation(inputValue)) {
           editorInsert(cmd.callback, {inputValue})
@@ -25,7 +28,10 @@ export const registerCommandsInputOutput = (context, cmd) => {
 export const registerCommandsInput = (context, cmd) => {
   context.subscriptions.push(
     commands.registerCommand(cmd.key, () =>
-      window.showInputBox({prompt: cmd.prompt})
+      window.showInputBox({
+        prompt: cmd.prompt,
+        placeHolder: !cmd.placeHolder ? '' : cmd.placeHolder
+      })
       .then(inputValue => {
         if (!cmd.validation || cmd.validation(inputValue)) {
           cmd.callback(inputValue)

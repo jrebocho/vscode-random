@@ -91,7 +91,8 @@ describe('>>>>> Extension Commands Tests', () => {
       expect(extensionExecCommands).toContainEqual({
         key: 'extension.resetSeed',
         callback: resetSeed,
-        prompt: 'Enter new random seed: [Press enter to use default options]',
+        prompt: 'Enter new random seed',
+        placeHolder: 'Leave empty to use default options',
         errorMsg: 'Invalid random seed',
         infoMsg: 'Random seed was reset'
       })
