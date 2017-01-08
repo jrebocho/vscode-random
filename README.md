@@ -16,10 +16,11 @@ Launch the Command Pallete **(Cmd+Shift+P / Ctrl+Shift+P)** and type `random` to
 
 ![Screen](https://raw.githubusercontent.com/jrebocho/vscode-random/master/images/vscode-random-screen.gif)
 
-Random values generation is also supported when using __multiple editors__.
+Random values generation is also supported when using **multiple editors**.
 
 # Available Commands
 
+* `extension.resetSeed` : Reset seed - Initialize random generation library with a new seed. If no new seed is provided, the library will be reinitialized with the default options.
 * `extension.randomByte` : Random byte - Generates an integer between 0 and 255 
 * `extension.randomShort` : Random short - Generates an integer between 0 and 65535
 * `extension.randomInt` : Random integer - Generates an integer between 0 and 4294967295
