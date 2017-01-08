@@ -1,3 +1,4 @@
+export const CMD_KEY_RESET_SEED = 'extension.resetSeed'
 export const CMD_KEY_RANDOM_BYTE = 'extension.randomByte'
 export const CMD_KEY_RANDOM_SHORT = 'extension.randomShort'
 export const CMD_KEY_RANDOM_INT = 'extension.randomInt'
@@ -13,5 +14,8 @@ export const CMD_KEY_RANDOM_EMAIL = 'extension.randomEmail'
 export const MSG_NO_ACTIVE_TEXT_EDITOR = 'No active text editor found!'
 export const MSG_ENTER_STRING_LENGTH = 'Enter the length of the string'
 export const MSG_INPUT_VALUE_MUST_BE_NUMBER = 'The input value must be a number'
+export const MSG_ENTER_SEED = 'Enter new random seed: [Press enter to use default options]'
+export const MSG_SEED_RESET = 'Random seed was reset'
+export const MSG_SEED_RESET_ERROR = 'Invalid random seed'
 
 export const VALUE_DEFAULT_STRING_LENGTH = 10

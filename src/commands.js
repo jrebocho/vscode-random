@@ -1,4 +1,5 @@
 import {
+  resetSeed,
   randomByte,
   randomShort,
   randomInt,
@@ -34,5 +35,15 @@ export const extensionCommandsWithInput = [
     prompt: constants.MSG_ENTER_STRING_LENGTH,
     validation: isNumber,
     errorMsg: constants.MSG_INPUT_VALUE_MUST_BE_NUMBER
+  }
+]
+
+export const extensionExecCommands = [
+  {
+    key: constants.CMD_KEY_RESET_SEED,
+    callback: resetSeed,
+    prompt: constants.MSG_ENTER_SEED,
+    errorMsg: constants.MSG_SEED_RESET_ERROR,
+    infoMsg: constants.MSG_SEED_RESET
   }
 ]

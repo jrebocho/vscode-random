@@ -1,5 +1,10 @@
-import { extensionCommands, extensionCommandsWithInput } from '../src/commands'
 import {
+  extensionCommands,
+  extensionCommandsWithInput,
+  extensionExecCommands
+} from '../src/commands'
+import {
+  resetSeed,
   randomByte,
   randomShort,
   randomInt,
@@ -73,6 +78,22 @@ describe('>>>>> Extension Commands Tests', () => {
         prompt: 'Enter the length of the string',
         validation: isNumber,
         errorMsg: 'The input value must be a number'
+      })
+    })
+  })
+
+  describe('Extension commands with function execution', () => {
+    it('has the expected number of commands', () => {
+      expect(extensionExecCommands).toHaveLength(1)
+    })
+
+    it('has the resetSeed command in the list', () => {
+      expect(extensionExecCommands).toContainEqual({
+        key: 'extension.resetSeed',
+        callback: resetSeed,
+        prompt: 'Enter new random seed: [Press enter to use default options]',
+        errorMsg: 'Invalid random seed',
+        infoMsg: 'Random seed was reset'
       })
     })
   })

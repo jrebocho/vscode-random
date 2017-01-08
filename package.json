@@ -17,6 +17,7 @@
         "Other"
     ],
     "activationEvents": [
+        "onCommand:extension.resetSeed",
         "onCommand:extension.randomByte",
         "onCommand:extension.randomShort",
         "onCommand:extension.randomInt",
@@ -32,6 +33,10 @@
     "main": "./build/extension",
     "contributes": {
         "commands": [
+            {
+                "command": "extension.resetSeed",
+                "title": "Random: Reset seed"
+            },
             {
                 "command": "extension.randomByte",
                 "title": "Random: Byte"

@@ -1,28 +1,51 @@
 import { commands, window, Position, Selection } from 'vscode'
-import { extensionCommands, extensionCommandsWithInput } from './commands'
+import { extensionCommands, extensionCommandsWithInput, extensionExecCommands } from './commands'
 import { MSG_NO_ACTIVE_TEXT_EDITOR } from './constants'
 
 export const activate = (context) => {
-  extensionCommands.map(cmd => {
-    context.subscriptions.push(
-      commands.registerCommand(cmd.key, () => editorInsert(cmd.callback))
-    )
-  })
+  extensionCommands.map(cmd => registerCommandsOutput(context, cmd))
+  extensionCommandsWithInput.map(cmd => registerCommandsInputOutput(context, cmd))
+  extensionExecCommands.map(cmd => registerCommandsInput(context, cmd))
+}
 
-  extensionCommandsWithInput.map(cmd => {
-    context.subscriptions.push(
-      commands.registerCommand(cmd.key, () =>
-        window.showInputBox({prompt: cmd.prompt})
-        .then(inputValue => {
-          if (cmd.validation(inputValue)) {
-            editorInsert(cmd.callback, {inputValue})
-          } else {
-            window.showErrorMessage(cmd.errorMsg)
-          }
-        })
-      )
+const registerCommandsOutput = (context, cmd) => {
+  context.subscriptions.push(
+    commands.registerCommand(cmd.key, () => editorInsert(cmd.callback))
+  )
+}
+
+const registerCommandsInputOutput = (context, cmd) => {
+  context.subscriptions.push(
+    commands.registerCommand(cmd.key, () =>
+      window.showInputBox({prompt: cmd.prompt})
+      .then(inputValue => {
+        if (!cmd.validation || cmd.validation(inputValue)) {
+          editorInsert(cmd.callback, {inputValue})
+        } else {
+          window.showErrorMessage(cmd.errorMsg)
+        }
+      })
     )
-  })
+  )
+}
+
+const registerCommandsInput = (context, cmd) => {
+  context.subscriptions.push(
+    commands.registerCommand(cmd.key, () =>
+      window.showInputBox({prompt: cmd.prompt})
+      .then(inputValue => {
+        if (!cmd.validation || cmd.validation(inputValue)) {
+          cmd.callback(inputValue)
+
+          if (cmd.infoMsg) {
+            window.showInformationMessage(cmd.infoMsg)
+          }
+        } else {
+          window.showErrorMessage(cmd.errorMsg)
+        }
+      })
+    )
+  )
 }
 
 const editorInsert = (generator, params = {}) => {
