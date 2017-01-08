@@ -5,6 +5,7 @@ export const chance = {
   name: jest.fn(),
   city: jest.fn(),
   address: jest.fn(),
+  country: jest.fn(),
   phone: jest.fn(),
   email: jest.fn()
 }

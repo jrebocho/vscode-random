@@ -8,6 +8,8 @@ import {
   randomString,
   randomName,
   randomCity,
+  randomCountryCode,
+  randomCountryName,
   randomStreetAddress,
   randomPhoneNumber,
   randomEmail
@@ -76,7 +78,7 @@ describe('>>>>> Random Generators Tests', () => {
     it('calls the lib natural function with the correct max param', () => {
       randomLong({chance})
 
-      expect(chance.natural).toBeCalledWith()
+      expect(chance.natural).toBeCalled()
     })
 
     it('returns a string', () => {
@@ -94,7 +96,7 @@ describe('>>>>> Random Generators Tests', () => {
     it('calls the lib guid function', () => {
       randomGuid({chance})
 
-      expect(chance.guid).toBeCalledWith()
+      expect(chance.guid).toBeCalled()
     })
   })
 
@@ -124,7 +126,7 @@ describe('>>>>> Random Generators Tests', () => {
     it('calls the lib name function', () => {
       randomName({chance})
 
-      expect(chance.name).toBeCalledWith()
+      expect(chance.name).toBeCalled()
     })
   })
 
@@ -136,7 +138,7 @@ describe('>>>>> Random Generators Tests', () => {
     it('calls the lib address function', () => {
       randomStreetAddress({chance})
 
-      expect(chance.address).toBeCalledWith()
+      expect(chance.address).toBeCalled()
     })
   })
 
@@ -148,7 +150,31 @@ describe('>>>>> Random Generators Tests', () => {
     it('calls the lib city function', () => {
       randomCity({chance})
 
-      expect(chance.city).toBeCalledWith()
+      expect(chance.city).toBeCalled()
+    })
+  })
+
+  describe('.randomCountryCode', () => {
+    beforeEach(() => {
+      chance.country.mockClear()
+    })
+
+    it('calls the lib country function', () => {
+      randomCountryCode({chance})
+
+      expect(chance.country).toBeCalled()
+    })
+  })
+
+  describe('.randomCountry', () => {
+    beforeEach(() => {
+      chance.country.mockClear()
+    })
+
+    it('calls the lib country function with option to display a full country name', () => {
+      randomCountryName({chance})
+
+      expect(chance.country).toBeCalledWith({ full: true })
     })
   })
 
@@ -160,7 +186,7 @@ describe('>>>>> Random Generators Tests', () => {
     it('calls the lib phone function', () => {
       randomPhoneNumber({chance})
 
-      expect(chance.phone).toBeCalledWith()
+      expect(chance.phone).toBeCalled()
     })
   })
 
@@ -172,7 +198,7 @@ describe('>>>>> Random Generators Tests', () => {
     it('calls the lib email function', () => {
       randomEmail({chance})
 
-      expect(chance.email).toBeCalledWith()
+      expect(chance.email).toBeCalled()
     })
   })
 })

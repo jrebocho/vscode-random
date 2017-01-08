@@ -1,7 +1,14 @@
 import Chance from 'chance'
+import { isValid } from './validations'
 import { VALUE_DEFAULT_STRING_LENGTH } from './constants'
 
-const chanceInstance = new Chance()
+let chanceInstance = new Chance()
+
+export const resetSeed = (seed) => {
+  chanceInstance = isValid(seed)
+    ? new Chance(seed)
+    : new Chance()
+}
 
 export const randomByte = ({chance = chanceInstance}) => {
   return chance.natural({max: 255}).toString()
@@ -37,6 +44,14 @@ export const randomStreetAddress = ({chance = chanceInstance}) => {
 
 export const randomCity = ({chance = chanceInstance}) => {
   return chance.city()
+}
+
+export const randomCountryCode = ({chance = chanceInstance}) => {
+  return chance.country()
+}
+
+export const randomCountryName = ({chance = chanceInstance}) => {
+  return chance.country({ full: true })
 }
 
 export const randomPhoneNumber = ({chance = chanceInstance}) => {

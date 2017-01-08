@@ -3,7 +3,7 @@
     "displayName": "vscode-random",
     "description": "Generates random data directly into VS Code",
     "icon": "images/vscode-random-icon.png",
-    "version": "1.0.2",
+    "version": "1.1.0",
     "publisher": "jrebocho",
     "repository": {
         "type": "git",
@@ -17,6 +17,7 @@
         "Other"
     ],
     "activationEvents": [
+        "onCommand:extension.resetSeed",
         "onCommand:extension.randomByte",
         "onCommand:extension.randomShort",
         "onCommand:extension.randomInt",
@@ -26,12 +27,18 @@
         "onCommand:extension.randomName",
         "onCommand:extension.randomStreetAddress",
         "onCommand:extension.randomCity",
+        "onCommand:extension.randomCountryCode",
+        "onCommand:extension.randomCountryName",
         "onCommand:extension.randomPhoneNumber",
         "onCommand:extension.randomEmail"
     ],
     "main": "./build/extension",
     "contributes": {
         "commands": [
+            {
+                "command": "extension.resetSeed",
+                "title": "Random: Reset seed"
+            },
             {
                 "command": "extension.randomByte",
                 "title": "Random: Byte"
@@ -67,6 +74,14 @@
             {
                 "command": "extension.randomCity",
                 "title": "Random: City"
+            },            
+            {
+                "command": "extension.randomCountryCode",
+                "title": "Random: Country code"
+            },            
+            {
+                "command": "extension.randomCountryName",
+                "title": "Random: Country name"
             },
             {
                 "command": "extension.randomPhoneNumber",

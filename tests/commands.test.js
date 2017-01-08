@@ -1,5 +1,10 @@
-import { extensionCommands, extensionCommandsWithInput } from '../src/commands'
 import {
+  extensionCommands,
+  extensionCommandsWithInput,
+  extensionExecCommands
+} from '../src/commands'
+import {
+  resetSeed,
   randomByte,
   randomShort,
   randomInt,
@@ -8,6 +13,8 @@ import {
   randomString,
   randomName,
   randomCity,
+  randomCountryCode,
+  randomCountryName,
   randomStreetAddress,
   randomPhoneNumber,
   randomEmail
@@ -17,7 +24,7 @@ import { isNumber } from '../src/validations'
 describe('>>>>> Extension Commands Tests', () => {
   describe('Simple extension commands', () => {
     it('has the expected number of commands', () => {
-      expect(extensionCommands).toHaveLength(10)
+      expect(extensionCommands).toHaveLength(12)
     })
 
     it('has the randomByte command in the list', () => {
@@ -48,6 +55,14 @@ describe('>>>>> Extension Commands Tests', () => {
       expect(extensionCommands).toContainEqual({ key: 'extension.randomCity', callback: randomCity })
     })
 
+    it('has the randomCountryCode command in the list', () => {
+      expect(extensionCommands).toContainEqual({ key: 'extension.randomCountryCode', callback: randomCountryCode })
+    })
+
+    it('has the randomCountryName command in the list', () => {
+      expect(extensionCommands).toContainEqual({ key: 'extension.randomCountryName', callback: randomCountryName })
+    })
+
     it('has the randomStreetAddress command in the list', () => {
       expect(extensionCommands).toContainEqual({ key: 'extension.randomStreetAddress', callback: randomStreetAddress })
     })
@@ -73,6 +88,23 @@ describe('>>>>> Extension Commands Tests', () => {
         prompt: 'Enter the length of the string',
         validation: isNumber,
         errorMsg: 'The input value must be a number'
+      })
+    })
+  })
+
+  describe('Extension commands with function execution', () => {
+    it('has the expected number of commands', () => {
+      expect(extensionExecCommands).toHaveLength(1)
+    })
+
+    it('has the resetSeed command in the list', () => {
+      expect(extensionExecCommands).toContainEqual({
+        key: 'extension.resetSeed',
+        callback: resetSeed,
+        prompt: 'Enter new random seed',
+        placeHolder: 'Leave empty to use default options',
+        errorMsg: 'Invalid random seed',
+        infoMsg: 'Random seed was reset'
       })
     })
   })
