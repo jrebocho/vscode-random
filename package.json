@@ -27,6 +27,8 @@
         "onCommand:extension.randomName",
         "onCommand:extension.randomStreetAddress",
         "onCommand:extension.randomCity",
+        "onCommand:extension.randomCountryCode",
+        "onCommand:extension.randomCountryName",
         "onCommand:extension.randomPhoneNumber",
         "onCommand:extension.randomEmail"
     ],
@@ -72,6 +74,14 @@
             {
                 "command": "extension.randomCity",
                 "title": "Random: City"
+            },            
+            {
+                "command": "extension.randomCountryCode",
+                "title": "Random: Country code"
+            },            
+            {
+                "command": "extension.randomCountryName",
+                "title": "Random: Country name"
             },
             {
                 "command": "extension.randomPhoneNumber",

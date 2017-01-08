@@ -13,6 +13,8 @@ import {
   randomString,
   randomName,
   randomCity,
+  randomCountryCode,
+  randomCountryName,
   randomStreetAddress,
   randomPhoneNumber,
   randomEmail
@@ -22,7 +24,7 @@ import { isNumber } from '../src/validations'
 describe('>>>>> Extension Commands Tests', () => {
   describe('Simple extension commands', () => {
     it('has the expected number of commands', () => {
-      expect(extensionCommands).toHaveLength(10)
+      expect(extensionCommands).toHaveLength(12)
     })
 
     it('has the randomByte command in the list', () => {
@@ -51,6 +53,14 @@ describe('>>>>> Extension Commands Tests', () => {
 
     it('has the randomCity command in the list', () => {
       expect(extensionCommands).toContainEqual({ key: 'extension.randomCity', callback: randomCity })
+    })
+
+    it('has the randomCountryCode command in the list', () => {
+      expect(extensionCommands).toContainEqual({ key: 'extension.randomCountryCode', callback: randomCountryCode })
+    })
+
+    it('has the randomCountryName command in the list', () => {
+      expect(extensionCommands).toContainEqual({ key: 'extension.randomCountryName', callback: randomCountryName })
     })
 
     it('has the randomStreetAddress command in the list', () => {

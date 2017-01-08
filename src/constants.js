@@ -8,6 +8,8 @@ export const CMD_KEY_RANDOM_STRING_CUSTOM_LENGTH = 'extension.randomStringCustom
 export const CMD_KEY_RANDOM_NAME = 'extension.randomName'
 export const CMD_KEY_RANDOM_STREET_ADDRESS = 'extension.randomStreetAddress'
 export const CMD_KEY_RANDOM_CITY = 'extension.randomCity'
+export const CMD_KEY_RANDOM_COUNTRY_CODE = 'extension.randomCountryCode'
+export const CMD_KEY_RANDOM_COUNTRY_NAME = 'extension.randomCountryName'
 export const CMD_KEY_RANDOM_PHONE_NUMBER = 'extension.randomPhoneNumber'
 export const CMD_KEY_RANDOM_EMAIL = 'extension.randomEmail'
 

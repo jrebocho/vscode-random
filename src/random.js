@@ -46,6 +46,14 @@ export const randomCity = ({chance = chanceInstance}) => {
   return chance.city()
 }
 
+export const randomCountryCode = ({chance = chanceInstance}) => {
+  return chance.country()
+}
+
+export const randomCountryName = ({chance = chanceInstance}) => {
+  return chance.country({ full: true })
+}
+
 export const randomPhoneNumber = ({chance = chanceInstance}) => {
   return chance.phone()
 }
