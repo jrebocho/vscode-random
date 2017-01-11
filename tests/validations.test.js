@@ -1,4 +1,4 @@
-import { isNumber, isValid } from '../src/validations'
+import { isNumber, isValid, isValidIntRange } from '../src/validations'
 
 describe('>>>>> Validator Functions Tests', () => {
   describe('.isNumber', () => {
@@ -12,6 +12,12 @@ describe('>>>>> Validator Functions Tests', () => {
       const valueToTest = '11'
 
       expect(isNumber(valueToTest)).toBeTruthy()
+    })
+
+    it('don\'t validate an empty string', () => {
+      const valueToTest = ''
+
+      expect(isNumber(valueToTest)).toBeFalsy()
     })
 
     it('don\'t validate a string with characters', () => {
@@ -70,6 +76,44 @@ describe('>>>>> Validator Functions Tests', () => {
 
         expect(isValid(valueToTest, 10)).toBeTruthy()
       })
+    })
+  })
+
+  describe('.isValidIntRange', () => {
+    it('don\'t validate an empty string', () => {
+      const valueToTest = ''
+
+      expect(isValidIntRange(valueToTest)).toBeFalsy()
+    })
+
+    it('don\'t validate a range with only one value', () => {
+      const valueToTest = '12-'
+
+      expect(isValidIntRange(valueToTest)).toBeFalsy()
+    })
+
+    it('don\'t validate a range with characters', () => {
+      const valueToTest = '12-1234a'
+
+      expect(isValidIntRange(valueToTest)).toBeFalsy()
+    })
+
+    it('don\'t validate a range with the first number greater than the second', () => {
+      const valueToTest = '32-16'
+
+      expect(isValidIntRange(valueToTest)).toBeFalsy()
+    })
+
+    it('validate a range with two numbers', () => {
+      const valueToTest = '1-25'
+
+      expect(isValidIntRange(valueToTest)).toBeTruthy()
+    })
+
+    it('don\'t validate a range with unsigned numbers', () => {
+      const valueToTest = '-2--1'
+
+      expect(isValidIntRange(valueToTest)).toBeFalsy()
     })
   })
 })
