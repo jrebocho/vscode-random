@@ -4,6 +4,7 @@ import {
   randomShort,
   randomInt,
   randomLong,
+  randomIntCustomRange,
   randomGuid,
   randomString,
   randomName,
@@ -14,7 +15,7 @@ import {
   randomPhoneNumber,
   randomEmail
 } from './random'
-import { isNumber } from './validations'
+import { isNumber, isValidIntRange } from './validations'
 import * as constants from './constants'
 
 export const extensionCommands = [
@@ -39,6 +40,14 @@ export const extensionCommandsWithInput = [
     prompt: constants.MSG_ENTER_STRING_LENGTH,
     validation: isNumber,
     errorMsg: constants.MSG_INPUT_VALUE_MUST_BE_NUMBER
+  },
+  {
+    key: constants.CMD_KEY_RANDOM_INTEGER_CUSTOM_RANGE,
+    callback: randomIntCustomRange,
+    prompt: constants.MSG_ENTER_INTEGER_RANGE,
+    placeHolder: constants.MSG_INTEGER_RANGE_FORMAT,
+    validation: isValidIntRange,
+    errorMsg: constants.MSG_INPUT_VALUE_MUST_BE_VALID_RANGE
   }
 ]
 

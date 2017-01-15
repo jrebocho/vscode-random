@@ -4,7 +4,7 @@ import {
   randomShort,
   randomInt,
   randomLong,
-  randomIntegerInRange,
+  randomIntCustomRange,
   randomGuid,
   randomString,
   randomName,
@@ -89,19 +89,19 @@ describe('>>>>> Random Generators Tests', () => {
     })
   })
 
-  describe('.randomIntegerInRange', () => {
+  describe('.randomIntCustomRange', () => {
     beforeEach(() => {
       chance.natural.mockClear()
     })
 
     it('calls the lib natural function with the correct min and max params', () => {
-      randomIntegerInRange({chance, range: '26-8989'})
+      randomIntCustomRange({chance, inputValue: '26-8989'})
 
       expect(chance.natural).toBeCalledWith({min: 26, max: 8989})
     })
 
     it('returns a string', () => {
-      const random = randomIntegerInRange({chance, range: '26-8989'})
+      const random = randomIntCustomRange({chance, inputValue: '26-8989'})
 
       expect(typeof (random) === 'string').toBeTruthy()
     })

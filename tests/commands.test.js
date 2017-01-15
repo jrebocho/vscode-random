@@ -9,6 +9,7 @@ import {
   randomShort,
   randomInt,
   randomLong,
+  randomIntCustomRange,
   randomGuid,
   randomString,
   randomName,
@@ -19,7 +20,7 @@ import {
   randomPhoneNumber,
   randomEmail
 } from '../src/random'
-import { isNumber } from '../src/validations'
+import { isNumber, isValidIntRange } from '../src/validations'
 
 describe('>>>>> Extension Commands Tests', () => {
   describe('Simple extension commands', () => {
@@ -78,7 +79,7 @@ describe('>>>>> Extension Commands Tests', () => {
 
   describe('Extension commands with input', () => {
     it('has the expected number of commands', () => {
-      expect(extensionCommandsWithInput).toHaveLength(1)
+      expect(extensionCommandsWithInput).toHaveLength(2)
     })
 
     it('has the randomStringCustomLength command in the list', () => {
@@ -88,6 +89,17 @@ describe('>>>>> Extension Commands Tests', () => {
         prompt: 'Enter the length of the string',
         validation: isNumber,
         errorMsg: 'The input value must be a number'
+      })
+    })
+
+    it('has the randomIntCustomRange command in the list', () => {
+      expect(extensionCommandsWithInput).toContainEqual({
+        key: 'extension.randomIntCustomRange',
+        callback: randomIntCustomRange,
+        prompt: 'Enter the integer range',
+        placeHolder: 'Range format',
+        validation: isValidIntRange,
+        errorMsg: 'The input value must be a valid range'
       })
     })
   })
