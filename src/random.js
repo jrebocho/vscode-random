@@ -26,6 +26,12 @@ export const randomLong = ({chance = chanceInstance}) => {
   return chance.natural().toString()
 }
 
+export const randomIntegerInRange = ({chance = chanceInstance, range}) => {
+  const rangeLimits = range.split('-')
+
+  return chance.natural({min: +rangeLimits[0], max: +rangeLimits[1]}).toString()
+}
+
 export const randomGuid = ({chance = chanceInstance}) => {
   return chance.guid()
 }
