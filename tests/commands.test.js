@@ -97,9 +97,9 @@ describe('>>>>> Extension Commands Tests', () => {
         key: 'extension.randomIntCustomRange',
         callback: randomIntCustomRange,
         prompt: 'Enter the integer range',
-        placeHolder: 'Range format',
+        placeHolder: 'MIN-MAX',
         validation: isValidIntRange,
-        errorMsg: 'The input value must be a valid range'
+        errorMsg: 'The input value must be a range with a min and max value separated by a hyphen'
       })
     })
   })
