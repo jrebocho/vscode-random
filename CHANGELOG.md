@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to the "vscode-random" extension are documented in this file.
 
+## [1.2.0] - 2017-01-18
+## Added
+- New command to generate a random integer within a given custom range
+
 ## [1.1.0] - 2017-01-08
 ## Added
 - New command to allow random seed reset

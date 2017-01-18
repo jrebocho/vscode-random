@@ -25,8 +25,9 @@ Random values generation is also supported when using **multiple editors**.
 * `extension.randomShort` : Random short - Generates an integer between 0 and 65535
 * `extension.randomInt` : Random integer - Generates an integer between 0 and 4294967295
 * `extension.randomLong` : Random long - Generates an integer between 0 and 9007199254740992
+* `extension.randomIntCustomRange` : Random integer (custom range) - Generates a random integer within a given custom range
 * `extension.randomGuid` : Random guid - Generates a guid
-* `extension.randomStringCustomLength` : Random string with custom length - Generates a string with a length defined by user input
+* `extension.randomStringCustomLength` : Random string (custom length) - Generates a string with a length defined by user input
 * `extension.randomName` : Random name - Generates a random name (first and last name)
 * `extension.randomStreetAddress` : Random street address - Generates a random street address
 * `extension.randomCity` : Random city - Generates a random city name
