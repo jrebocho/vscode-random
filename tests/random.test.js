@@ -13,7 +13,12 @@ import {
   randomCountryName,
   randomStreetAddress,
   randomPhoneNumber,
-  randomEmail
+  randomEmail,
+  randomIP,
+  randomIPv6,
+  randomUrl,
+  randomHexColor,
+  randomRgbColor
 } from '../src/random'
 
 describe('>>>>> Random Generators Tests', () => {
@@ -218,6 +223,66 @@ describe('>>>>> Random Generators Tests', () => {
       randomEmail({chance})
 
       expect(chance.email).toBeCalled()
+    })
+  })
+
+  describe('.randomIP', () => {
+    beforeEach(() => {
+      chance.ip.mockClear()
+    })
+
+    it('calls the lib ip function', () => {
+      randomIP({chance})
+
+      expect(chance.ip).toBeCalled()
+    })
+  })
+
+  describe('.randomIPv6', () => {
+    beforeEach(() => {
+      chance.ipv6.mockClear()
+    })
+
+    it('calls the lib ipv6 function', () => {
+      randomIPv6({chance})
+
+      expect(chance.ipv6).toBeCalled()
+    })
+  })
+
+  describe('.randomUrl', () => {
+    beforeEach(() => {
+      chance.url.mockClear()
+    })
+
+    it('calls the lib url function', () => {
+      randomUrl({chance})
+
+      expect(chance.url).toBeCalled()
+    })
+  })
+
+  describe('.randomHexColor', () => {
+    beforeEach(() => {
+      chance.color.mockClear()
+    })
+
+    it('calls the lib color function with hex format', () => {
+      randomHexColor({chance})
+
+      expect(chance.color).toBeCalledWith({format: 'hex'})
+    })
+  })
+
+  describe('.randomRgbColor', () => {
+    beforeEach(() => {
+      chance.color.mockClear()
+    })
+
+    it('calls the lib color function with rgb format', () => {
+      randomRgbColor({chance})
+
+      expect(chance.color).toBeCalledWith({format: 'rgb'})
     })
   })
 })

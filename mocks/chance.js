@@ -7,5 +7,9 @@ export const chance = {
   address: jest.fn(),
   country: jest.fn(),
   phone: jest.fn(),
-  email: jest.fn()
+  email: jest.fn(),
+  ip: jest.fn(),
+  ipv6: jest.fn(),
+  url: jest.fn(),
+  color: jest.fn()
 }
