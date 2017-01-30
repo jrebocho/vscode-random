@@ -270,7 +270,7 @@ describe('>>>>> Random Generators Tests', () => {
     it('calls the lib color function with hex format', () => {
       randomHexColor({chance})
 
-      expect(chance.color).toBeCalledWith({format: 'hex'})
+      expect(chance.color).toBeCalledWith({format: 'hex', casing: 'upper'})
     })
   })
 

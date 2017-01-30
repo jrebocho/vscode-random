@@ -81,7 +81,7 @@ export const randomUrl = ({chance = chanceInstance}) => {
 }
 
 export const randomHexColor = ({chance = chanceInstance}) => {
-  return chance.color({format: 'hex'})
+  return chance.color({format: 'hex', casing: 'upper'})
 }
 
 export const randomRgbColor = ({chance = chanceInstance}) => {
