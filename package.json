@@ -3,7 +3,7 @@
     "displayName": "vscode-random",
     "description": "Generates random data directly into VS Code",
     "icon": "images/vscode-random-icon.png",
-    "version": "1.2.0",
+    "version": "1.3.0",
     "publisher": "jrebocho",
     "repository": {
         "type": "git",
@@ -31,7 +31,12 @@
         "onCommand:extension.randomCountryCode",
         "onCommand:extension.randomCountryName",
         "onCommand:extension.randomPhoneNumber",
-        "onCommand:extension.randomEmail"
+        "onCommand:extension.randomEmail",
+        "onCommand:extension.randomIP",
+        "onCommand:extension.randomIPv6",
+        "onCommand:extension.randomUrl",
+        "onCommand:extension.randomHexColor",
+        "onCommand:extension.randomRgbColor"
     ],
     "main": "./build/extension",
     "contributes": {
@@ -95,6 +100,26 @@
             {
                 "command": "extension.randomEmail",
                 "title": "Random: Email"
+            },
+            {
+                "command": "extension.randomIP",
+                "title": "Random: IP"
+            },
+            {
+                "command": "extension.randomIPv6",
+                "title": "Random: IPv6"
+            },
+            {
+                "command": "extension.randomUrl",
+                "title": "Random: Url"
+            },
+            {
+                "command": "extension.randomHexColor",
+                "title": "Random: Color (Hexadecimal)"
+            },
+            {
+                "command": "extension.randomRgbColor",
+                "title": "Random: Color (RGB)"
             }
         ]
     },
