@@ -18,14 +18,19 @@ import {
   randomCountryName,
   randomStreetAddress,
   randomPhoneNumber,
-  randomEmail
+  randomEmail,
+  randomIP,
+  randomIPv6,
+  randomUrl,
+  randomHexColor,
+  randomRgbColor
 } from '../src/random'
 import { isNumber, isValidIntRange } from '../src/validations'
 
 describe('>>>>> Extension Commands Tests', () => {
   describe('Simple extension commands', () => {
     it('has the expected number of commands', () => {
-      expect(extensionCommands).toHaveLength(12)
+      expect(extensionCommands).toHaveLength(17)
     })
 
     it('has the randomByte command in the list', () => {
@@ -74,6 +79,26 @@ describe('>>>>> Extension Commands Tests', () => {
 
     it('has the randomEmail command in the list', () => {
       expect(extensionCommands).toContainEqual({ key: 'extension.randomEmail', callback: randomEmail })
+    })
+
+    it('has the randomIP command in the list', () => {
+      expect(extensionCommands).toContainEqual({ key: 'extension.randomIP', callback: randomIP })
+    })
+
+    it('has the randomIPv6 command in the list', () => {
+      expect(extensionCommands).toContainEqual({ key: 'extension.randomIPv6', callback: randomIPv6 })
+    })
+
+    it('has the randomUrl command in the list', () => {
+      expect(extensionCommands).toContainEqual({ key: 'extension.randomUrl', callback: randomUrl })
+    })
+
+    it('has the randomHexColor command in the list', () => {
+      expect(extensionCommands).toContainEqual({ key: 'extension.randomHexColor', callback: randomHexColor })
+    })
+
+    it('has the randomRgbColor command in the list', () => {
+      expect(extensionCommands).toContainEqual({ key: 'extension.randomRgbColor', callback: randomRgbColor })
     })
   })
 
