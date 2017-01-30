@@ -1,6 +1,14 @@
 # Change Log
 All notable changes to the "vscode-random" extension are documented in this file.
 
+## [1.3.0] - 2017-01-30
+## Added
+- New command to generate a random IP address
+- New command to generate a random IPv6 address
+- New command to generate a random Url
+- New command to generate a random hexadecimal color
+- New command to generate a random RGB color
+
 ## [1.2.0] - 2017-01-18
 ## Added
 - New command to generate a random integer within a given custom range

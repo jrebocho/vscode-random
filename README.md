@@ -35,6 +35,11 @@ Random values generation is also supported when using **multiple editors**.
 * `extension.randomCountryName` : Random country name - Returns a random country name
 * `extension.randomPhoneNumber` : Random phone number - Generates a random phone number
 * `extension.randomEmail` : Random email - Generates a random email with a random domain
+* `extension.randomIP` : Random IP - Generates a random IP address
+* `extension.randomIPv6` : Random IPv6 - Generates a random IPv6 address
+* `extension.randomUrl` : Random Url - Generates a random Url
+* `extension.randomHexColor` : Random hexadecimal color - Generates a random hexadecimal color
+* `extension.randomRgbColor` : Random RGB color - Generates a random RGB color
 
 # Change Log
 

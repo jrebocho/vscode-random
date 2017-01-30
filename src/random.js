@@ -67,3 +67,23 @@ export const randomPhoneNumber = ({chance = chanceInstance}) => {
 export const randomEmail = ({chance = chanceInstance}) => {
   return chance.email()
 }
+
+export const randomIP = ({chance = chanceInstance}) => {
+  return chance.ip()
+}
+
+export const randomIPv6 = ({chance = chanceInstance}) => {
+  return chance.ipv6()
+}
+
+export const randomUrl = ({chance = chanceInstance}) => {
+  return chance.url()
+}
+
+export const randomHexColor = ({chance = chanceInstance}) => {
+  return chance.color({format: 'hex', casing: 'upper'})
+}
+
+export const randomRgbColor = ({chance = chanceInstance}) => {
+  return chance.color({format: 'rgb'})
+}
