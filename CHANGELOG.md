@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to the "vscode-random" extension are documented in this file.
 
+## [1.3.1] - 2017-07-02
+## Changed
+- Update dependencies packages
+
 ## [1.3.0] - 2017-01-30
 ## Added
 - New command to generate a random IP address
