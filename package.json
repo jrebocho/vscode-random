@@ -3,7 +3,7 @@
     "displayName": "vscode-random",
     "description": "Generates random data directly into VS Code",
     "icon": "images/vscode-random-icon.png",
-    "version": "1.3.1",
+    "version": "1.3.2",
     "publisher": "jrebocho",
     "repository": {
         "type": "git",
@@ -142,18 +142,18 @@
         ]
     },
     "devDependencies": {
-        "babel-cli": "^6.24.1",
-        "babel-jest": "^20.0.3",
-        "babel-polyfill": "^6.23.0",
-        "babel-preset-es2015": "^6.24.1",
-        "eslint": "^4.1.1",
-        "jest": "^20.0.4",
-        "mocha": "^3.4.2",
-        "rimraf": "^2.6.1",
-        "standard": "^10.0.2",
-        "vscode": "^1.1.1"
+        "babel-core":"^6.26.0",
+        "babel-cli": "^6.26.0",
+        "babel-jest": "^21.2.0",
+        "babel-polyfill": "^6.26.0",
+        "babel-preset-env": "^1.6.1",
+        "eslint": "^4.11.0",
+        "jest": "^21.2.1",
+        "rimraf": "^2.6.2",
+        "standard": "^10.0.3",
+        "vscode": "^1.1.7"
     },
     "dependencies": {
-        "chance": "^1.0.10"
+        "chance": "^1.0.12"
     }
 }

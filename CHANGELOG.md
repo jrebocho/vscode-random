@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to the "vscode-random" extension are documented in this file.
 
+## [1.3.2] - 2017-11-17
+## Changed
+- Update dependencies packages
+
 ## [1.3.1] - 2017-07-02
 ## Changed
 - Update dependencies packages
