@@ -84,11 +84,11 @@
             {
                 "command": "extension.randomCity",
                 "title": "Random: City"
-            },            
+            },
             {
                 "command": "extension.randomCountryCode",
                 "title": "Random: Country code"
-            },            
+            },
             {
                 "command": "extension.randomCountryName",
                 "title": "Random: Country name"
@@ -142,11 +142,12 @@
         ]
     },
     "devDependencies": {
-        "babel-core":"^6.26.0",
-        "babel-cli": "^6.26.0",
-        "babel-jest": "^21.2.0",
-        "babel-polyfill": "^6.26.0",
-        "babel-preset-env": "^1.6.1",
+        "@babel/cli": "^7.0.0",
+        "@babel/core": "^7.0.0",
+        "@babel/polyfill": "^7.0.0",
+        "@babel/preset-env": "^7.0.0",
+        "babel-core": "^7.0.0-bridge.0",
+        "babel-jest": "^23.4.2",
         "eslint": "^4.11.0",
         "jest": "^21.2.1",
         "rimraf": "^2.6.2",
