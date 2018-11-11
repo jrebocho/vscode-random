@@ -3,7 +3,7 @@
     "displayName": "vscode-random",
     "description": "Generates random data directly into VS Code",
     "icon": "images/vscode-random-icon.png",
-    "version": "1.3.2",
+    "version": "1.4.0",
     "publisher": "jrebocho",
     "repository": {
         "type": "git",
@@ -11,7 +11,7 @@
     },
     "license": "MIT",
     "engines": {
-        "vscode": "^1.5.0"
+        "vscode": "^1.25.0"
     },
     "categories": [
         "Other"
@@ -84,11 +84,11 @@
             {
                 "command": "extension.randomCity",
                 "title": "Random: City"
-            },            
+            },
             {
                 "command": "extension.randomCountryCode",
                 "title": "Random: Country code"
-            },            
+            },
             {
                 "command": "extension.randomCountryName",
                 "title": "Random: Country name"
@@ -142,18 +142,19 @@
         ]
     },
     "devDependencies": {
-        "babel-core":"^6.26.0",
-        "babel-cli": "^6.26.0",
-        "babel-jest": "^21.2.0",
-        "babel-polyfill": "^6.26.0",
-        "babel-preset-env": "^1.6.1",
-        "eslint": "^4.11.0",
-        "jest": "^21.2.1",
+        "@babel/cli": "^7.0.0",
+        "@babel/core": "^7.0.0",
+        "@babel/polyfill": "^7.0.0",
+        "@babel/preset-env": "^7.0.0",
+        "babel-core": "^7.0.0-bridge.0",
+        "babel-jest": "^23.6.0",
+        "eslint": "^5.9.0",
+        "jest": "^23.6.0",
         "rimraf": "^2.6.2",
-        "standard": "^10.0.3",
-        "vscode": "^1.1.7"
+        "standard": "^12.0.1",
+        "vscode": "^1.1.21"
     },
     "dependencies": {
-        "chance": "^1.0.12"
+        "chance": "^1.0.16"
     }
 }

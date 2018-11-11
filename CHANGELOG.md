@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to the "vscode-random" extension are documented in this file.
 
+## [1.4.0] - 2018-11-11
+## Changed
+- Update dependencies packages
+- Update to Babel 7
+- New extension icon
+
 ## [1.3.2] - 2017-11-17
 ## Changed
 - Update dependencies packages
