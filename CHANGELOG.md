@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to the "vscode-random" extension are documented in this file.
 
+## [1.5.0] - 2019-02-04
+## Added
+- Context menu with extensions commands (Thanks to [@lnxbil](https://github.com/lnxbil) for the suggestion & [@johanhammar](https://github.com/johanhammar) for the implementation!)
+
 ## [1.4.0] - 2018-11-11
 ## Changed
 - Update dependencies packages
