@@ -18,6 +18,10 @@ Launch the Command Pallete **(Cmd+Shift+P / Ctrl+Shift+P)** and type `random` to
 
 Random values generation is also supported when using **multiple editors**.
 
+# Configuration
+
+* `vscodeRandom.contextMenu.enabled` : Enable/disable the context menu for the available data generators (disabled by default).
+
 # Available Commands
 
 * `extension.resetSeed` : Reset seed - Initialize random generation library with a new seed. If no new seed is provided, the library will be reinitialized with the default options.
