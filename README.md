@@ -4,7 +4,7 @@ It uses the great [ChangeJS](http://chancejs.com/) library written by [Victor Qu
 
 # Install
 
-This extension can be installed with one the following methods: 
+This extension can be installed with one the following methods:
 
 1. Launch the Command Pallete **(Cmd+Shift+P / Ctrl+Shift+P)** and type `Extensions: Install Extensions`. Type `vscode-random` in the Side Bar search input. Click the install button and reload VS Code.
 2. Click the Extensions icon in the View Bar. Type `vscode-random` in the Side Bar search input. Click the install button and reload VS Code.
@@ -25,13 +25,14 @@ Random values generation is also supported when using **multiple editors**.
 # Available Commands
 
 * `extension.resetSeed` : Reset seed - Initialize random generation library with a new seed. If no new seed is provided, the library will be reinitialized with the default options.
-* `extension.randomByte` : Random byte - Generates an integer between 0 and 255 
+* `extension.randomByte` : Random byte - Generates an integer between 0 and 255
 * `extension.randomShort` : Random short - Generates an integer between 0 and 65535
 * `extension.randomInt` : Random integer - Generates an integer between 0 and 4294967295
 * `extension.randomLong` : Random long - Generates an integer between 0 and 9007199254740992
 * `extension.randomIntCustomRange` : Random integer (custom range) - Generates a random integer within a given custom range
 * `extension.randomGuid` : Random guid - Generates a guid
 * `extension.randomStringCustomLength` : Random string (custom length) - Generates a string with a length defined by user input
+* `extension.randomSampleFromInput` : Random sample from input - Selects a random string from a comma-separated set of values
 * `extension.randomName` : Random name - Generates a random name (first and last name)
 * `extension.randomStreetAddress` : Random street address - Generates a random street address
 * `extension.randomCity` : Random city - Generates a random city name
