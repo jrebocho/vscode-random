@@ -23,9 +23,10 @@ import {
   randomIPv6,
   randomUrl,
   randomHexColor,
-  randomRgbColor
+  randomRgbColor,
+  randomSample
 } from '../src/random'
-import { isNumber, isValidIntRange } from '../src/validations'
+import { isNumber, isValidIntRange, isStringWithComma } from '../src/validations'
 
 describe('>>>>> Extension Commands Tests', () => {
   describe('Simple extension commands', () => {
@@ -104,7 +105,7 @@ describe('>>>>> Extension Commands Tests', () => {
 
   describe('Extension commands with input', () => {
     it('has the expected number of commands', () => {
-      expect(extensionCommandsWithInput).toHaveLength(2)
+      expect(extensionCommandsWithInput).toHaveLength(3)
     })
 
     it('has the randomStringCustomLength command in the list', () => {
@@ -125,6 +126,16 @@ describe('>>>>> Extension Commands Tests', () => {
         placeHolder: 'MIN-MAX',
         validation: isValidIntRange,
         errorMsg: 'The input value must be a range with a min and max value separated by a hyphen'
+      })
+    })
+
+    it('has the randomSampleFromInput command in the list', () => {
+      expect(extensionCommandsWithInput).toContainEqual({
+        key: 'extension.randomSampleFromInput',
+        callback: randomSample,
+        prompt: 'Enter a comma-separated list of strings',
+        validation: isStringWithComma,
+        errorMsg: 'The input value must contain at least one comma to separate values'
       })
     })
   })
