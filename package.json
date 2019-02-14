@@ -264,5 +264,8 @@
     },
     "dependencies": {
         "chance": "^1.0.16"
+    },
+    "resolutions": {
+        "**/event-stream": "^4.0.1"
     }
 }
