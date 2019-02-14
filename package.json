@@ -25,6 +25,7 @@
         "onCommand:extension.randomIntCustomRange",
         "onCommand:extension.randomGuid",
         "onCommand:extension.randomStringCustomLength",
+        "onCommand:extension.randomSampleFromInput",
         "onCommand:extension.randomName",
         "onCommand:extension.randomStreetAddress",
         "onCommand:extension.randomCity",
@@ -81,6 +82,10 @@
             {
                 "command": "extension.randomStringCustomLength",
                 "title": "Random: String (custom length)"
+            },
+            {
+                "command": "extension.randomSampleFromInput",
+                "title": "Random: Sample (from input)"
             },
             {
                 "command": "extension.randomName",
@@ -165,6 +170,11 @@
                 },
                 {
                     "command": "extension.randomStringCustomLength",
+                    "when": "editorHasSelection && config.vscodeRandom.contextMenu.enabled",
+                    "group": "vscode-random"
+                },
+                {
+                    "command": "extension.randomSampleFromInput",
                     "when": "editorHasSelection && config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
