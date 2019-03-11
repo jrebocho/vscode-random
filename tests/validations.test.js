@@ -123,30 +123,51 @@ describe('>>>>> Validator Functions Tests', () => {
   })
 
   describe('.isStringWithComma', () => {
-    it('validates strings containing at least one comma', () => {
-      const oneComma = '1,2'
-      const twoCommas = 'a, b,c'
-      const allCommas = ',,,,,,'
+    it('validates strings containing two comma-separated values', () => {
+      const valueToTest = '1,2'
 
-      expect(isStringWithComma(oneComma)).toBeTruthy()
-      expect(isStringWithComma(twoCommas)).toBeTruthy()
-      expect(isStringWithComma(allCommas)).toBeTruthy()
+      expect(isStringWithComma(valueToTest)).toBeTruthy()
+    })
+
+    it('validates strings containing several comma-separated values', () => {
+      const valueToTest = 'a, b,c'
+
+      expect(isStringWithComma(valueToTest)).toBeTruthy()
+    })
+
+    it('validates strings containing all commas', () => {
+      const valueToTest = ',,,,,,'
+
+      expect(isStringWithComma(valueToTest)).toBeTruthy()
     })
 
     it('returns false if input value has no commas', () => {
-      const oneComma = '12'
-      const twoCommas = 'a bc'
-      const allCommas = ''
-
-      expect(isStringWithComma(oneComma)).toBeFalsy()
-      expect(isStringWithComma(twoCommas)).toBeFalsy()
-      expect(isStringWithComma(allCommas)).toBeFalsy()
+      const valueToTest = 'a bc !def '
+      expect(isStringWithComma(valueToTest)).toBeFalsy()
     })
 
-    it('returns false if input value is a number, null, or undefined', () => {
-      expect(isStringWithComma(123)).toBeFalsy()
-      expect(isStringWithComma(null)).toBeFalsy()
-      expect(isStringWithComma(undefined)).toBeFalsy()
+    it('returns false if input value is an empty string', () => {
+      const valueToTest = ''
+
+      expect(isStringWithComma(valueToTest)).toBe(false)
+    })
+
+    it('returns false if input value is a number', () => {
+      const valueToTest = 123
+
+      expect(isStringWithComma(valueToTest)).toBe(false)
+    })
+
+    it('returns false if input value is null', () => {
+      const valueToTest = null
+
+      expect(isStringWithComma(valueToTest)).toBe(false)
+    })
+
+    it('returns false if input value is undefined', () => {
+      const valueToTest = undefined
+
+      expect(isStringWithComma(valueToTest)).toBe(false)
     })
   })
 })
