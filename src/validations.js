@@ -21,3 +21,11 @@ export const isValidIntRange = (value) => {
     isNumber(integerValues[1]) &&
     +integerValues[0] <= +integerValues[1]
 }
+
+export const isStringWithComma = (value) => {
+  if (!value || typeof value !== 'string') {
+    return false
+  }
+
+  return value.indexOf(',') > -1
+}

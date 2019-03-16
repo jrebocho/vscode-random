@@ -7,6 +7,7 @@ import {
   randomIntCustomRange,
   randomGuid,
   randomString,
+  randomSample,
   randomName,
   randomCity,
   randomCountryCode,
@@ -20,7 +21,7 @@ import {
   randomHexColor,
   randomRgbColor
 } from './random'
-import { isNumber, isValidIntRange } from './validations'
+import { isNumber, isValidIntRange, isStringWithComma } from './validations'
 import * as constants from './constants'
 
 export const extensionCommands = [
@@ -58,6 +59,13 @@ export const extensionCommandsWithInput = [
     placeHolder: constants.MSG_INTEGER_RANGE_FORMAT,
     validation: isValidIntRange,
     errorMsg: constants.MSG_INPUT_VALUE_MUST_BE_VALID_RANGE
+  },
+  {
+    key: constants.CMD_KEY_RANDOM_SAMPLE_FROM_INPUT,
+    callback: randomSample,
+    prompt: constants.MSG_ENTER_SAMPLE_INPUT,
+    validation: isStringWithComma,
+    errorMsg: constants.MSG_INPUT_VALUE_MUST_CONTAIN_COMMA
   }
 ]
 

@@ -1,4 +1,9 @@
-import { isNumber, isValid, isValidIntRange } from '../src/validations'
+import {
+  isNumber,
+  isValid,
+  isValidIntRange,
+  isStringWithComma,
+} from '../src/validations'
 
 describe('>>>>> Validator Functions Tests', () => {
   describe('.isNumber', () => {
@@ -114,6 +119,55 @@ describe('>>>>> Validator Functions Tests', () => {
       const valueToTest = '-2--1'
 
       expect(isValidIntRange(valueToTest)).toBeFalsy()
+    })
+  })
+
+  describe('.isStringWithComma', () => {
+    it('validates strings containing two comma-separated values', () => {
+      const valueToTest = '1,2'
+
+      expect(isStringWithComma(valueToTest)).toBeTruthy()
+    })
+
+    it('validates strings containing several comma-separated values', () => {
+      const valueToTest = 'a, b,c'
+
+      expect(isStringWithComma(valueToTest)).toBeTruthy()
+    })
+
+    it('validates strings containing all commas', () => {
+      const valueToTest = ',,,,,,'
+
+      expect(isStringWithComma(valueToTest)).toBeTruthy()
+    })
+
+    it('returns false if input value has no commas', () => {
+      const valueToTest = 'a bc !def '
+      expect(isStringWithComma(valueToTest)).toBeFalsy()
+    })
+
+    it('returns false if input value is an empty string', () => {
+      const valueToTest = ''
+
+      expect(isStringWithComma(valueToTest)).toBe(false)
+    })
+
+    it('returns false if input value is a number', () => {
+      const valueToTest = 123
+
+      expect(isStringWithComma(valueToTest)).toBe(false)
+    })
+
+    it('returns false if input value is null', () => {
+      const valueToTest = null
+
+      expect(isStringWithComma(valueToTest)).toBe(false)
+    })
+
+    it('returns false if input value is undefined', () => {
+      const valueToTest = undefined
+
+      expect(isStringWithComma(valueToTest)).toBe(false)
     })
   })
 })

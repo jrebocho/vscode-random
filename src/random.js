@@ -1,6 +1,9 @@
 import Chance from 'chance'
 import { isValid } from './validations'
-import { VALUE_DEFAULT_STRING_LENGTH } from './constants'
+import {
+  VALUE_DEFAULT_STRING_LENGTH,
+  VALUE_DEFAULT_SAMPLE_OPTIONS,
+} from './constants'
 
 let chanceInstance = new Chance()
 
@@ -38,6 +41,11 @@ export const randomGuid = ({chance = chanceInstance}) => {
 
 export const randomString = ({chance = chanceInstance, inputValue = VALUE_DEFAULT_STRING_LENGTH}) => {
   return chance.word({length: inputValue})
+}
+
+export const randomSample = ({chance = chanceInstance, inputValue = VALUE_DEFAULT_SAMPLE_OPTIONS}) => {
+  const sampleSet = inputValue.split(',')
+  return sampleSet[chance.natural({ max: sampleSet.length - 1 })]
 }
 
 export const randomName = ({chance = chanceInstance}) => {

@@ -7,6 +7,7 @@ import {
   randomIntCustomRange,
   randomGuid,
   randomString,
+  randomSample,
   randomName,
   randomCity,
   randomCountryCode,
@@ -139,6 +140,26 @@ describe('>>>>> Random Generators Tests', () => {
       randomString({chance, inputValue: 32})
 
       expect(chance.word).toBeCalledWith({length: 32})
+    })
+  })
+
+  describe('.randomSample', () => {
+    beforeEach(() => {
+      chance.natural.mockClear()
+    })
+
+    it('calls the lib natural function with the correct limit', () => {
+      randomSample({chance})
+
+      expect(chance.natural).toBeCalledWith({max: 2})
+    })
+
+    it('returns a random sample from the comma-delimited set', () => {
+      const inputValue = 'One,Two 2,Three-b, four '
+      chance.natural.mockReturnValue(1)
+      expect(randomSample({chance, inputValue})).toEqual('Two 2')
+      chance.natural.mockReturnValue(3)
+      expect(randomSample({chance, inputValue})).toEqual(' four ')
     })
   })
 
