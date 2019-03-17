@@ -1,6 +1,15 @@
 # Change Log
 All notable changes to the "vscode-random" extension are documented in this file.
 
+## [1.6.0] - 2019-03-17
+## Added
+- New command which takes a comma-separated set of values as input and returns a random sample from the list (Thanks to [@tannerwelsh](https://github.com/tannerwelsh) for the suggestion & implementation!)
+
+## Changed
+- Update dependencies packages
+
+- Context menu with extensions commands (Thanks to [@lnxbil](https://github.com/lnxbil) for the suggestion & [@johanhammar](https://github.com/johanhammar) for the implementation!)
+
 ## [1.5.0] - 2019-02-04
 ## Added
 - Context menu with extensions commands (Thanks to [@lnxbil](https://github.com/lnxbil) for the suggestion & [@johanhammar](https://github.com/johanhammar) for the implementation!)
