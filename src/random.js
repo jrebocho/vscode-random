@@ -2,6 +2,7 @@ import Chance from 'chance'
 import { isValid } from './validations'
 import {
   VALUE_DEFAULT_STRING_LENGTH,
+  VALUE_DEFAULT_HASH_LENGTH,
   VALUE_DEFAULT_SAMPLE_OPTIONS,
 } from './constants'
 
@@ -43,7 +44,7 @@ export const randomString = ({chance = chanceInstance, inputValue = VALUE_DEFAUL
   return chance.word({length: inputValue})
 }
 
-export const randomHash = ({chance = chanceInstance, inputValue = VALUE_DEFAULT_STRING_LENGTH}) => {
+export const randomHash = ({chance = chanceInstance, inputValue = VALUE_DEFAULT_HASH_LENGTH}) => {
   const hash = chance.string({
     pool: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
     length: inputValue
