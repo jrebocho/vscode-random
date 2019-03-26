@@ -7,6 +7,7 @@ import {
   randomIntCustomRange,
   randomGuid,
   randomString,
+  randomHash,
   randomSample,
   randomName,
   randomCity,
@@ -49,6 +50,14 @@ export const extensionCommandsWithInput = [
     key: constants.CMD_KEY_RANDOM_STRING_CUSTOM_LENGTH,
     callback: randomString,
     prompt: constants.MSG_ENTER_STRING_LENGTH,
+    validation: isNumber,
+    errorMsg: constants.MSG_INPUT_VALUE_MUST_BE_NUMBER
+  },
+  {
+    key: constants.CMD_KEY_RANDOM_HASH_CUSTOM_LENGTH,
+    callback: randomHash,
+    prompt: constants.MSG_ENTER_HASH_LENGTH,
+    placeHolder: constants.VALUE_DEFAULT_HASH_LENGTH,
     validation: isNumber,
     errorMsg: constants.MSG_INPUT_VALUE_MUST_BE_NUMBER
   },

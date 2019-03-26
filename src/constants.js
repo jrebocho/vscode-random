@@ -6,6 +6,7 @@ export const CMD_KEY_RANDOM_LONG = 'extension.randomLong'
 export const CMD_KEY_RANDOM_INTEGER_CUSTOM_RANGE = 'extension.randomIntCustomRange'
 export const CMD_KEY_RANDOM_GUID = 'extension.randomGuid'
 export const CMD_KEY_RANDOM_STRING_CUSTOM_LENGTH = 'extension.randomStringCustomLength'
+export const CMD_KEY_RANDOM_HASH_CUSTOM_LENGTH = 'extension.randomHashCustomLength'
 export const CMD_KEY_RANDOM_SAMPLE_FROM_INPUT = 'extension.randomSampleFromInput'
 export const CMD_KEY_RANDOM_NAME = 'extension.randomName'
 export const CMD_KEY_RANDOM_STREET_ADDRESS = 'extension.randomStreetAddress'
@@ -22,6 +23,7 @@ export const CMD_KEY_RANDOM_RGB_COLOR = 'extension.randomRgbColor'
 
 export const MSG_NO_ACTIVE_TEXT_EDITOR = 'No active text editor found!'
 export const MSG_ENTER_STRING_LENGTH = 'Enter the length of the string'
+export const MSG_ENTER_HASH_LENGTH = 'Enter the length of the hash'
 export const MSG_ENTER_SAMPLE_INPUT = 'Enter a comma-separated list of strings'
 export const MSG_INPUT_VALUE_MUST_BE_NUMBER = 'The input value must be a number'
 export const MSG_INPUT_VALUE_MUST_CONTAIN_COMMA = 'The input value must contain at least one comma to separate values'
@@ -34,4 +36,5 @@ export const MSG_INTEGER_RANGE_FORMAT = 'MIN-MAX'
 export const MSG_INPUT_VALUE_MUST_BE_VALID_RANGE = 'The input value must be a range with a min and max value separated by a hyphen'
 
 export const VALUE_DEFAULT_STRING_LENGTH = 10
+export const VALUE_DEFAULT_HASH_LENGTH = 6
 export const VALUE_DEFAULT_SAMPLE_OPTIONS = 'a,b,c'

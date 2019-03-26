@@ -43,6 +43,14 @@ export const randomString = ({chance = chanceInstance, inputValue = VALUE_DEFAUL
   return chance.word({length: inputValue})
 }
 
+export const randomHash = ({chance = chanceInstance, inputValue = VALUE_DEFAULT_STRING_LENGTH}) => {
+  const hash = chance.string({
+    pool: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+    length: inputValue
+  });
+  return `#${hash}`
+};
+
 export const randomSample = ({chance = chanceInstance, inputValue = VALUE_DEFAULT_SAMPLE_OPTIONS}) => {
   const sampleSet = inputValue.split(',')
   return sampleSet[chance.natural({ max: sampleSet.length - 1 })]
