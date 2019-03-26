@@ -31,6 +31,7 @@ export const extensionCommands = [
   { key: constants.CMD_KEY_RANDOM_INT, callback: randomInt },
   { key: constants.CMD_KEY_RANDOM_LONG, callback: randomLong },
   { key: constants.CMD_KEY_RANDOM_GUID, callback: randomGuid },
+  { key: constants.CMD_KEY_RANDOM_HASH, callback: randomHash },
   { key: constants.CMD_KEY_RANDOM_NAME, callback: randomName },
   { key: constants.CMD_KEY_RANDOM_CITY, callback: randomCity },
   { key: constants.CMD_KEY_RANDOM_COUNTRY_CODE, callback: randomCountryCode },

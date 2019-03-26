@@ -81,6 +81,10 @@
                 "title": "Random: Guid"
             },
             {
+                "command": "extension.randomHash",
+                "title": "Random: Hash"
+            },
+            {
                 "command": "extension.randomStringCustomLength",
                 "title": "Random: String (custom length)"
             },
