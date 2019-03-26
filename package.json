@@ -25,6 +25,7 @@
         "onCommand:extension.randomIntCustomRange",
         "onCommand:extension.randomGuid",
         "onCommand:extension.randomStringCustomLength",
+        "onCommand:extension.randomHash",
         "onCommand:extension.randomHashCustomLength",
         "onCommand:extension.randomSampleFromInput",
         "onCommand:extension.randomName",
