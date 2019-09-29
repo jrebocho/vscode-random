@@ -11,7 +11,7 @@
     },
     "license": "MIT",
     "engines": {
-        "vscode": "^1.25.0"
+        "vscode": "^1.30.0"
     },
     "categories": [
         "Other"
@@ -243,7 +243,6 @@
     },
     "scripts": {
         "compile": "rimraf build & babel src --out-dir build",
-        "postinstall": "node ./node_modules/vscode/bin/install",
         "test": "jest",
         "test:watch": "jest --watch"
     },
