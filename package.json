@@ -3,7 +3,7 @@
     "displayName": "vscode-random",
     "description": "Generates random data directly into VS Code",
     "icon": "images/vscode-random-icon.png",
-    "version": "1.6.0",
+    "version": "1.6.1",
     "publisher": "jrebocho",
     "repository": {
         "type": "git",
@@ -11,7 +11,7 @@
     },
     "license": "MIT",
     "engines": {
-        "vscode": "^1.25.0"
+        "vscode": "^1.30.0"
     },
     "categories": [
         "Other"
@@ -243,7 +243,6 @@
     },
     "scripts": {
         "compile": "rimraf build & babel src --out-dir build",
-        "postinstall": "node ./node_modules/vscode/bin/install",
         "test": "jest",
         "test:watch": "jest --watch"
     },
@@ -260,20 +259,19 @@
         ]
     },
     "devDependencies": {
-        "@babel/cli": "^7.2.3",
-        "@babel/core": "^7.3.4",
-        "@babel/polyfill": "^7.2.5",
-        "@babel/preset-env": "^7.3.4",
+        "@babel/cli": "^7.6.2",
+        "@babel/core": "^7.6.2",
+        "@babel/polyfill": "^7.6.0",
+        "@babel/preset-env": "^7.6.2",
         "babel-core": "^7.0.0-bridge.0",
-        "babel-jest": "^24.5.0",
-        "eslint": "^5.15.2",
-        "jest": "^24.5.0",
-        "rimraf": "^2.6.3",
-        "standard": "^12.0.1",
-        "vscode": "^1.1.30"
+        "babel-jest": "^24.9.0",
+        "eslint": "^6.5.0",
+        "jest": "^24.9.0",
+        "rimraf": "^3.0.0",
+        "standard": "^14.3.1"
     },
     "dependencies": {
-        "chance": "^1.0.18"
+        "chance": "^1.1.0"
     },
     "resolutions": {
         "**/event-stream": "^4.0.1"
