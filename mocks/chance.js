@@ -11,5 +11,6 @@ export const chance = {
   ip: jest.fn(),
   ipv6: jest.fn(),
   url: jest.fn(),
-  color: jest.fn()
+  color: jest.fn(),
+  iban: jest.fn()
 }

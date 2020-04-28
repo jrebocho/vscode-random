@@ -95,3 +95,8 @@ export const randomHexColor = ({chance = chanceInstance}) => {
 export const randomRgbColor = ({chance = chanceInstance}) => {
   return chance.color({format: 'rgb'})
 }
+
+export const randomIban = ({chance = chanceInstance}) => {
+  return chance.iban()
+}
+

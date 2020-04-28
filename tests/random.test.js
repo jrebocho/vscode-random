@@ -19,7 +19,8 @@ import {
   randomIPv6,
   randomUrl,
   randomHexColor,
-  randomRgbColor
+  randomRgbColor,
+  randomIban
 } from '../src/random'
 
 describe('>>>>> Random Generators Tests', () => {
@@ -304,6 +305,18 @@ describe('>>>>> Random Generators Tests', () => {
       randomRgbColor({chance})
 
       expect(chance.color).toBeCalledWith({format: 'rgb'})
+    })
+  })
+
+  describe('.randomIban', () => {
+    beforeEach(() => {
+      chance.iban.mockClear()
+    })
+
+    it('calls the lib iban function', () => {
+      randomIban({chance})
+
+      expect(chance.iban).toBeCalled()
     })
   })
 })
