@@ -19,6 +19,7 @@ export const CMD_KEY_RANDOM_IP_V6 = 'extension.randomIPv6'
 export const CMD_KEY_RANDOM_URL = 'extension.randomUrl'
 export const CMD_KEY_RANDOM_HEX_COLOR = 'extension.randomHexColor'
 export const CMD_KEY_RANDOM_RGB_COLOR = 'extension.randomRgbColor'
+export const CMD_KEY_RANDOM_IBAN = 'extension.randomIban'
 
 export const MSG_NO_ACTIVE_TEXT_EDITOR = 'No active text editor found!'
 export const MSG_ENTER_STRING_LENGTH = 'Enter the length of the string'

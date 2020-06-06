@@ -19,7 +19,8 @@ import {
   randomIPv6,
   randomUrl,
   randomHexColor,
-  randomRgbColor
+  randomRgbColor,
+  randomIban
 } from './random'
 import { isNumber, isValidIntRange, isStringWithComma } from './validations'
 import * as constants from './constants'
@@ -41,7 +42,8 @@ export const extensionCommands = [
   { key: constants.CMD_KEY_RANDOM_IP_V6, callback: randomIPv6 },
   { key: constants.CMD_KEY_RANDOM_URL, callback: randomUrl },
   { key: constants.CMD_KEY_RANDOM_HEX_COLOR, callback: randomHexColor },
-  { key: constants.CMD_KEY_RANDOM_RGB_COLOR, callback: randomRgbColor }
+  { key: constants.CMD_KEY_RANDOM_RGB_COLOR, callback: randomRgbColor },
+  { key: constants.CMD_KEY_RANDOM_IBAN, callback: randomIban }
 ]
 
 export const extensionCommandsWithInput = [

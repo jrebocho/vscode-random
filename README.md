@@ -45,6 +45,7 @@ Random values generation is also supported when using **multiple editors**.
 * `extension.randomUrl` : Random Url - Generates a random Url
 * `extension.randomHexColor` : Random hexadecimal color - Generates a random hexadecimal color
 * `extension.randomRgbColor` : Random RGB color - Generates a random RGB color
+* `extension.randomIban` : Random IBAN - Generates a random IBAN
 
 # Change Log
 

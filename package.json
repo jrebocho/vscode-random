@@ -37,7 +37,8 @@
         "onCommand:extension.randomIPv6",
         "onCommand:extension.randomUrl",
         "onCommand:extension.randomHexColor",
-        "onCommand:extension.randomRgbColor"
+        "onCommand:extension.randomRgbColor",
+        "onCommand:extension.randomIban"
     ],
     "main": "./build/extension",
     "contributes": {
@@ -134,6 +135,10 @@
             {
                 "command": "extension.randomRgbColor",
                 "title": "Random: Color (RGB)"
+            },
+            {
+                "command": "extension.randomIban",
+                "title": "Random: IBAN"
             }
         ],
         "menus": {
@@ -235,6 +240,11 @@
                 },
                 {
                     "command": "extension.randomRgbColor",
+                    "when": "editorHasSelection && config.vscodeRandom.contextMenu.enabled",
+                    "group": "vscode-random"
+                },
+                {
+                    "command": "extension.randomIban",
                     "when": "editorHasSelection && config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 }

@@ -24,14 +24,15 @@ import {
   randomUrl,
   randomHexColor,
   randomRgbColor,
-  randomSample
+  randomSample,
+  randomIban
 } from '../src/random'
 import { isNumber, isValidIntRange, isStringWithComma } from '../src/validations'
 
 describe('>>>>> Extension Commands Tests', () => {
   describe('Simple extension commands', () => {
     it('has the expected number of commands', () => {
-      expect(extensionCommands).toHaveLength(17)
+      expect(extensionCommands).toHaveLength(18)
     })
 
     it('has the randomByte command in the list', () => {
@@ -100,6 +101,10 @@ describe('>>>>> Extension Commands Tests', () => {
 
     it('has the randomRgbColor command in the list', () => {
       expect(extensionCommands).toContainEqual({ key: 'extension.randomRgbColor', callback: randomRgbColor })
+    })
+
+    it('has the randomIban command in the list', () => {
+      expect(extensionCommands).toContainEqual({ key: 'extension.randomIban', callback: randomIban })
     })
   })
 
