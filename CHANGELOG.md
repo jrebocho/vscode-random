@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to the "vscode-random" extension are documented in this file.
 
+## [1.7.0] - 2020-06-27
+## Added
+- New random string generator command that matches IBAN pattern (Thanks to [@b-pagis](https://github.com/b-pagis) for the suggestion & implementation!)
+
+## Changed
+- Update dependencies packages
+
 ## [1.6.1] - 2019-09-29
 ## Changed
 - Update dependencies packages
