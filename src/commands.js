@@ -20,9 +20,10 @@ import {
   randomUrl,
   randomHexColor,
   randomRgbColor,
-  randomIban
+  randomIban,
+  randomRegEx
 } from './random'
-import { isNumber, isValidIntRange, isStringWithComma } from './validations'
+import { isNumber, isValidIntRange, isStringWithComma, isValidRegEx } from './validations'
 import * as constants from './constants'
 
 export const extensionCommands = [
@@ -46,7 +47,7 @@ export const extensionCommands = [
   { key: constants.CMD_KEY_RANDOM_IBAN, callback: randomIban }
 ]
 
-export const extensionCommandsWithInput = [
+export const extensionCommandsWithInput = [ 
   {
     key: constants.CMD_KEY_RANDOM_STRING_CUSTOM_LENGTH,
     callback: randomString,
@@ -68,6 +69,13 @@ export const extensionCommandsWithInput = [
     prompt: constants.MSG_ENTER_SAMPLE_INPUT,
     validation: isStringWithComma,
     errorMsg: constants.MSG_INPUT_VALUE_MUST_CONTAIN_COMMA
+  },
+  {
+    key: constants.CMD_KEY_RANDOM_REGEX,
+    callback: randomRegEx,
+    prompt: constants.MSG_ENTER_REGEX,
+    validation: isValidRegEx,
+    errorMsg: constants.MSG_ENTER_REGEX_ERROR
   }
 ]
 

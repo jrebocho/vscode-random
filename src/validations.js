@@ -29,3 +29,12 @@ export const isStringWithComma = (value) => {
 
   return value.indexOf(',') > -1
 }
+
+export const isValidRegEx = (value) => {
+  try {
+    new RegExp(value)
+    return true
+  } catch (e) {
+    return false
+  }
+}
