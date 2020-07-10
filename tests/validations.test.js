@@ -3,6 +3,7 @@ import {
   isValid,
   isValidIntRange,
   isStringWithComma,
+  isValidRegEx
 } from '../src/validations'
 
 describe('>>>>> Validator Functions Tests', () => {
@@ -168,6 +169,20 @@ describe('>>>>> Validator Functions Tests', () => {
       const valueToTest = undefined
 
       expect(isStringWithComma(valueToTest)).toBe(false)
+    })
+  })
+
+  describe('.isValidRegEx', () => {
+    it('validate regular expression', () => {
+      const valueToTest = '[a-zA-Z0-9]{10,12}-\d{10}'
+
+      expect(isValidRegEx(valueToTest)).toBeTruthy()
+    })
+
+    it('invalid regular expression', () => {
+      const valueToTest = '[a-Z]{10}'
+
+      expect(isStringWithComma(valueToTest)).toBeFalsy()
     })
   })
 })

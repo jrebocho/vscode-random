@@ -20,7 +20,8 @@ import {
   randomUrl,
   randomHexColor,
   randomRgbColor,
-  randomIban
+  randomIban,
+  randomRegEx
 } from '../src/random'
 
 describe('>>>>> Random Generators Tests', () => {
@@ -317,6 +318,15 @@ describe('>>>>> Random Generators Tests', () => {
       randomIban({chance})
 
       expect(chance.iban).toBeCalled()
+    })
+  })
+
+  describe('.randomRegEx', () => {
+    it('random by regular expression', () => {
+      const regEx = /[a-zA-Z0-9]{10,12}-\d{10}/
+      const randomString = randomRegEx({inputValue: regEx.toString()})
+
+      expect(randomString).toMatch(regEx)
     })
   })
 })

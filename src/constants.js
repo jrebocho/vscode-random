@@ -34,7 +34,7 @@ export const MSG_SEED_RESET_ERROR = 'Invalid random seed'
 export const MSG_ENTER_INTEGER_RANGE = 'Enter the integer range'
 export const MSG_INTEGER_RANGE_FORMAT = 'MIN-MAX'
 export const MSG_INPUT_VALUE_MUST_BE_VALID_RANGE = 'The input value must be a range with a min and max value separated by a hyphen'
-export const MSG_ENTER_REGEX = 'The input value must be a regular expression'
+export const MSG_ENTER_REGEX = 'Enter the regular expression'
 export const MSG_ENTER_REGEX_ERROR = 'Invalid regular expression'
 
 export const VALUE_DEFAULT_STRING_LENGTH = 10
