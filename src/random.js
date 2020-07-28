@@ -1,4 +1,5 @@
 import Chance from 'chance'
+import RandExp from 'randexp'
 import { isValid } from './validations'
 import {
   VALUE_DEFAULT_STRING_LENGTH,
@@ -100,3 +101,6 @@ export const randomIban = ({chance = chanceInstance}) => {
   return chance.iban()
 }
 
+export const randomRegEx = ({inputValue}) => {
+  return new RandExp(inputValue).gen()
+}

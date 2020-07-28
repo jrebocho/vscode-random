@@ -38,7 +38,8 @@
         "onCommand:extension.randomUrl",
         "onCommand:extension.randomHexColor",
         "onCommand:extension.randomRgbColor",
-        "onCommand:extension.randomIban"
+        "onCommand:extension.randomIban",
+        "onCommand:extension.randomRegEx"
     ],
     "main": "./build/extension",
     "contributes": {
@@ -139,6 +140,10 @@
             {
                 "command": "extension.randomIban",
                 "title": "Random: IBAN"
+            },
+            {
+                "command": "extension.randomRegEx",
+                "title": "Random: Regular Expression"
             }
         ],
         "menus": {
@@ -247,6 +252,11 @@
                     "command": "extension.randomIban",
                     "when": "editorHasSelection && config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
+                },
+                {
+                    "command": "extension.randomRegEx",
+                    "when": "editorHasSelection && config.vscodeRandom.contextMenu.enabled",
+                    "group": "vscode-random"
                 }
             ]
         }
@@ -281,7 +291,8 @@
         "standard": "^14.3.4"
     },
     "dependencies": {
-        "chance": "^1.1.6"
+        "chance": "^1.1.6",
+        "randexp": "^0.5.3"
     },
     "resolutions": {
         "**/event-stream": "^4.0.1"

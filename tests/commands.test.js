@@ -25,9 +25,10 @@ import {
   randomHexColor,
   randomRgbColor,
   randomSample,
-  randomIban
+  randomIban,
+  randomRegEx
 } from '../src/random'
-import { isNumber, isValidIntRange, isStringWithComma } from '../src/validations'
+import { isNumber, isValidIntRange, isStringWithComma, isValidRegEx } from '../src/validations'
 
 describe('>>>>> Extension Commands Tests', () => {
   describe('Simple extension commands', () => {
@@ -110,7 +111,7 @@ describe('>>>>> Extension Commands Tests', () => {
 
   describe('Extension commands with input', () => {
     it('has the expected number of commands', () => {
-      expect(extensionCommandsWithInput).toHaveLength(3)
+      expect(extensionCommandsWithInput).toHaveLength(4)
     })
 
     it('has the randomStringCustomLength command in the list', () => {
@@ -141,6 +142,16 @@ describe('>>>>> Extension Commands Tests', () => {
         prompt: 'Enter a comma-separated list of strings',
         validation: isStringWithComma,
         errorMsg: 'The input value must contain at least one comma to separate values'
+      })
+    })
+
+    it('has the randomRegEx command in the list', () => {
+      expect(extensionCommandsWithInput).toContainEqual({
+        key: 'extension.randomRegEx',
+        callback: randomRegEx,
+        prompt: 'Enter the regular expression',
+        validation: isValidRegEx,
+        errorMsg: 'Invalid regular expression'
       })
     })
   })
