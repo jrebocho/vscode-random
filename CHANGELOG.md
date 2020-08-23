@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to the "vscode-random" extension are documented in this file.
 
+## [1.8.0] - 2020-08-23
+## Added
+- New random string generator command that match a given regular expression (Thanks to [@ntsd](https://github.com/ntsd) for the suggestion & implementation!)
+
 ## [1.7.0] - 2020-06-27
 ## Added
 - New random string generator command that matches IBAN pattern (Thanks to [@b-pagis](https://github.com/b-pagis) for the suggestion & implementation!)
