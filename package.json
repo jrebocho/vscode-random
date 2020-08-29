@@ -264,7 +264,8 @@
     "scripts": {
         "compile": "rimraf build & babel src --out-dir build",
         "test": "jest",
-        "test:watch": "jest --watch"
+        "test:watch": "jest --watch",
+        "lint": "eslint ./{src,tests,mocks}/**/*.js --fix"
     },
     "jest": {
         "testRegex": "(/tests/.*|(\\.|/)(test|spec))\\.js?$"
@@ -281,12 +282,16 @@
     "devDependencies": {
         "@babel/cli": "^7.10.3",
         "@babel/core": "^7.10.3",
+        "@babel/eslint-plugin": "^7.11.3",
         "@babel/polyfill": "^7.10.1",
         "@babel/preset-env": "^7.10.3",
         "babel-core": "^7.0.0-bridge.0",
         "babel-jest": "^26.1.0",
         "eslint": "^7.3.1",
+        "eslint-config-prettier": "^6.11.0",
+        "eslint-plugin-prettier": "^3.1.4",
         "jest": "^26.1.0",
+        "prettier": "2.1.1",
         "rimraf": "^3.0.2",
         "standard": "^14.3.4"
     },
