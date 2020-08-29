@@ -1,7 +1,7 @@
 import {
   extensionCommands,
   extensionCommandsWithInput,
-  extensionExecCommands
+  extensionExecCommands,
 } from '../src/commands'
 import {
   resetSeed,
@@ -26,7 +26,7 @@ import {
   randomRgbColor,
   randomSample,
   randomIban,
-  randomRegEx
+  randomRegEx,
 } from '../src/random'
 import { isNumber, isValidIntRange, isStringWithComma, isValidRegEx } from '../src/validations'
 
@@ -37,11 +37,17 @@ describe('>>>>> Extension Commands Tests', () => {
     })
 
     it('has the randomByte command in the list', () => {
-      expect(extensionCommands).toContainEqual({ key: 'extension.randomByte', callback: randomByte })
+      expect(extensionCommands).toContainEqual({
+        key: 'extension.randomByte',
+        callback: randomByte,
+      })
     })
 
     it('has the randomShort command in the list', () => {
-      expect(extensionCommands).toContainEqual({ key: 'extension.randomShort', callback: randomShort })
+      expect(extensionCommands).toContainEqual({
+        key: 'extension.randomShort',
+        callback: randomShort,
+      })
     })
 
     it('has the randomInt command in the list', () => {
@@ -49,39 +55,66 @@ describe('>>>>> Extension Commands Tests', () => {
     })
 
     it('has the randomLong command in the list', () => {
-      expect(extensionCommands).toContainEqual({ key: 'extension.randomLong', callback: randomLong })
+      expect(extensionCommands).toContainEqual({
+        key: 'extension.randomLong',
+        callback: randomLong,
+      })
     })
 
     it('has the randomGuid command in the list', () => {
-      expect(extensionCommands).toContainEqual({ key: 'extension.randomGuid', callback: randomGuid })
+      expect(extensionCommands).toContainEqual({
+        key: 'extension.randomGuid',
+        callback: randomGuid,
+      })
     })
 
     it('has the randomName command in the list', () => {
-      expect(extensionCommands).toContainEqual({ key: 'extension.randomName', callback: randomName })
+      expect(extensionCommands).toContainEqual({
+        key: 'extension.randomName',
+        callback: randomName,
+      })
     })
 
     it('has the randomCity command in the list', () => {
-      expect(extensionCommands).toContainEqual({ key: 'extension.randomCity', callback: randomCity })
+      expect(extensionCommands).toContainEqual({
+        key: 'extension.randomCity',
+        callback: randomCity,
+      })
     })
 
     it('has the randomCountryCode command in the list', () => {
-      expect(extensionCommands).toContainEqual({ key: 'extension.randomCountryCode', callback: randomCountryCode })
+      expect(extensionCommands).toContainEqual({
+        key: 'extension.randomCountryCode',
+        callback: randomCountryCode,
+      })
     })
 
     it('has the randomCountryName command in the list', () => {
-      expect(extensionCommands).toContainEqual({ key: 'extension.randomCountryName', callback: randomCountryName })
+      expect(extensionCommands).toContainEqual({
+        key: 'extension.randomCountryName',
+        callback: randomCountryName,
+      })
     })
 
     it('has the randomStreetAddress command in the list', () => {
-      expect(extensionCommands).toContainEqual({ key: 'extension.randomStreetAddress', callback: randomStreetAddress })
+      expect(extensionCommands).toContainEqual({
+        key: 'extension.randomStreetAddress',
+        callback: randomStreetAddress,
+      })
     })
 
     it('has the randomPhoneNumber command in the list', () => {
-      expect(extensionCommands).toContainEqual({ key: 'extension.randomPhoneNumber', callback: randomPhoneNumber })
+      expect(extensionCommands).toContainEqual({
+        key: 'extension.randomPhoneNumber',
+        callback: randomPhoneNumber,
+      })
     })
 
     it('has the randomEmail command in the list', () => {
-      expect(extensionCommands).toContainEqual({ key: 'extension.randomEmail', callback: randomEmail })
+      expect(extensionCommands).toContainEqual({
+        key: 'extension.randomEmail',
+        callback: randomEmail,
+      })
     })
 
     it('has the randomIP command in the list', () => {
@@ -89,7 +122,10 @@ describe('>>>>> Extension Commands Tests', () => {
     })
 
     it('has the randomIPv6 command in the list', () => {
-      expect(extensionCommands).toContainEqual({ key: 'extension.randomIPv6', callback: randomIPv6 })
+      expect(extensionCommands).toContainEqual({
+        key: 'extension.randomIPv6',
+        callback: randomIPv6,
+      })
     })
 
     it('has the randomUrl command in the list', () => {
@@ -97,15 +133,24 @@ describe('>>>>> Extension Commands Tests', () => {
     })
 
     it('has the randomHexColor command in the list', () => {
-      expect(extensionCommands).toContainEqual({ key: 'extension.randomHexColor', callback: randomHexColor })
+      expect(extensionCommands).toContainEqual({
+        key: 'extension.randomHexColor',
+        callback: randomHexColor,
+      })
     })
 
     it('has the randomRgbColor command in the list', () => {
-      expect(extensionCommands).toContainEqual({ key: 'extension.randomRgbColor', callback: randomRgbColor })
+      expect(extensionCommands).toContainEqual({
+        key: 'extension.randomRgbColor',
+        callback: randomRgbColor,
+      })
     })
 
     it('has the randomIban command in the list', () => {
-      expect(extensionCommands).toContainEqual({ key: 'extension.randomIban', callback: randomIban })
+      expect(extensionCommands).toContainEqual({
+        key: 'extension.randomIban',
+        callback: randomIban,
+      })
     })
   })
 
@@ -120,7 +165,7 @@ describe('>>>>> Extension Commands Tests', () => {
         callback: randomString,
         prompt: 'Enter the length of the string',
         validation: isNumber,
-        errorMsg: 'The input value must be a number'
+        errorMsg: 'The input value must be a number',
       })
     })
 
@@ -131,7 +176,7 @@ describe('>>>>> Extension Commands Tests', () => {
         prompt: 'Enter the integer range',
         placeHolder: 'MIN-MAX',
         validation: isValidIntRange,
-        errorMsg: 'The input value must be a range with a min and max value separated by a hyphen'
+        errorMsg: 'The input value must be a range with a min and max value separated by a hyphen',
       })
     })
 
@@ -141,7 +186,7 @@ describe('>>>>> Extension Commands Tests', () => {
         callback: randomSample,
         prompt: 'Enter a comma-separated list of strings',
         validation: isStringWithComma,
-        errorMsg: 'The input value must contain at least one comma to separate values'
+        errorMsg: 'The input value must contain at least one comma to separate values',
       })
     })
 
@@ -151,7 +196,7 @@ describe('>>>>> Extension Commands Tests', () => {
         callback: randomRegEx,
         prompt: 'Enter the regular expression',
         validation: isValidRegEx,
-        errorMsg: 'Invalid regular expression'
+        errorMsg: 'Invalid regular expression',
       })
     })
   })
@@ -168,7 +213,7 @@ describe('>>>>> Extension Commands Tests', () => {
         prompt: 'Enter new random seed',
         placeHolder: 'Leave empty to use default options',
         errorMsg: 'Invalid random seed',
-        infoMsg: 'Random seed was reset'
+        infoMsg: 'Random seed was reset',
       })
     })
   })

@@ -3,7 +3,7 @@ import {
   isValid,
   isValidIntRange,
   isStringWithComma,
-  isValidRegEx
+  isValidRegEx,
 } from '../src/validations'
 
 describe('>>>>> Validator Functions Tests', () => {
@@ -20,19 +20,19 @@ describe('>>>>> Validator Functions Tests', () => {
       expect(isNumber(valueToTest)).toBeTruthy()
     })
 
-    it('don\'t validate an empty string', () => {
+    it("don't validate an empty string", () => {
       const valueToTest = ''
 
       expect(isNumber(valueToTest)).toBeFalsy()
     })
 
-    it('don\'t validate a string with characters', () => {
+    it("don't validate a string with characters", () => {
       const valueToTest = 'a11'
 
       expect(isNumber(valueToTest)).toBeFalsy()
     })
 
-    it('don\'t validate a boolean', () => {
+    it("don't validate a boolean", () => {
       const valueToTest = 'false'
 
       expect(isNumber(valueToTest)).toBeFalsy()
@@ -86,25 +86,25 @@ describe('>>>>> Validator Functions Tests', () => {
   })
 
   describe('.isValidIntRange', () => {
-    it('don\'t validate an empty string', () => {
+    it("don't validate an empty string", () => {
       const valueToTest = ''
 
       expect(isValidIntRange(valueToTest)).toBeFalsy()
     })
 
-    it('don\'t validate a range with only one value', () => {
+    it("don't validate a range with only one value", () => {
       const valueToTest = '12-'
 
       expect(isValidIntRange(valueToTest)).toBeFalsy()
     })
 
-    it('don\'t validate a range with characters', () => {
+    it("don't validate a range with characters", () => {
       const valueToTest = '12-1234a'
 
       expect(isValidIntRange(valueToTest)).toBeFalsy()
     })
 
-    it('don\'t validate a range with the first number greater than the second', () => {
+    it("don't validate a range with the first number greater than the second", () => {
       const valueToTest = '32-16'
 
       expect(isValidIntRange(valueToTest)).toBeFalsy()
@@ -116,7 +116,7 @@ describe('>>>>> Validator Functions Tests', () => {
       expect(isValidIntRange(valueToTest)).toBeTruthy()
     })
 
-    it('don\'t validate a range with unsigned numbers', () => {
+    it("don't validate a range with unsigned numbers", () => {
       const valueToTest = '-2--1'
 
       expect(isValidIntRange(valueToTest)).toBeFalsy()
@@ -174,7 +174,7 @@ describe('>>>>> Validator Functions Tests', () => {
 
   describe('.isValidRegEx', () => {
     it('validate regular expression', () => {
-      const valueToTest = '[a-zA-Z0-9]{10,12}-\d{10}'
+      const valueToTest = '[a-zA-Z0-9]{10,12}-d{10}'
 
       expect(isValidRegEx(valueToTest)).toBeTruthy()
     })
