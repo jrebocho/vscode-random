@@ -21,7 +21,7 @@ import {
   randomHexColor,
   randomRgbColor,
   randomIban,
-  randomRegEx
+  randomRegEx,
 } from '../src/random'
 
 describe('>>>>> Random Generators Tests', () => {
@@ -31,15 +31,15 @@ describe('>>>>> Random Generators Tests', () => {
     })
 
     it('calls the lib natural function with the correct max param', () => {
-      randomByte({chance})
+      randomByte({ chance })
 
-      expect(chance.natural).toBeCalledWith({max: 255})
+      expect(chance.natural).toBeCalledWith({ max: 255 })
     })
 
     it('returns a string', () => {
-      const random = randomByte({chance})
+      const random = randomByte({ chance })
 
-      expect(typeof (random) === 'string').toBeTruthy()
+      expect(typeof random === 'string').toBeTruthy()
     })
   })
 
@@ -49,15 +49,15 @@ describe('>>>>> Random Generators Tests', () => {
     })
 
     it('calls the lib natural function with the correct max param', () => {
-      randomShort({chance})
+      randomShort({ chance })
 
-      expect(chance.natural).toBeCalledWith({max: 65535})
+      expect(chance.natural).toBeCalledWith({ max: 65535 })
     })
 
     it('returns a string', () => {
-      const random = randomShort({chance})
+      const random = randomShort({ chance })
 
-      expect(typeof (random) === 'string').toBeTruthy()
+      expect(typeof random === 'string').toBeTruthy()
     })
   })
 
@@ -67,15 +67,15 @@ describe('>>>>> Random Generators Tests', () => {
     })
 
     it('calls the lib natural function with the correct max param', () => {
-      randomInt({chance})
+      randomInt({ chance })
 
-      expect(chance.natural).toBeCalledWith({max: 4294967295})
+      expect(chance.natural).toBeCalledWith({ max: 4294967295 })
     })
 
     it('returns a string', () => {
-      const random = randomInt({chance})
+      const random = randomInt({ chance })
 
-      expect(typeof (random) === 'string').toBeTruthy()
+      expect(typeof random === 'string').toBeTruthy()
     })
   })
 
@@ -85,15 +85,15 @@ describe('>>>>> Random Generators Tests', () => {
     })
 
     it('calls the lib natural function with the correct max param', () => {
-      randomLong({chance})
+      randomLong({ chance })
 
       expect(chance.natural).toBeCalled()
     })
 
     it('returns a string', () => {
-      const random = randomLong({chance})
+      const random = randomLong({ chance })
 
-      expect(typeof (random) === 'string').toBeTruthy()
+      expect(typeof random === 'string').toBeTruthy()
     })
   })
 
@@ -103,15 +103,15 @@ describe('>>>>> Random Generators Tests', () => {
     })
 
     it('calls the lib natural function with the correct min and max params', () => {
-      randomIntCustomRange({chance, inputValue: '26-8989'})
+      randomIntCustomRange({ chance, inputValue: '26-8989' })
 
-      expect(chance.natural).toBeCalledWith({min: 26, max: 8989})
+      expect(chance.natural).toBeCalledWith({ min: 26, max: 8989 })
     })
 
     it('returns a string', () => {
-      const random = randomIntCustomRange({chance, inputValue: '26-8989'})
+      const random = randomIntCustomRange({ chance, inputValue: '26-8989' })
 
-      expect(typeof (random) === 'string').toBeTruthy()
+      expect(typeof random === 'string').toBeTruthy()
     })
   })
 
@@ -121,7 +121,7 @@ describe('>>>>> Random Generators Tests', () => {
     })
 
     it('calls the lib guid function', () => {
-      randomGuid({chance})
+      randomGuid({ chance })
 
       expect(chance.guid).toBeCalled()
     })
@@ -133,15 +133,15 @@ describe('>>>>> Random Generators Tests', () => {
     })
 
     it('calls the lib word function with the correct default length', () => {
-      randomString({chance})
+      randomString({ chance })
 
-      expect(chance.word).toBeCalledWith({length: 10})
+      expect(chance.word).toBeCalledWith({ length: 10 })
     })
 
     it('calls the lib word function with the correct length param', () => {
-      randomString({chance, inputValue: 32})
+      randomString({ chance, inputValue: 32 })
 
-      expect(chance.word).toBeCalledWith({length: 32})
+      expect(chance.word).toBeCalledWith({ length: 32 })
     })
   })
 
@@ -151,17 +151,17 @@ describe('>>>>> Random Generators Tests', () => {
     })
 
     it('calls the lib natural function with the correct limit', () => {
-      randomSample({chance})
+      randomSample({ chance })
 
-      expect(chance.natural).toBeCalledWith({max: 2})
+      expect(chance.natural).toBeCalledWith({ max: 2 })
     })
 
     it('returns a random sample from the comma-delimited set', () => {
       const inputValue = 'One,Two 2,Three-b, four '
       chance.natural.mockReturnValue(1)
-      expect(randomSample({chance, inputValue})).toEqual('Two 2')
+      expect(randomSample({ chance, inputValue })).toEqual('Two 2')
       chance.natural.mockReturnValue(3)
-      expect(randomSample({chance, inputValue})).toEqual(' four ')
+      expect(randomSample({ chance, inputValue })).toEqual(' four ')
     })
   })
 
@@ -171,7 +171,7 @@ describe('>>>>> Random Generators Tests', () => {
     })
 
     it('calls the lib name function', () => {
-      randomName({chance})
+      randomName({ chance })
 
       expect(chance.name).toBeCalled()
     })
@@ -183,7 +183,7 @@ describe('>>>>> Random Generators Tests', () => {
     })
 
     it('calls the lib address function', () => {
-      randomStreetAddress({chance})
+      randomStreetAddress({ chance })
 
       expect(chance.address).toBeCalled()
     })
@@ -195,7 +195,7 @@ describe('>>>>> Random Generators Tests', () => {
     })
 
     it('calls the lib city function', () => {
-      randomCity({chance})
+      randomCity({ chance })
 
       expect(chance.city).toBeCalled()
     })
@@ -207,7 +207,7 @@ describe('>>>>> Random Generators Tests', () => {
     })
 
     it('calls the lib country function', () => {
-      randomCountryCode({chance})
+      randomCountryCode({ chance })
 
       expect(chance.country).toBeCalled()
     })
@@ -219,7 +219,7 @@ describe('>>>>> Random Generators Tests', () => {
     })
 
     it('calls the lib country function with option to display a full country name', () => {
-      randomCountryName({chance})
+      randomCountryName({ chance })
 
       expect(chance.country).toBeCalledWith({ full: true })
     })
@@ -231,7 +231,7 @@ describe('>>>>> Random Generators Tests', () => {
     })
 
     it('calls the lib phone function', () => {
-      randomPhoneNumber({chance})
+      randomPhoneNumber({ chance })
 
       expect(chance.phone).toBeCalled()
     })
@@ -243,7 +243,7 @@ describe('>>>>> Random Generators Tests', () => {
     })
 
     it('calls the lib email function', () => {
-      randomEmail({chance})
+      randomEmail({ chance })
 
       expect(chance.email).toBeCalled()
     })
@@ -255,7 +255,7 @@ describe('>>>>> Random Generators Tests', () => {
     })
 
     it('calls the lib ip function', () => {
-      randomIP({chance})
+      randomIP({ chance })
 
       expect(chance.ip).toBeCalled()
     })
@@ -267,7 +267,7 @@ describe('>>>>> Random Generators Tests', () => {
     })
 
     it('calls the lib ipv6 function', () => {
-      randomIPv6({chance})
+      randomIPv6({ chance })
 
       expect(chance.ipv6).toBeCalled()
     })
@@ -279,7 +279,7 @@ describe('>>>>> Random Generators Tests', () => {
     })
 
     it('calls the lib url function', () => {
-      randomUrl({chance})
+      randomUrl({ chance })
 
       expect(chance.url).toBeCalled()
     })
@@ -291,9 +291,9 @@ describe('>>>>> Random Generators Tests', () => {
     })
 
     it('calls the lib color function with hex format', () => {
-      randomHexColor({chance})
+      randomHexColor({ chance })
 
-      expect(chance.color).toBeCalledWith({format: 'hex', casing: 'upper'})
+      expect(chance.color).toBeCalledWith({ format: 'hex', casing: 'upper' })
     })
   })
 
@@ -303,9 +303,9 @@ describe('>>>>> Random Generators Tests', () => {
     })
 
     it('calls the lib color function with rgb format', () => {
-      randomRgbColor({chance})
+      randomRgbColor({ chance })
 
-      expect(chance.color).toBeCalledWith({format: 'rgb'})
+      expect(chance.color).toBeCalledWith({ format: 'rgb' })
     })
   })
 
@@ -315,7 +315,7 @@ describe('>>>>> Random Generators Tests', () => {
     })
 
     it('calls the lib iban function', () => {
-      randomIban({chance})
+      randomIban({ chance })
 
       expect(chance.iban).toBeCalled()
     })
@@ -324,7 +324,7 @@ describe('>>>>> Random Generators Tests', () => {
   describe('.randomRegEx', () => {
     it('random by regular expression', () => {
       const regEx = /[a-zA-Z0-9]{10,12}-\d{10}/
-      const randomString = randomRegEx({inputValue: regEx.toString()})
+      const randomString = randomRegEx({ inputValue: regEx.toString() })
 
       expect(randomString).toMatch(regEx)
     })

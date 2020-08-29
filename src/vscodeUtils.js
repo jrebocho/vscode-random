@@ -2,25 +2,24 @@ import { commands, window, Position, Selection } from 'vscode'
 import { MSG_NO_ACTIVE_TEXT_EDITOR } from './constants'
 
 export const registerCommandsOutput = (context, cmd) => {
-  context.subscriptions.push(
-    commands.registerCommand(cmd.key, () => editorInsert(cmd.callback))
-  )
+  context.subscriptions.push(commands.registerCommand(cmd.key, () => editorInsert(cmd.callback)))
 }
 
 export const registerCommandsInputOutput = (context, cmd) => {
   context.subscriptions.push(
     commands.registerCommand(cmd.key, () =>
-      window.showInputBox({
-        prompt: cmd.prompt,
-        placeHolder: !cmd.placeHolder ? '' : cmd.placeHolder
-      })
-      .then(inputValue => {
-        if (!cmd.validation || cmd.validation(inputValue)) {
-          editorInsert(cmd.callback, {inputValue})
-        } else {
-          window.showErrorMessage(cmd.errorMsg)
-        }
-      })
+      window
+        .showInputBox({
+          prompt: cmd.prompt,
+          placeHolder: !cmd.placeHolder ? '' : cmd.placeHolder,
+        })
+        .then((inputValue) => {
+          if (!cmd.validation || cmd.validation(inputValue)) {
+            editorInsert(cmd.callback, { inputValue })
+          } else {
+            window.showErrorMessage(cmd.errorMsg)
+          }
+        })
     )
   )
 }
@@ -28,21 +27,22 @@ export const registerCommandsInputOutput = (context, cmd) => {
 export const registerCommandsInput = (context, cmd) => {
   context.subscriptions.push(
     commands.registerCommand(cmd.key, () =>
-      window.showInputBox({
-        prompt: cmd.prompt,
-        placeHolder: !cmd.placeHolder ? '' : cmd.placeHolder
-      })
-      .then(inputValue => {
-        if (!cmd.validation || cmd.validation(inputValue)) {
-          cmd.callback(inputValue)
+      window
+        .showInputBox({
+          prompt: cmd.prompt,
+          placeHolder: !cmd.placeHolder ? '' : cmd.placeHolder,
+        })
+        .then((inputValue) => {
+          if (!cmd.validation || cmd.validation(inputValue)) {
+            cmd.callback(inputValue)
 
-          if (cmd.infoMsg) {
-            window.showInformationMessage(cmd.infoMsg)
+            if (cmd.infoMsg) {
+              window.showInformationMessage(cmd.infoMsg)
+            }
+          } else {
+            window.showErrorMessage(cmd.errorMsg)
           }
-        } else {
-          window.showErrorMessage(cmd.errorMsg)
-        }
-      })
+        })
     )
   )
 }
@@ -56,16 +56,18 @@ const editorInsert = (generator, params = {}) => {
   }
 
   const newSelections = []
-  editor.edit((builder) => {
-    editor.selections.map(selection => {
-      const text = generator(params)
+  editor
+    .edit((builder) => {
+      editor.selections.map((selection) => {
+        const text = generator(params)
 
-      builder.replace(selection, text)
-      newSelections.push(getEndPosition(selection, text))
+        builder.replace(selection, text)
+        newSelections.push(getEndPosition(selection, text))
+      })
     })
-  }).then(() => {
-    editor.selections = newSelections
-  })
+    .then(() => {
+      editor.selections = newSelections
+    })
 }
 
 const getEndPosition = (selection, text) => {

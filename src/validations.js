@@ -3,8 +3,7 @@ export const isNumber = (value) => {
 }
 
 export const isValid = (value, maxLength = null) => {
-  return !!value &&
-    (!maxLength || value.length <= maxLength)
+  return !!value && (!maxLength || value.length <= maxLength)
 }
 
 export const isValidIntRange = (value) => {
@@ -17,9 +16,11 @@ export const isValidIntRange = (value) => {
     return false
   }
 
-  return isNumber(integerValues[0]) &&
+  return (
+    isNumber(integerValues[0]) &&
     isNumber(integerValues[1]) &&
     +integerValues[0] <= +integerValues[1]
+  )
 }
 
 export const isStringWithComma = (value) => {

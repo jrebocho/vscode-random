@@ -21,7 +21,7 @@ import {
   randomHexColor,
   randomRgbColor,
   randomIban,
-  randomRegEx
+  randomRegEx,
 } from './random'
 import { isNumber, isValidIntRange, isStringWithComma, isValidRegEx } from './validations'
 import * as constants from './constants'
@@ -44,16 +44,16 @@ export const extensionCommands = [
   { key: constants.CMD_KEY_RANDOM_URL, callback: randomUrl },
   { key: constants.CMD_KEY_RANDOM_HEX_COLOR, callback: randomHexColor },
   { key: constants.CMD_KEY_RANDOM_RGB_COLOR, callback: randomRgbColor },
-  { key: constants.CMD_KEY_RANDOM_IBAN, callback: randomIban }
+  { key: constants.CMD_KEY_RANDOM_IBAN, callback: randomIban },
 ]
 
-export const extensionCommandsWithInput = [ 
+export const extensionCommandsWithInput = [
   {
     key: constants.CMD_KEY_RANDOM_STRING_CUSTOM_LENGTH,
     callback: randomString,
     prompt: constants.MSG_ENTER_STRING_LENGTH,
     validation: isNumber,
-    errorMsg: constants.MSG_INPUT_VALUE_MUST_BE_NUMBER
+    errorMsg: constants.MSG_INPUT_VALUE_MUST_BE_NUMBER,
   },
   {
     key: constants.CMD_KEY_RANDOM_INTEGER_CUSTOM_RANGE,
@@ -61,22 +61,22 @@ export const extensionCommandsWithInput = [
     prompt: constants.MSG_ENTER_INTEGER_RANGE,
     placeHolder: constants.MSG_INTEGER_RANGE_FORMAT,
     validation: isValidIntRange,
-    errorMsg: constants.MSG_INPUT_VALUE_MUST_BE_VALID_RANGE
+    errorMsg: constants.MSG_INPUT_VALUE_MUST_BE_VALID_RANGE,
   },
   {
     key: constants.CMD_KEY_RANDOM_SAMPLE_FROM_INPUT,
     callback: randomSample,
     prompt: constants.MSG_ENTER_SAMPLE_INPUT,
     validation: isStringWithComma,
-    errorMsg: constants.MSG_INPUT_VALUE_MUST_CONTAIN_COMMA
+    errorMsg: constants.MSG_INPUT_VALUE_MUST_CONTAIN_COMMA,
   },
   {
     key: constants.CMD_KEY_RANDOM_REGEX,
     callback: randomRegEx,
     prompt: constants.MSG_ENTER_REGEX,
     validation: isValidRegEx,
-    errorMsg: constants.MSG_ENTER_REGEX_ERROR
-  }
+    errorMsg: constants.MSG_ENTER_REGEX_ERROR,
+  },
 ]
 
 export const extensionExecCommands = [
@@ -86,6 +86,6 @@ export const extensionExecCommands = [
     prompt: constants.MSG_ENTER_SEED,
     placeHolder: constants.MSG_LEAVE_EMPTY_FOR_DEFAULT,
     errorMsg: constants.MSG_SEED_RESET_ERROR,
-    infoMsg: constants.MSG_SEED_RESET
-  }
+    infoMsg: constants.MSG_SEED_RESET,
+  },
 ]
