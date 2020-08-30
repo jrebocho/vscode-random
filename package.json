@@ -263,7 +263,8 @@
     },
     "scripts": {
         "compile": "rimraf build & babel src --out-dir build",
-        "test": "jest",
+        "pretest": "eslint ./{src,tests,mocks}/**/*.js",
+        "test": "jest --ci",
         "test:watch": "jest --watch",
         "lint": "eslint ./{src,tests,mocks}/**/*.js --fix"
     },
