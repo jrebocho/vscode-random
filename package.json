@@ -47,7 +47,7 @@
             "properties": {
                 "vscodeRandom.contextMenu.enabled": {
                     "type": "boolean",
-                    "default": false,
+                    "default": true,
                     "description": "Enables the context menu for vscode-random"
                 }
             }
@@ -148,6 +148,12 @@
         ],
         "menus": {
             "editor/context": [
+                {
+                    "submenu": "vscode-random",
+                    "group": "navigation"
+                }
+            ],
+            "vscode-random": [
                 {
                     "command": "extension.randomByte",
                     "when": "editorHasSelection && config.vscodeRandom.contextMenu.enabled",
@@ -259,7 +265,13 @@
                     "group": "vscode-random"
                 }
             ]
-        }
+        },
+        "submenus": [
+            {
+              "id": "vscode-random",
+              "label": "Random"
+            }
+          ]
     },
     "scripts": {
         "compile": "rimraf build & babel src --out-dir build",
