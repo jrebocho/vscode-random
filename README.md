@@ -1,6 +1,6 @@
 # Random Data Generator for VS Code
 This extension generates random data directly into VS Code.
-It uses the great [ChangeJS](http://chancejs.com/) library written by [Victor Quinn](https://www.victorquinn.com/) and was inspired by the [Random](https://atom.io/packages/random) extension for Atom.
+It uses the great [ChanceJS](http://chancejs.com/) library written by [Victor Quinn](https://www.victorquinn.com/) and was inspired by the [Random](https://atom.io/packages/random) extension for Atom.
 
 # Install
 
