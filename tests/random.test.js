@@ -1,33 +1,33 @@
 import { chance } from '../mocks/chance'
 import {
   randomByte,
-  randomShort,
-  randomInt,
-  randomLong,
-  randomIntCustomRange,
-  randomGuid,
-  randomLetters,
-  randomDigits,
-  randomLettersDigits,
-  randomLowercaseLetters,
-  randomLowercaseLettersDigits,
-  randomUppercaseLetters,
-  randomUppercaseLettersDigits,
-  randomSample,
-  randomName,
   randomCity,
   randomCountryCode,
   randomCountryName,
-  randomStreetAddress,
-  randomPhoneNumber,
+  randomDigits,
   randomEmail,
+  randomGuid,
+  randomHexColor,
+  randomIban,
+  randomInt,
+  randomIntCustomRange,
   randomIP,
   randomIPv6,
-  randomUrl,
-  randomHexColor,
-  randomRgbColor,
-  randomIban,
+  randomLetters,
+  randomLettersDigits,
+  randomLong,
+  randomLowercaseLetters,
+  randomLowercaseLettersDigits,
+  randomName,
+  randomPhoneNumber,
   randomRegEx,
+  randomRgbColor,
+  randomSample,
+  randomShort,
+  randomStreetAddress,
+  randomUppercaseLetters,
+  randomUppercaseLettersDigits,
+  randomUrl,
 } from '../src/random'
 
 describe('>>>>> Random Generators Tests', () => {
@@ -228,7 +228,7 @@ describe('>>>>> Random Generators Tests', () => {
         length: 32,
         alpha: true,
         numeric: true,
-        casing: 'upper',
+        casing: 'lower',
       })
     })
   })
@@ -244,7 +244,6 @@ describe('>>>>> Random Generators Tests', () => {
       expect(chance.string).toBeCalledWith({
         length: 10,
         alpha: true,
-        numeric: true,
         casing: 'upper',
       })
     })
@@ -255,7 +254,6 @@ describe('>>>>> Random Generators Tests', () => {
       expect(chance.string).toBeCalledWith({
         length: 32,
         alpha: true,
-        numeric: true,
         casing: 'upper',
       })
     })
@@ -269,13 +267,23 @@ describe('>>>>> Random Generators Tests', () => {
     it('calls the lib string function with the correct default length', () => {
       randomUppercaseLettersDigits({ chance })
 
-      expect(chance.string).toBeCalledWith({ length: 10, alpha: true, casing: 'upper' })
+      expect(chance.string).toBeCalledWith({
+        length: 10,
+        alpha: true,
+        numeric: true,
+        casing: 'upper',
+      })
     })
 
     it('calls the lib string function with the correct length param', () => {
       randomUppercaseLettersDigits({ chance, inputValue: 32 })
 
-      expect(chance.string).toBeCalledWith({ length: 32, alpha: true, casing: 'upper' })
+      expect(chance.string).toBeCalledWith({
+        length: 32,
+        alpha: true,
+        numeric: true,
+        casing: 'upper',
+      })
     })
   })
 
