@@ -25,6 +25,13 @@
         "onCommand:extension.randomIntCustomRange",
         "onCommand:extension.randomGuid",
         "onCommand:extension.randomStringCustomLength",
+        "onCommand:extension.randomLettersCustomLength",
+        "onCommand:extension.randomDigitsCustomLength",
+        "onCommand:extension.randomLowercaseLettersCustomLength",
+        "onCommand:extension.randomUppercaseLettersCustomLength",
+        "onCommand:extension.randomLettersDigitsCustomLength",
+        "onCommand:extension.randomLowercaseLettersDigitsCustomLength",
+        "onCommand:extension.randomUppercaseLettersDigitsCustomLength",
         "onCommand:extension.randomSampleFromInput",
         "onCommand:extension.randomName",
         "onCommand:extension.randomStreetAddress",
@@ -84,6 +91,34 @@
             {
                 "command": "extension.randomStringCustomLength",
                 "title": "Random: String (custom length)"
+            },
+            {
+                "command": "extension.randomLettersCustomLength",
+                "title": "Random: Letters (custom length)"
+            },
+            {
+                "command": "extension.randomDigitsCustomLength",
+                "title": "Random: Digits (custom length)"
+            },
+            {
+                "command": "extension.randomLowercaseLettersCustomLength",
+                "title": "Random: Lowercase Letters (custom length)"
+            },
+            {
+                "command": "extension.randomUppercaseLettersCustomLength",
+                "title": "Random: Uppercase Letters (custom length)"
+            },
+            {
+                "command": "extension.randomLettersDigitsCustomLength",
+                "title": "Random: Letters and Digits (custom length)"
+            },
+            {
+                "command": "extension.randomLowercaseLettersDigitsCustomLength",
+                "title": "Random: Lowercase Letters and Digits (custom length)"
+            },
+            {
+                "command": "extension.randomUppercaseLettersDigitsCustomLength",
+                "title": "Random: Uppercase Letters and Digits (custom length)"
             },
             {
                 "command": "extension.randomSampleFromInput",
@@ -180,6 +215,46 @@
                 },
                 {
                     "command": "extension.randomStringCustomLength",
+                    "when": "editorHasSelection && config.vscodeRandom.contextMenu.enabled",
+                    "group": "vscode-random"
+                },
+                {
+                    "command": "extension.randomStringCustomLength",
+                    "when": "editorHasSelection && config.vscodeRandom.contextMenu.enabled",
+                    "group": "vscode-random"
+                },
+                {
+                    "command": "extension.randomLettersCustomLength",
+                    "when": "editorHasSelection && config.vscodeRandom.contextMenu.enabled",
+                    "group": "vscode-random"
+                },
+                {
+                    "command": "extension.randomDigitsCustomLength",
+                    "when": "editorHasSelection && config.vscodeRandom.contextMenu.enabled",
+                    "group": "vscode-random"
+                },
+                {
+                    "command": "extension.randomLowercaseLettersCustomLength",
+                    "when": "editorHasSelection && config.vscodeRandom.contextMenu.enabled",
+                    "group": "vscode-random"
+                },
+                {
+                    "command": "extension.randomUppercaseLettersCustomLength",
+                    "when": "editorHasSelection && config.vscodeRandom.contextMenu.enabled",
+                    "group": "vscode-random"
+                },
+                {
+                    "command": "extension.randomLettersDigitsCustomLength",
+                    "when": "editorHasSelection && config.vscodeRandom.contextMenu.enabled",
+                    "group": "vscode-random"
+                },
+                {
+                    "command": "extension.randomLowercaseLettersDigitsCustomLength",
+                    "when": "editorHasSelection && config.vscodeRandom.contextMenu.enabled",
+                    "group": "vscode-random"
+                },
+                {
+                    "command": "extension.randomUppercaseLettersDigitsCustomLength",
                     "when": "editorHasSelection && config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },

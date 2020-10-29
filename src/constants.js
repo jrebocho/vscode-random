@@ -5,7 +5,18 @@ export const CMD_KEY_RANDOM_INT = 'extension.randomInt'
 export const CMD_KEY_RANDOM_LONG = 'extension.randomLong'
 export const CMD_KEY_RANDOM_INTEGER_CUSTOM_RANGE = 'extension.randomIntCustomRange'
 export const CMD_KEY_RANDOM_GUID = 'extension.randomGuid'
-export const CMD_KEY_RANDOM_STRING_CUSTOM_LENGTH = 'extension.randomStringCustomLength'
+export const CMD_KEY_RANDOM_LETTERS_CUSTOM_LENGTH = 'extension.randomLettersCustomLength'
+export const CMD_KEY_RANDOM_DIGITS_CUSTOM_LENGTH = 'extension.randomDigitsCustomLength'
+export const CMD_KEY_RANDOM_LOWERCASE_LETTERS_CUSTOM_LENGTH =
+  'extension.randomLowercaseLettersCustomLength'
+export const CMD_KEY_RANDOM_UPPERCASE_LETTERS_CUSTOM_LENGTH =
+  'extension.randomUppercaseLettersCustomLength'
+export const CMD_KEY_RANDOM_LETTERS_DIGITS_CUSTOM_LENGTH =
+  'extension.randomLettersDigitsCustomLength'
+export const CMD_KEY_RANDOM_LOWERCASE_LETTERS_DIGITS_CUSTOM_LENGTH =
+  'extension.randomLowercaseLettersDigitsCustomLength'
+export const CMD_KEY_RANDOM_UPPERCASE_LETTERS_DIGITS_CUSTOM_LENGTH =
+  'extension.randomUppercaseLettersDigitsCustomLength'
 export const CMD_KEY_RANDOM_SAMPLE_FROM_INPUT = 'extension.randomSampleFromInput'
 export const CMD_KEY_RANDOM_NAME = 'extension.randomName'
 export const CMD_KEY_RANDOM_STREET_ADDRESS = 'extension.randomStreetAddress'
