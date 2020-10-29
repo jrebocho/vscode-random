@@ -24,7 +24,6 @@
         "onCommand:extension.randomLong",
         "onCommand:extension.randomIntCustomRange",
         "onCommand:extension.randomGuid",
-        "onCommand:extension.randomStringCustomLength",
         "onCommand:extension.randomLettersCustomLength",
         "onCommand:extension.randomDigitsCustomLength",
         "onCommand:extension.randomLowercaseLettersCustomLength",
@@ -87,10 +86,6 @@
             {
                 "command": "extension.randomGuid",
                 "title": "Random: Guid"
-            },
-            {
-                "command": "extension.randomStringCustomLength",
-                "title": "Random: String (custom length)"
             },
             {
                 "command": "extension.randomLettersCustomLength",
@@ -210,16 +205,6 @@
                 },
                 {
                     "command": "extension.randomGuid",
-                    "when": "editorHasSelection && config.vscodeRandom.contextMenu.enabled",
-                    "group": "vscode-random"
-                },
-                {
-                    "command": "extension.randomStringCustomLength",
-                    "when": "editorHasSelection && config.vscodeRandom.contextMenu.enabled",
-                    "group": "vscode-random"
-                },
-                {
-                    "command": "extension.randomStringCustomLength",
                     "when": "editorHasSelection && config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
