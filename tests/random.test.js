@@ -6,7 +6,13 @@ import {
   randomLong,
   randomIntCustomRange,
   randomGuid,
-  randomString,
+  randomLetters,
+  randomDigits,
+  randomLettersDigits,
+  randomLowercaseLetters,
+  randomLowercaseLettersDigits,
+  randomUppercaseLetters,
+  randomUppercaseLettersDigits,
   randomSample,
   randomName,
   randomCity,
@@ -127,21 +133,149 @@ describe('>>>>> Random Generators Tests', () => {
     })
   })
 
-  describe('.randomString', () => {
+  describe('.randomLetters', () => {
     beforeEach(() => {
-      chance.word.mockClear()
+      chance.string.mockClear()
     })
 
-    it('calls the lib word function with the correct default length', () => {
-      randomString({ chance })
+    it('calls the lib string function with the correct default length', () => {
+      randomLetters({ chance })
 
-      expect(chance.word).toBeCalledWith({ length: 10 })
+      expect(chance.string).toBeCalledWith({ length: 10, alpha: true })
     })
 
-    it('calls the lib word function with the correct length param', () => {
-      randomString({ chance, inputValue: 32 })
+    it('calls the lib string function with the correct length param', () => {
+      randomLetters({ chance, inputValue: 32 })
 
-      expect(chance.word).toBeCalledWith({ length: 32 })
+      expect(chance.string).toBeCalledWith({ length: 32, alpha: true })
+    })
+  })
+
+  describe('.randomDigits', () => {
+    beforeEach(() => {
+      chance.string.mockClear()
+    })
+
+    it('calls the lib string function with the correct default length', () => {
+      randomDigits({ chance })
+
+      expect(chance.string).toBeCalledWith({ length: 10, numeric: true })
+    })
+
+    it('calls the lib string function with the correct length param', () => {
+      randomDigits({ chance, inputValue: 32 })
+
+      expect(chance.string).toBeCalledWith({ length: 32, numeric: true })
+    })
+  })
+
+  describe('.randomLettersDigits', () => {
+    beforeEach(() => {
+      chance.string.mockClear()
+    })
+
+    it('calls the lib string function with the correct default length', () => {
+      randomLettersDigits({ chance })
+
+      expect(chance.string).toBeCalledWith({ length: 10, alpha: true, numeric: true })
+    })
+
+    it('calls the lib string function with the correct length param', () => {
+      randomLettersDigits({ chance, inputValue: 32 })
+
+      expect(chance.string).toBeCalledWith({ length: 32, alpha: true, numeric: true })
+    })
+  })
+
+  describe('.randomLowercaseLetters', () => {
+    beforeEach(() => {
+      chance.string.mockClear()
+    })
+
+    it('calls the lib string function with the correct default length', () => {
+      randomLowercaseLetters({ chance })
+
+      expect(chance.string).toBeCalledWith({ length: 10, alpha: true, casing: 'lower' })
+    })
+
+    it('calls the lib string function with the correct length param', () => {
+      randomLowercaseLetters({ chance, inputValue: 32 })
+
+      expect(chance.string).toBeCalledWith({ length: 32, alpha: true, casing: 'lower' })
+    })
+  })
+
+  describe('.randomLowercaseLettersDigits', () => {
+    beforeEach(() => {
+      chance.string.mockClear()
+    })
+
+    it('calls the lib string function with the correct default length', () => {
+      randomLowercaseLettersDigits({ chance })
+
+      expect(chance.string).toBeCalledWith({
+        length: 10,
+        alpha: true,
+        numeric: true,
+        casing: 'lower',
+      })
+    })
+
+    it('calls the lib string function with the correct length param', () => {
+      randomLowercaseLettersDigits({ chance, inputValue: 32 })
+
+      expect(chance.string).toBeCalledWith({
+        length: 32,
+        alpha: true,
+        numeric: true,
+        casing: 'upper',
+      })
+    })
+  })
+
+  describe('.randomUppercaseLetters', () => {
+    beforeEach(() => {
+      chance.string.mockClear()
+    })
+
+    it('calls the lib string function with the correct default length', () => {
+      randomUppercaseLetters({ chance })
+
+      expect(chance.string).toBeCalledWith({
+        length: 10,
+        alpha: true,
+        numeric: true,
+        casing: 'upper',
+      })
+    })
+
+    it('calls the lib string function with the correct length param', () => {
+      randomUppercaseLetters({ chance, inputValue: 32 })
+
+      expect(chance.string).toBeCalledWith({
+        length: 32,
+        alpha: true,
+        numeric: true,
+        casing: 'upper',
+      })
+    })
+  })
+
+  describe('.randomUppercaseLettersDigits', () => {
+    beforeEach(() => {
+      chance.string.mockClear()
+    })
+
+    it('calls the lib string function with the correct default length', () => {
+      randomUppercaseLettersDigits({ chance })
+
+      expect(chance.string).toBeCalledWith({ length: 10, alpha: true, casing: 'upper' })
+    })
+
+    it('calls the lib string function with the correct length param', () => {
+      randomUppercaseLettersDigits({ chance, inputValue: 32 })
+
+      expect(chance.string).toBeCalledWith({ length: 32, alpha: true, casing: 'upper' })
     })
   })
 
