@@ -49,20 +49,6 @@ export const randomDigits = ({
   return chance.string({ length: inputValue, numeric: true })
 }
 
-export const randomLowercaseLetters = ({
-  chance = chanceInstance,
-  inputValue = VALUE_DEFAULT_STRING_LENGTH,
-}) => {
-  return chance.string({ length: inputValue, alpha: true, casing: 'lower' })
-}
-
-export const randomUppercaseLetters = ({
-  chance = chanceInstance,
-  inputValue = VALUE_DEFAULT_STRING_LENGTH,
-}) => {
-  return chance.string({ length: inputValue, alpha: true, casing: 'upper' })
-}
-
 export const randomLettersDigits = ({
   chance = chanceInstance,
   inputValue = VALUE_DEFAULT_STRING_LENGTH,
@@ -70,11 +56,25 @@ export const randomLettersDigits = ({
   return chance.string({ length: inputValue, alpha: true, numeric: true })
 }
 
+export const randomLowercaseLetters = ({
+  chance = chanceInstance,
+  inputValue = VALUE_DEFAULT_STRING_LENGTH,
+}) => {
+  return chance.string({ length: inputValue, alpha: true, casing: 'lower' })
+}
+
 export const randomLowercaseLettersDigits = ({
   chance = chanceInstance,
   inputValue = VALUE_DEFAULT_STRING_LENGTH,
 }) => {
   return chance.string({ length: inputValue, alpha: true, numeric: true, casing: 'lower' })
+}
+
+export const randomUppercaseLetters = ({
+  chance = chanceInstance,
+  inputValue = VALUE_DEFAULT_STRING_LENGTH,
+}) => {
+  return chance.string({ length: inputValue, alpha: true, casing: 'upper' })
 }
 
 export const randomUppercaseLettersDigits = ({

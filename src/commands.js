@@ -69,20 +69,6 @@ export const extensionCommandsWithInput = [
     errorMsg: constants.MSG_INPUT_VALUE_MUST_BE_NUMBER,
   },
   {
-    key: constants.CMD_KEY_RANDOM_LOWERCASE_LETTERS_CUSTOM_LENGTH,
-    callback: randomLowercaseLetters,
-    prompt: constants.MSG_ENTER_STRING_LENGTH,
-    validation: isNumber,
-    errorMsg: constants.MSG_INPUT_VALUE_MUST_BE_NUMBER,
-  },
-  {
-    key: constants.CMD_KEY_RANDOM_UPPERCASE_LETTERS_CUSTOM_LENGTH,
-    callback: randomUppercaseLetters,
-    prompt: constants.MSG_ENTER_STRING_LENGTH,
-    validation: isNumber,
-    errorMsg: constants.MSG_INPUT_VALUE_MUST_BE_NUMBER,
-  },
-  {
     key: constants.CMD_KEY_RANDOM_LETTERS_DIGITS_CUSTOM_LENGTH,
     callback: randomLettersDigits,
     prompt: constants.MSG_ENTER_STRING_LENGTH,
@@ -90,8 +76,22 @@ export const extensionCommandsWithInput = [
     errorMsg: constants.MSG_INPUT_VALUE_MUST_BE_NUMBER,
   },
   {
+    key: constants.CMD_KEY_RANDOM_LOWERCASE_LETTERS_CUSTOM_LENGTH,
+    callback: randomLowercaseLetters,
+    prompt: constants.MSG_ENTER_STRING_LENGTH,
+    validation: isNumber,
+    errorMsg: constants.MSG_INPUT_VALUE_MUST_BE_NUMBER,
+  },
+  {
     key: constants.CMD_KEY_RANDOM_LOWERCASE_LETTERS_DIGITS_CUSTOM_LENGTH,
     callback: randomLowercaseLettersDigits,
+    prompt: constants.MSG_ENTER_STRING_LENGTH,
+    validation: isNumber,
+    errorMsg: constants.MSG_INPUT_VALUE_MUST_BE_NUMBER,
+  },
+  {
+    key: constants.CMD_KEY_RANDOM_UPPERCASE_LETTERS_CUSTOM_LENGTH,
+    callback: randomUppercaseLetters,
     prompt: constants.MSG_ENTER_STRING_LENGTH,
     validation: isNumber,
     errorMsg: constants.MSG_INPUT_VALUE_MUST_BE_NUMBER,
