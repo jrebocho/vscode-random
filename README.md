@@ -1,4 +1,5 @@
 # Random Data Generator for VS Code
+
 This extension generates random data directly into VS Code.
 It uses the great [ChangeJS](http://chancejs.com/) library written by [Victor Quinn](https://www.victorquinn.com/) and was inspired by the [Random](https://atom.io/packages/random) extension for Atom.
 
@@ -31,7 +32,13 @@ Random values generation is also supported when using **multiple editors**.
 * `extension.randomLong` : Random long - Generates an integer between 0 and 9007199254740992
 * `extension.randomIntCustomRange` : Random integer (custom range) - Generates a random integer within a given custom range
 * `extension.randomGuid` : Random guid - Generates a guid
-* `extension.randomStringCustomLength` : Random string (custom length) - Generates a string with a length defined by user input
+* `extension.randomLetters,` : Random letters (custom length) - Generates a string with a length defined by user input
+* `extension.randomDigits,` : Random digits (custom length) - Generates a string with a length defined by user input
+* `extension.randomLettersDigits,` : Random letters and digits (custom length) - Generates a string with a length defined by user input
+* `extension.randomLowercaseLetters,` : Random lowercase letters (custom length) - Generates a string with a length defined by user input
+* `extension.randomLowercaseLettersDigits,` : Random lowercase letters and digits (custom length) - Generates a string with a length defined by user input
+* `extension.randomUppercaseLetters,` : Random uppercase letters (custom length) - Generates a string with a length defined by user input
+* `extension.randomUppercaseLettersDigits,` : Random uppercase letters and digits (custom length) - Generates a string with a length defined by user input
 * `extension.randomSampleFromInput` : Random sample from input - Selects a random string from a comma-separated set of values
 * `extension.randomName` : Random name - Generates a random name (first and last name)
 * `extension.randomStreetAddress` : Random street address - Generates a random street address
