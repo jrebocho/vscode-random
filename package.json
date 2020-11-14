@@ -353,23 +353,23 @@
         ]
     },
     "devDependencies": {
-        "@babel/cli": "^7.10.3",
-        "@babel/core": "^7.10.3",
-        "@babel/eslint-plugin": "^7.11.3",
-        "@babel/polyfill": "^7.10.1",
-        "@babel/preset-env": "^7.10.3",
+        "@babel/cli": "^7.12.1",
+        "@babel/core": "^7.12.3",
+        "@babel/eslint-plugin": "^7.12.1",
+        "@babel/polyfill": "^7.12.1",
+        "@babel/preset-env": "^7.12.1",
         "babel-core": "^7.0.0-bridge.0",
-        "babel-jest": "^26.1.0",
-        "eslint": "^7.3.1",
-        "eslint-config-prettier": "^6.11.0",
+        "babel-jest": "^26.6.3",
+        "eslint": "^7.13.0",
+        "eslint-config-prettier": "^6.15.0",
         "eslint-plugin-prettier": "^3.1.4",
-        "jest": "^26.1.0",
-        "prettier": "2.1.1",
+        "jest": "^26.6.3",
+        "prettier": "2.1.2",
         "rimraf": "^3.0.2",
-        "standard": "^14.3.4"
+        "standard": "^16.0.2"
     },
     "dependencies": {
-        "chance": "^1.1.6",
+        "chance": "^1.1.7",
         "randexp": "^0.5.3"
     },
     "resolutions": {
