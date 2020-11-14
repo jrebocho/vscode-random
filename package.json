@@ -89,31 +89,31 @@
             },
             {
                 "command": "extension.randomLettersCustomLength",
-                "title": "Random: letters (custom length)"
+                "title": "Random: Letters (custom length)"
             },
             {
                 "command": "extension.randomDigitsCustomLength",
-                "title": "Random: digits (custom length)"
+                "title": "Random: Digits (custom length)"
             },
             {
                 "command": "extension.randomLettersDigitsCustomLength",
-                "title": "Random: letters and digits (custom length)"
+                "title": "Random: Letters & Digits (custom length)"
             },
             {
                 "command": "extension.randomLowercaseLettersCustomLength",
-                "title": "Random: lowercase letters (custom length)"
+                "title": "Random: Lowercase Letters (custom length)"
             },
             {
                 "command": "extension.randomLowercaseLettersDigitsCustomLength",
-                "title": "Random: lowercase letters and digits (custom length)"
+                "title": "Random: Lowercase Letters & Digits (custom length)"
             },
             {
                 "command": "extension.randomUppercaseLettersCustomLength",
-                "title": "Random: uppercase letters (custom length)"
+                "title": "Random: Uppercase Letters (custom length)"
             },
             {
                 "command": "extension.randomUppercaseLettersDigitsCustomLength",
-                "title": "Random: uppercase letters and digits (custom length)"
+                "title": "Random: Uppercase Letters & Digits (custom length)"
             },
             {
                 "command": "extension.randomSampleFromInput",
