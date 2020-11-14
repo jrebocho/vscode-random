@@ -216,37 +216,37 @@
                 },
                 {
                     "command": "extension.randomLettersCustomLength",
-                    "when": "editorHasSelection && config.vscodeRandom.contextMenu.enabled",
+                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomDigitsCustomLength",
-                    "when": "editorHasSelection && config.vscodeRandom.contextMenu.enabled",
+                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomLowercaseLettersCustomLength",
-                    "when": "editorHasSelection && config.vscodeRandom.contextMenu.enabled",
+                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomUppercaseLettersCustomLength",
-                    "when": "editorHasSelection && config.vscodeRandom.contextMenu.enabled",
+                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomLettersDigitsCustomLength",
-                    "when": "editorHasSelection && config.vscodeRandom.contextMenu.enabled",
+                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomLowercaseLettersDigitsCustomLength",
-                    "when": "editorHasSelection && config.vscodeRandom.contextMenu.enabled",
+                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomUppercaseLettersDigitsCustomLength",
-                    "when": "editorHasSelection && config.vscodeRandom.contextMenu.enabled",
+                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
