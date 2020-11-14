@@ -1,7 +1,7 @@
 import Chance from 'chance'
 import RandExp from 'randexp'
+import { VALUE_DEFAULT_SAMPLE_OPTIONS, VALUE_DEFAULT_STRING_LENGTH } from './constants'
 import { isValid } from './validations'
-import { VALUE_DEFAULT_STRING_LENGTH, VALUE_DEFAULT_SAMPLE_OPTIONS } from './constants'
 
 let chanceInstance = new Chance()
 
@@ -35,11 +35,53 @@ export const randomGuid = ({ chance = chanceInstance }) => {
   return chance.guid()
 }
 
-export const randomString = ({
+export const randomLetters = ({
   chance = chanceInstance,
   inputValue = VALUE_DEFAULT_STRING_LENGTH,
 }) => {
-  return chance.word({ length: inputValue })
+  return chance.string({ length: inputValue, alpha: true })
+}
+
+export const randomDigits = ({
+  chance = chanceInstance,
+  inputValue = VALUE_DEFAULT_STRING_LENGTH,
+}) => {
+  return chance.string({ length: inputValue, numeric: true })
+}
+
+export const randomLettersDigits = ({
+  chance = chanceInstance,
+  inputValue = VALUE_DEFAULT_STRING_LENGTH,
+}) => {
+  return chance.string({ length: inputValue, alpha: true, numeric: true })
+}
+
+export const randomLowercaseLetters = ({
+  chance = chanceInstance,
+  inputValue = VALUE_DEFAULT_STRING_LENGTH,
+}) => {
+  return chance.string({ length: inputValue, alpha: true, casing: 'lower' })
+}
+
+export const randomLowercaseLettersDigits = ({
+  chance = chanceInstance,
+  inputValue = VALUE_DEFAULT_STRING_LENGTH,
+}) => {
+  return chance.string({ length: inputValue, alpha: true, numeric: true, casing: 'lower' })
+}
+
+export const randomUppercaseLetters = ({
+  chance = chanceInstance,
+  inputValue = VALUE_DEFAULT_STRING_LENGTH,
+}) => {
+  return chance.string({ length: inputValue, alpha: true, casing: 'upper' })
+}
+
+export const randomUppercaseLettersDigits = ({
+  chance = chanceInstance,
+  inputValue = VALUE_DEFAULT_STRING_LENGTH,
+}) => {
+  return chance.string({ length: inputValue, alpha: true, numeric: true, casing: 'upper' })
 }
 
 export const randomSample = ({

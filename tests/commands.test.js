@@ -11,7 +11,13 @@ import {
   randomLong,
   randomIntCustomRange,
   randomGuid,
-  randomString,
+  randomLetters,
+  randomDigits,
+  randomLettersDigits,
+  randomLowercaseLetters,
+  randomLowercaseLettersDigits,
+  randomUppercaseLetters,
+  randomUppercaseLettersDigits,
   randomName,
   randomCity,
   randomCountryCode,
@@ -156,13 +162,73 @@ describe('>>>>> Extension Commands Tests', () => {
 
   describe('Extension commands with input', () => {
     it('has the expected number of commands', () => {
-      expect(extensionCommandsWithInput).toHaveLength(4)
+      expect(extensionCommandsWithInput).toHaveLength(10)
     })
 
-    it('has the randomStringCustomLength command in the list', () => {
+    it('has the randomLettersCustomLength command in the list', () => {
       expect(extensionCommandsWithInput).toContainEqual({
-        key: 'extension.randomStringCustomLength',
-        callback: randomString,
+        key: 'extension.randomLettersCustomLength',
+        callback: randomLetters,
+        prompt: 'Enter the length of the string',
+        validation: isNumber,
+        errorMsg: 'The input value must be a number',
+      })
+    })
+
+    it('has the randomDigitsCustomLength command in the list', () => {
+      expect(extensionCommandsWithInput).toContainEqual({
+        key: 'extension.randomDigitsCustomLength',
+        callback: randomDigits,
+        prompt: 'Enter the length of the string',
+        validation: isNumber,
+        errorMsg: 'The input value must be a number',
+      })
+    })
+
+    it('has the randomLettersDigitsCustomLength command in the list', () => {
+      expect(extensionCommandsWithInput).toContainEqual({
+        key: 'extension.randomLettersDigitsCustomLength',
+        callback: randomLettersDigits,
+        prompt: 'Enter the length of the string',
+        validation: isNumber,
+        errorMsg: 'The input value must be a number',
+      })
+    })
+
+    it('has the randomLowercaseLettersCustomLength command in the list', () => {
+      expect(extensionCommandsWithInput).toContainEqual({
+        key: 'extension.randomLowercaseLettersCustomLength',
+        callback: randomLowercaseLetters,
+        prompt: 'Enter the length of the string',
+        validation: isNumber,
+        errorMsg: 'The input value must be a number',
+      })
+    })
+
+    it('has the randomLowercaseLettersDigitsCustomLength command in the list', () => {
+      expect(extensionCommandsWithInput).toContainEqual({
+        key: 'extension.randomLowercaseLettersDigitsCustomLength',
+        callback: randomLowercaseLettersDigits,
+        prompt: 'Enter the length of the string',
+        validation: isNumber,
+        errorMsg: 'The input value must be a number',
+      })
+    })
+
+    it('has the randomUppercaseLettersCustomLength command in the list', () => {
+      expect(extensionCommandsWithInput).toContainEqual({
+        key: 'extension.randomUppercaseLettersCustomLength',
+        callback: randomUppercaseLetters,
+        prompt: 'Enter the length of the string',
+        validation: isNumber,
+        errorMsg: 'The input value must be a number',
+      })
+    })
+
+    it('has the randomUppercaseLettersDigitsCustomLength command in the list', () => {
+      expect(extensionCommandsWithInput).toContainEqual({
+        key: 'extension.randomUppercaseLettersDigitsCustomLength',
+        callback: randomUppercaseLettersDigits,
         prompt: 'Enter the length of the string',
         validation: isNumber,
         errorMsg: 'The input value must be a number',
