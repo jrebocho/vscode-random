@@ -3,7 +3,7 @@
     "displayName": "vscode-random",
     "description": "Generates random data directly into VS Code",
     "icon": "images/vscode-random-icon.png",
-    "version": "1.8.1",
+    "version": "1.9.0",
     "publisher": "jrebocho",
     "repository": {
         "type": "git",
@@ -11,7 +11,7 @@
     },
     "license": "MIT",
     "engines": {
-        "vscode": "^1.30.0"
+        "vscode": "^1.50.0"
     },
     "categories": [
         "Other"
@@ -89,31 +89,31 @@
             },
             {
                 "command": "extension.randomLettersCustomLength",
-                "title": "Random: letters (custom length)"
+                "title": "Random: Letters (custom length)"
             },
             {
                 "command": "extension.randomDigitsCustomLength",
-                "title": "Random: digits (custom length)"
+                "title": "Random: Digits (custom length)"
             },
             {
                 "command": "extension.randomLettersDigitsCustomLength",
-                "title": "Random: letters and digits (custom length)"
+                "title": "Random: Letters & Digits (custom length)"
             },
             {
                 "command": "extension.randomLowercaseLettersCustomLength",
-                "title": "Random: lowercase letters (custom length)"
+                "title": "Random: Lowercase Letters (custom length)"
             },
             {
                 "command": "extension.randomLowercaseLettersDigitsCustomLength",
-                "title": "Random: lowercase letters and digits (custom length)"
+                "title": "Random: Lowercase Letters & Digits (custom length)"
             },
             {
                 "command": "extension.randomUppercaseLettersCustomLength",
-                "title": "Random: uppercase letters (custom length)"
+                "title": "Random: Uppercase Letters (custom length)"
             },
             {
                 "command": "extension.randomUppercaseLettersDigitsCustomLength",
-                "title": "Random: uppercase letters and digits (custom length)"
+                "title": "Random: Uppercase Letters & Digits (custom length)"
             },
             {
                 "command": "extension.randomSampleFromInput",
@@ -216,37 +216,37 @@
                 },
                 {
                     "command": "extension.randomLettersCustomLength",
-                    "when": "editorHasSelection && config.vscodeRandom.contextMenu.enabled",
+                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomDigitsCustomLength",
-                    "when": "editorHasSelection && config.vscodeRandom.contextMenu.enabled",
+                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomLowercaseLettersCustomLength",
-                    "when": "editorHasSelection && config.vscodeRandom.contextMenu.enabled",
+                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomUppercaseLettersCustomLength",
-                    "when": "editorHasSelection && config.vscodeRandom.contextMenu.enabled",
+                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomLettersDigitsCustomLength",
-                    "when": "editorHasSelection && config.vscodeRandom.contextMenu.enabled",
+                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomLowercaseLettersDigitsCustomLength",
-                    "when": "editorHasSelection && config.vscodeRandom.contextMenu.enabled",
+                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomUppercaseLettersDigitsCustomLength",
-                    "when": "editorHasSelection && config.vscodeRandom.contextMenu.enabled",
+                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
@@ -353,23 +353,23 @@
         ]
     },
     "devDependencies": {
-        "@babel/cli": "^7.10.3",
-        "@babel/core": "^7.10.3",
-        "@babel/eslint-plugin": "^7.11.3",
-        "@babel/polyfill": "^7.10.1",
-        "@babel/preset-env": "^7.10.3",
+        "@babel/cli": "^7.12.1",
+        "@babel/core": "^7.12.3",
+        "@babel/eslint-plugin": "^7.12.1",
+        "@babel/polyfill": "^7.12.1",
+        "@babel/preset-env": "^7.12.1",
         "babel-core": "^7.0.0-bridge.0",
-        "babel-jest": "^26.1.0",
-        "eslint": "^7.3.1",
-        "eslint-config-prettier": "^6.11.0",
+        "babel-jest": "^26.6.3",
+        "eslint": "^7.13.0",
+        "eslint-config-prettier": "^6.15.0",
         "eslint-plugin-prettier": "^3.1.4",
-        "jest": "^26.1.0",
-        "prettier": "2.1.1",
+        "jest": "^26.6.3",
+        "prettier": "2.1.2",
         "rimraf": "^3.0.2",
-        "standard": "^14.3.4"
+        "standard": "^16.0.2"
     },
     "dependencies": {
-        "chance": "^1.1.6",
+        "chance": "^1.1.7",
         "randexp": "^0.5.3"
     },
     "resolutions": {
