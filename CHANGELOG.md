@@ -1,6 +1,17 @@
 # Change Log
 All notable changes to the "vscode-random" extension are documented in this file.
 
+## [1.9.0] - 2020-11-15
+## Added
+- Use submenus for context menu items. Submenu enabled by default (Thanks to [@johanhammar](https://github.com/johanhammar) for the suggestion & implementation!)
+- New multiple random string variants generators (Thanks to [@andreavaccari](https://github.com/andreavaccari) for the suggestion & implementation!)
+
+## Changed
+- Update dependencies packages
+
+## Fixed
+- Fix typo in documentation (Thanks to [@dafujii](https://github.com/dafujii))
+
 ## [1.8.1] - 2020-08-23
 ## Fixed
 - Fix minor issue while publishing v.1.8.0
