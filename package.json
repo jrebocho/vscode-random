@@ -3,7 +3,7 @@
     "displayName": "vscode-random",
     "description": "Generates random data directly into VS Code",
     "icon": "images/vscode-random-icon.png",
-    "version": "1.8.1",
+    "version": "1.9.0",
     "publisher": "jrebocho",
     "repository": {
         "type": "git",
