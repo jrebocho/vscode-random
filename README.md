@@ -22,6 +22,7 @@ Random values generation is also supported when using **multiple editors**.
 # Configuration
 
 * `vscodeRandom.contextMenu.enabled` : Enable/disable the context menu for the available data generators (enabled by default).
+* `vscodeRandom.multipleEditors.generateDifferentValues` : Generate different values when using multiple editors (true by default).
 
 # Available Commands
 

@@ -55,6 +55,11 @@
                     "type": "boolean",
                     "default": true,
                     "description": "Enables the context menu for vscode-random"
+                },
+                "vscodeRandom.multipleEditors.generateDifferentValues": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Generates different values when using multiple editors"
                 }
             }
         },
