@@ -1,5 +1,6 @@
 import Chance from 'chance'
 import RandExp from 'randexp'
+import dayjs from 'dayjs'
 import { VALUE_DEFAULT_SAMPLE_OPTIONS, VALUE_DEFAULT_STRING_LENGTH } from './constants'
 import { isValid } from './validations'
 
@@ -146,4 +147,43 @@ export const randomIban = ({ chance = chanceInstance }) => {
 
 export const randomRegEx = ({ inputValue }) => {
   return new RandExp(inputValue).gen()
+}
+
+export const randomDateShort = ({ chance = chanceInstance, inputValue }) => {
+  const year = inputValue ? inputValue : new Date().getFullYear()
+
+  const randomDate = chance.date({ year })
+
+  return dayjs(randomDate).format('DD/MM/YYYY')
+}
+
+export const randomDateLong = ({ chance = chanceInstance, inputValue }) => {
+  const year = inputValue ? inputValue : new Date().getFullYear()
+
+  const randomDate = chance.date({ year })
+
+  return dayjs(randomDate).format('dddd, DD MMMM YYYY')
+}
+
+export const randomDateISO = ({ chance = chanceInstance, inputValue }) => {
+  const year = inputValue ? inputValue : new Date().getFullYear()
+
+  const randomDate = chance.date({ year })
+
+  return dayjs(randomDate).format()
+}
+
+export const randomTime = ({ chance = chanceInstance, twentyfour = true }) => {
+  const hours = chance.hour({ twentyfour }).toString().padStart(2, '0')
+  const minutes = chance.minute().toString().padStart(2, '0')
+  const seconds = chance.second().toString().padStart(2, '0')
+  const ampm = twentyfour ? '' : ` ${chance.ampm().toUpperCase()}`
+
+  return `${hours}:${minutes}:${seconds}${ampm}`
+}
+
+export const randomDateTime = ({ chance = chanceInstance, twentyfour = true, inputValue }) => {
+  const year = inputValue ? inputValue : new Date().getFullYear()
+
+  return `${randomDateShort({ chance, inputValue: year })} ${randomTime({ chance, twentyfour })}`
 }

@@ -333,10 +333,10 @@
         },
         "submenus": [
             {
-              "id": "vscode-random",
-              "label": "Random"
+                "id": "vscode-random",
+                "label": "Random"
             }
-          ]
+        ]
     },
     "scripts": {
         "compile": "rimraf build & babel src --out-dir build",
@@ -375,6 +375,7 @@
     },
     "dependencies": {
         "chance": "^1.1.7",
+        "dayjs": "^1.10.6",
         "randexp": "^0.5.3"
     },
     "resolutions": {
