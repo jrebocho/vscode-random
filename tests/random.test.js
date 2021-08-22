@@ -484,13 +484,17 @@ describe('>>>>> Random Generators Tests', () => {
     })
 
     it('calls the lib date function', () => {
-      randomDateShort({ chance, inputValue: 2021 })
+      randomDateShort({ chance, getConfig: () => 'DD/MM/YYYY', inputValue: 2021 })
 
       expect(chance.date).toBeCalledWith({ year: 2021 })
     })
 
     it('returns a random short date string', () => {
-      const actual = randomDateShort({ chance, inputValue: 2021 })
+      const actual = randomDateShort({
+        chance,
+        getConfig: () => 'DD/MM/YYYY',
+        inputValue: 2021,
+      })
 
       expect(actual).toEqual('05/11/2021')
     })
@@ -502,13 +506,17 @@ describe('>>>>> Random Generators Tests', () => {
     })
 
     it('calls the lib date function', () => {
-      randomDateLong({ chance, inputValue: 2021 })
+      randomDateLong({ chance, getConfig: () => 'dddd, DD MMMM YYYY', inputValue: 2021 })
 
       expect(chance.date).toBeCalledWith({ year: 2021 })
     })
 
     it('returns a random long date string', () => {
-      const actual = randomDateLong({ chance, inputValue: 2021 })
+      const actual = randomDateLong({
+        chance,
+        getConfig: () => 'dddd, DD MMMM YYYY',
+        inputValue: 2021,
+      })
 
       expect(actual).toEqual('Friday, 05 November 2021')
     })
@@ -538,44 +546,44 @@ describe('>>>>> Random Generators Tests', () => {
     })
 
     it('calls the lib hour function', () => {
-      randomTime({ chance, twentyfour: true })
+      randomTime({ chance, getConfig: () => true })
 
       expect(chance.hour).toBeCalled()
     })
 
     it('calls the lib minute function', () => {
-      randomTime({ chance, twentyfour: true })
+      randomTime({ chance, getConfig: () => true })
 
       expect(chance.minute).toBeCalled()
     })
 
     it('calls the lib second function', () => {
-      randomTime({ chance, twentyfour: true })
+      randomTime({ chance, getConfig: () => true })
 
       expect(chance.second).toBeCalled()
     })
 
     it('does not call the lib ampm function', () => {
-      randomTime({ chance, twentyfour: true })
+      randomTime({ chance, getConfig: () => true })
 
       expect(chance.ampm).not.toBeCalled()
     })
 
     it('returns the random time string', () => {
-      const actual = randomTime({ chance, twentyfour: true })
+      const actual = randomTime({ chance, getConfig: () => true })
 
       expect(actual).toEqual('13:06:08')
     })
 
     describe('when the time has not 24h format', () => {
       it('returns the random time string with AM/PM', () => {
-        const actual = randomTime({ chance, twentyfour: false })
+        const actual = randomTime({ chance, getConfig: () => false })
 
         expect(actual).toEqual('01:06:08 PM')
       })
 
       it('calls the lib ampm function', () => {
-        randomTime({ chance, twentyfour: true })
+        randomTime({ chance, getConfig: () => false })
 
         expect(chance.ampm).toBeCalled()
       })
@@ -584,7 +592,11 @@ describe('>>>>> Random Generators Tests', () => {
 
   describe('.randomDateTime', () => {
     it('returns a random date time short string', () => {
-      const actual = randomDateTime({ chance, inputValue: 2021 })
+      const actual = randomDateTime({
+        chance,
+        getConfig: (key) => (key === 'vscodeRandom.time.use24h' ? true : 'DD/MM/YYYY'),
+        inputValue: 2021,
+      })
 
       expect(actual).toEqual('05/11/2021 13:06:08')
     })

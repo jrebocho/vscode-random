@@ -65,6 +65,21 @@
                     "type": "boolean",
                     "default": true,
                     "description": "Generates different values when using multiple editors"
+                },
+                "vscodeRandom.date.shortFormat": {
+                    "type": "string",
+                    "default": "DD/MM/YYYY",
+                    "description": "Short date format"
+                },
+                "vscodeRandom.date.longFormat": {
+                    "type": "string",
+                    "default": "dddd, DD MMMM YYYY",
+                    "description": "Long date format"
+                },
+                "vscodeRandom.time.use24h": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Use 24H format in time commands"
                 }
             }
         },

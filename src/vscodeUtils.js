@@ -55,9 +55,9 @@ const editorInsert = (generator, params = {}) => {
     return
   }
 
-  const generateDifferentValues = workspace
-    .getConfiguration('vscodeRandom.multipleEditors')
-    .get('generateDifferentValues')
+  const generateDifferentValues = getConfigValue(
+    'vscodeRandom.multipleEditors.generateDifferentValues'
+  )
 
   const initialValue = generator(params)
 
@@ -79,4 +79,13 @@ const editorInsert = (generator, params = {}) => {
 const getEndPosition = (selection, text) => {
   var endPosition = new Position(selection.start.line, selection.start.character + text.length)
   return new Selection(endPosition, endPosition)
+}
+
+export const getConfigValue = (settingKey) => {
+  const lastPos = settingKey.lastIndexOf('.')
+
+  const keyGroup = settingKey.substring(0, lastPos)
+  const key = settingKey.substring(lastPos + 1)
+
+  return workspace.getConfiguration(keyGroup).get(key)
 }
