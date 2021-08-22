@@ -4,6 +4,7 @@ import {
   isValidIntRange,
   isStringWithComma,
   isValidRegEx,
+  isValidYear,
 } from '../src/validations'
 
 describe('>>>>> Validator Functions Tests', () => {
@@ -173,16 +174,74 @@ describe('>>>>> Validator Functions Tests', () => {
   })
 
   describe('.isValidRegEx', () => {
-    it('validate regular expression', () => {
+    it('validates the regular expression', () => {
       const valueToTest = '[a-zA-Z0-9]{10,12}-d{10}'
 
       expect(isValidRegEx(valueToTest)).toBeTruthy()
     })
 
-    it('invalid regular expression', () => {
+    it('invalidates the regular expression', () => {
       const valueToTest = '[a-Z]{10}'
 
       expect(isStringWithComma(valueToTest)).toBeFalsy()
+    })
+  })
+
+  describe('.isValidYear', () => {
+    describe('when the year is inside the valid range', () => {
+      it('validates the year', () => {
+        const valueToTest = '1970'
+
+        expect(isValidYear(valueToTest)).toBeTruthy()
+      })
+
+      it('validates the year', () => {
+        const valueToTest = '2999'
+
+        expect(isValidYear(valueToTest)).toBeTruthy()
+      })
+
+      it('validates the year', () => {
+        const valueToTest = '2021'
+
+        expect(isValidYear(valueToTest)).toBeTruthy()
+      })
+    })
+
+    describe('when the year is not inside the valid range', () => {
+      it('invalidates the year', () => {
+        const valueToTest = '1969'
+
+        expect(isValidYear(valueToTest)).toBeFalsy()
+      })
+
+      it('invalidates the year', () => {
+        const valueToTest = '3000'
+
+        expect(isValidYear(valueToTest)).toBeFalsy()
+      })
+    })
+
+    describe('when the input is an empty string', () => {
+      it('validates the year', () => {
+        const valueToTest = ''
+
+        expect(isValidYear(valueToTest)).toBeTruthy()
+      })
+    })
+
+    describe('when the input is not valid', () => {
+      it('invalidates the year', () => {
+        const valueToTest = 'year'
+
+        expect(isValidYear(valueToTest)).toBeFalsy()
+      })
+
+      it('invalidates the year', () => {
+        const valueToTest = null
+
+        expect(isValidYear(valueToTest)).toBeFalsy()
+      })
     })
   })
 })
