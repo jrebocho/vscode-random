@@ -1,4 +1,5 @@
-import { chance } from '../mocks/chance'
+import { chance, dayjs } from '../mocks/chance'
+import { describe } from '../node_modules/jest-circus/build/index'
 import {
   randomByte,
   randomCity,
@@ -28,6 +29,11 @@ import {
   randomUppercaseLetters,
   randomUppercaseLettersDigits,
   randomUrl,
+  randomDateShort,
+  randomDateLong,
+  randomDateISO,
+  randomTime,
+  randomDateTime,
 } from '../src/random'
 
 describe('>>>>> Random Generators Tests', () => {
@@ -469,6 +475,130 @@ describe('>>>>> Random Generators Tests', () => {
       const randomString = randomRegEx({ inputValue: regEx.toString() })
 
       expect(randomString).toMatch(regEx)
+    })
+  })
+
+  describe('.randomDateShort', () => {
+    beforeEach(() => {
+      chance.date.mockClear()
+    })
+
+    it('calls the lib date function', () => {
+      randomDateShort({ chance, getConfig: () => 'DD/MM/YYYY', inputValue: 2021 })
+
+      expect(chance.date).toBeCalledWith({ year: 2021 })
+    })
+
+    it('returns a random short date string', () => {
+      const actual = randomDateShort({
+        chance,
+        getConfig: () => 'DD/MM/YYYY',
+        inputValue: 2021,
+      })
+
+      expect(actual).toEqual('05/11/2021')
+    })
+  })
+
+  describe('.randomDateLong', () => {
+    beforeEach(() => {
+      chance.date.mockClear()
+    })
+
+    it('calls the lib date function', () => {
+      randomDateLong({ chance, getConfig: () => 'dddd, DD MMMM YYYY', inputValue: 2021 })
+
+      expect(chance.date).toBeCalledWith({ year: 2021 })
+    })
+
+    it('returns a random long date string', () => {
+      const actual = randomDateLong({
+        chance,
+        getConfig: () => 'dddd, DD MMMM YYYY',
+        inputValue: 2021,
+      })
+
+      expect(actual).toEqual('Friday, 05 November 2021')
+    })
+  })
+
+  describe('.randomDateISO', () => {
+    beforeEach(() => {
+      chance.date.mockClear()
+    })
+
+    it('calls the lib date function', () => {
+      randomDateISO({ chance, inputValue: 2021 })
+
+      expect(chance.date).toBeCalledWith({ year: 2021 })
+    })
+
+    it('returns a random ISO date string', () => {
+      const actual = randomDateISO({ chance, inputValue: 2021 })
+
+      expect(actual).toEqual('2021-11-05T17:47:07+00:00')
+    })
+  })
+
+  describe('.randomTime', () => {
+    beforeEach(() => {
+      chance.date.mockClear()
+    })
+
+    it('calls the lib hour function', () => {
+      randomTime({ chance, getConfig: () => true })
+
+      expect(chance.hour).toBeCalled()
+    })
+
+    it('calls the lib minute function', () => {
+      randomTime({ chance, getConfig: () => true })
+
+      expect(chance.minute).toBeCalled()
+    })
+
+    it('calls the lib second function', () => {
+      randomTime({ chance, getConfig: () => true })
+
+      expect(chance.second).toBeCalled()
+    })
+
+    it('does not call the lib ampm function', () => {
+      randomTime({ chance, getConfig: () => true })
+
+      expect(chance.ampm).not.toBeCalled()
+    })
+
+    it('returns the random time string', () => {
+      const actual = randomTime({ chance, getConfig: () => true })
+
+      expect(actual).toEqual('13:06:08')
+    })
+
+    describe('when the time has not 24h format', () => {
+      it('returns the random time string with AM/PM', () => {
+        const actual = randomTime({ chance, getConfig: () => false })
+
+        expect(actual).toEqual('01:06:08 PM')
+      })
+
+      it('calls the lib ampm function', () => {
+        randomTime({ chance, getConfig: () => false })
+
+        expect(chance.ampm).toBeCalled()
+      })
+    })
+  })
+
+  describe('.randomDateTime', () => {
+    it('returns a random date time short string', () => {
+      const actual = randomDateTime({
+        chance,
+        getConfig: (key) => (key === 'vscodeRandom.time.use24h' ? true : 'DD/MM/YYYY'),
+        inputValue: 2021,
+      })
+
+      expect(actual).toEqual('05/11/2021 13:06:08')
     })
   })
 })

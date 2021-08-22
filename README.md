@@ -22,6 +22,10 @@ Random values generation is also supported when using **multiple editors**.
 # Configuration
 
 * `vscodeRandom.contextMenu.enabled` : Enable/disable the context menu for the available data generators (enabled by default).
+* `vscodeRandom.multipleEditors.generateDifferentValues` : Generate different values when using multiple editors (true by default).
+* `vscodeRandom.date.shortFormat` : Date format used by the random short date command ("DD/MM/YYYY" by default). Refer to [dayjs documentation](https://day.js.org/docs/en/display/format) on how to config your custom format.
+* `vscodeRandom.date.longFormat` : Date format used by the random long date command ("dddd, DD MMMM YYYY" by default). Refer to [dayjs documentation](https://day.js.org/docs/en/display/format) on how to config your custom format.
+* `vscodeRandom.time.use24h` : Use 24H or AM/PM in random time commands (true by default)
 
 # Available Commands
 
@@ -53,7 +57,12 @@ Random values generation is also supported when using **multiple editors**.
 * `extension.randomHexColor` : Random hexadecimal color - Generates a random hexadecimal color
 * `extension.randomRgbColor` : Random RGB color - Generates a random RGB color
 * `extension.randomIban` : Random IBAN - Generates a random IBAN
-* `extension.randomRegEx` : Random Regular Expression - Create random strings that match a given regular expression.
+* `extension.randomRegEx` : Random Regular Expression - Generates random strings that match a given regular expression
+* `extension.randomDateShort` : Random Date (short format) - Generates a random date (short format)
+* `extension.randomDateLong` : Random Date (long format) - Generates a random date (long format)
+* `extension.randomDateISO` : Random Date (ISO format) - Generates a random date (ISO format)
+* `extension.randomTime` : Random Time - Generates a random time
+* `extension.randomDateTime` : Random DateTime - Generates a random date with time
 
 # Change Log
 

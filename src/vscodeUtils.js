@@ -1,4 +1,4 @@
-import { commands, window, Position, Selection } from 'vscode'
+import { commands, window, Position, Selection, workspace } from 'vscode'
 import { MSG_NO_ACTIVE_TEXT_EDITOR } from './constants'
 
 export const registerCommandsOutput = (context, cmd) => {
@@ -55,11 +55,17 @@ const editorInsert = (generator, params = {}) => {
     return
   }
 
+  const generateDifferentValues = getConfigValue(
+    'vscodeRandom.multipleEditors.generateDifferentValues'
+  )
+
+  const initialValue = generator(params)
+
   const newSelections = []
   editor
     .edit((builder) => {
       editor.selections.map((selection) => {
-        const text = generator(params)
+        const text = generateDifferentValues ? generator(params) : initialValue
 
         builder.replace(selection, text)
         newSelections.push(getEndPosition(selection, text))
@@ -73,4 +79,13 @@ const editorInsert = (generator, params = {}) => {
 const getEndPosition = (selection, text) => {
   var endPosition = new Position(selection.start.line, selection.start.character + text.length)
   return new Selection(endPosition, endPosition)
+}
+
+export const getConfigValue = (settingKey) => {
+  const lastPos = settingKey.lastIndexOf('.')
+
+  const keyGroup = settingKey.substring(0, lastPos)
+  const key = settingKey.substring(lastPos + 1)
+
+  return workspace.getConfiguration(keyGroup).get(key)
 }

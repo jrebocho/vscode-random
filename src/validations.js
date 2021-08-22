@@ -39,3 +39,15 @@ export const isValidRegEx = (value) => {
     return false
   }
 }
+
+export const isValidYear = (value) => {
+  if (value === '') {
+    return true
+  }
+
+  if (!value) {
+    return false
+  }
+
+  return isNumber(value) && +value <= 2999 && +value >= 1970
+}

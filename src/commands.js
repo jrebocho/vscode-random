@@ -28,8 +28,19 @@ import {
   randomRgbColor,
   randomIban,
   randomRegEx,
+  randomDateShort,
+  randomDateLong,
+  randomDateISO,
+  randomTime,
+  randomDateTime,
 } from './random'
-import { isNumber, isValidIntRange, isStringWithComma, isValidRegEx } from './validations'
+import {
+  isNumber,
+  isValidIntRange,
+  isStringWithComma,
+  isValidRegEx,
+  isValidYear,
+} from './validations'
 import * as constants from './constants'
 
 export const extensionCommands = [
@@ -51,6 +62,7 @@ export const extensionCommands = [
   { key: constants.CMD_KEY_RANDOM_HEX_COLOR, callback: randomHexColor },
   { key: constants.CMD_KEY_RANDOM_RGB_COLOR, callback: randomRgbColor },
   { key: constants.CMD_KEY_RANDOM_IBAN, callback: randomIban },
+  { key: constants.CMD_KEY_RANDOM_TIME, callback: randomTime },
 ]
 
 export const extensionCommandsWithInput = [
@@ -124,6 +136,38 @@ export const extensionCommandsWithInput = [
     prompt: constants.MSG_ENTER_REGEX,
     validation: isValidRegEx,
     errorMsg: constants.MSG_ENTER_REGEX_ERROR,
+  },
+  {
+    key: constants.CMD_KEY_RANDOM_DATE_SHORT,
+    callback: randomDateShort,
+    prompt: constants.MSG_ENTER_YEAR,
+    placeHolder: constants.MSG_ENTER_YEAR_PLACEHOLDER,
+    validation: isValidYear,
+    errorMsg: constants.MSG_ENTER_YEAR_ERROR,
+  },
+  {
+    key: constants.CMD_KEY_RANDOM_DATE_LONG,
+    callback: randomDateLong,
+    prompt: constants.MSG_ENTER_YEAR,
+    placeHolder: constants.MSG_ENTER_YEAR_PLACEHOLDER,
+    validation: isValidYear,
+    errorMsg: constants.MSG_ENTER_YEAR_ERROR,
+  },
+  {
+    key: constants.CMD_KEY_RANDOM_DATE_ISO,
+    callback: randomDateISO,
+    prompt: constants.MSG_ENTER_YEAR,
+    placeHolder: constants.MSG_ENTER_YEAR_PLACEHOLDER,
+    validation: isValidYear,
+    errorMsg: constants.MSG_ENTER_YEAR_ERROR,
+  },
+  {
+    key: constants.CMD_KEY_RANDOM_DATETIME,
+    callback: randomDateTime,
+    prompt: constants.MSG_ENTER_YEAR,
+    placeHolder: constants.MSG_ENTER_YEAR_PLACEHOLDER,
+    validation: isValidYear,
+    errorMsg: constants.MSG_ENTER_YEAR_ERROR,
   },
 ]
 

@@ -13,4 +13,9 @@ export const chance = {
   url: jest.fn(),
   color: jest.fn(),
   iban: jest.fn(),
+  date: jest.fn(() => new Date(2021, 10, 5, 17, 47, 7)),
+  hour: jest.fn(({ twentyfour }) => (twentyfour ? 13 : 1)),
+  minute: jest.fn(() => 6),
+  second: jest.fn(() => 8),
+  ampm: jest.fn(() => 'pm'),
 }

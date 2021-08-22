@@ -1,5 +1,6 @@
 import Chance from 'chance'
 import RandExp from 'randexp'
+import dayjs from 'dayjs'
 import { VALUE_DEFAULT_SAMPLE_OPTIONS, VALUE_DEFAULT_STRING_LENGTH } from './constants'
 import { isValid } from './validations'
 
@@ -146,4 +147,68 @@ export const randomIban = ({ chance = chanceInstance }) => {
 
 export const randomRegEx = ({ inputValue }) => {
   return new RandExp(inputValue).gen()
+}
+
+export const randomDateShort = ({ chance = chanceInstance, getConfig, inputValue }) => {
+  const year = inputValue ? inputValue : new Date().getFullYear()
+
+  const randomDate = chance.date({ year })
+
+  if (!getConfig) {
+    getConfig = require('./vscodeUtils').getConfigValue
+  }
+
+  const dateFormat = getConfig('vscodeRandom.date.shortFormat')
+
+  return dayjs(randomDate).format(dateFormat)
+}
+
+export const randomDateLong = ({ chance = chanceInstance, getConfig, inputValue }) => {
+  const year = inputValue ? inputValue : new Date().getFullYear()
+
+  const randomDate = chance.date({ year })
+
+  if (!getConfig) {
+    getConfig = require('./vscodeUtils').getConfigValue
+  }
+
+  const dateFormat = getConfig('vscodeRandom.date.longFormat')
+
+  return dayjs(randomDate).format(dateFormat)
+}
+
+export const randomDateISO = ({ chance = chanceInstance, inputValue }) => {
+  const year = inputValue ? inputValue : new Date().getFullYear()
+
+  const randomDate = chance.date({ year })
+
+  return dayjs(randomDate).format()
+}
+
+export const randomTime = ({ chance = chanceInstance, getConfig }) => {
+  if (!getConfig) {
+    getConfig = require('./vscodeUtils').getConfigValue
+  }
+
+  const twentyfour = getConfig('vscodeRandom.time.use24h')
+
+  const hours = chance.hour({ twentyfour }).toString().padStart(2, '0')
+  const minutes = chance.minute().toString().padStart(2, '0')
+  const seconds = chance.second().toString().padStart(2, '0')
+  const ampm = twentyfour ? '' : ` ${chance.ampm().toUpperCase()}`
+
+  return `${hours}:${minutes}:${seconds}${ampm}`
+}
+
+export const randomDateTime = ({ chance = chanceInstance, getConfig, inputValue }) => {
+  if (!getConfig) {
+    getConfig = require('./vscodeUtils').getConfigValue
+  }
+
+  const year = inputValue ? inputValue : new Date().getFullYear()
+
+  return `${randomDateShort({ chance, getConfig, inputValue: year })} ${randomTime({
+    chance,
+    getConfig,
+  })}`
 }
