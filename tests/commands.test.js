@@ -33,13 +33,24 @@ import {
   randomSample,
   randomIban,
   randomRegEx,
+  randomDateShort,
+  randomDateLong,
+  randomDateISO,
+  randomDateTime,
+  randomTime,
 } from '../src/random'
-import { isNumber, isValidIntRange, isStringWithComma, isValidRegEx } from '../src/validations'
+import {
+  isNumber,
+  isValidIntRange,
+  isStringWithComma,
+  isValidRegEx,
+  isValidYear,
+} from '../src/validations'
 
 describe('>>>>> Extension Commands Tests', () => {
   describe('Simple extension commands', () => {
     it('has the expected number of commands', () => {
-      expect(extensionCommands).toHaveLength(18)
+      expect(extensionCommands).toHaveLength(19)
     })
 
     it('has the randomByte command in the list', () => {
@@ -158,11 +169,18 @@ describe('>>>>> Extension Commands Tests', () => {
         callback: randomIban,
       })
     })
+
+    it('has the randomTime command in the list', () => {
+      expect(extensionCommands).toContainEqual({
+        key: 'extension.randomTime',
+        callback: randomTime,
+      })
+    })
   })
 
   describe('Extension commands with input', () => {
     it('has the expected number of commands', () => {
-      expect(extensionCommandsWithInput).toHaveLength(10)
+      expect(extensionCommandsWithInput).toHaveLength(14)
     })
 
     it('has the randomLettersCustomLength command in the list', () => {
@@ -263,6 +281,50 @@ describe('>>>>> Extension Commands Tests', () => {
         prompt: 'Enter the regular expression',
         validation: isValidRegEx,
         errorMsg: 'Invalid regular expression',
+      })
+    })
+
+    it('has the randomDateShort command in the list', () => {
+      expect(extensionCommandsWithInput).toContainEqual({
+        key: 'extension.randomDateShort',
+        callback: randomDateShort,
+        prompt: 'Enter the year',
+        placeHolder: 'Leave empty to use current year',
+        validation: isValidYear,
+        errorMsg: 'Invalid year. Must be between 1970 and 2999',
+      })
+    })
+
+    it('has the randomDateLong command in the list', () => {
+      expect(extensionCommandsWithInput).toContainEqual({
+        key: 'extension.randomDateLong',
+        callback: randomDateLong,
+        prompt: 'Enter the year',
+        placeHolder: 'Leave empty to use current year',
+        validation: isValidYear,
+        errorMsg: 'Invalid year. Must be between 1970 and 2999',
+      })
+    })
+
+    it('has the randomDateISO command in the list', () => {
+      expect(extensionCommandsWithInput).toContainEqual({
+        key: 'extension.randomDateISO',
+        callback: randomDateISO,
+        prompt: 'Enter the year',
+        placeHolder: 'Leave empty to use current year',
+        validation: isValidYear,
+        errorMsg: 'Invalid year. Must be between 1970 and 2999',
+      })
+    })
+
+    it('has the randomDateTime command in the list', () => {
+      expect(extensionCommandsWithInput).toContainEqual({
+        key: 'extension.randomDateTime',
+        callback: randomDateTime,
+        prompt: 'Enter the year',
+        placeHolder: 'Leave empty to use current year',
+        validation: isValidYear,
+        errorMsg: 'Invalid year. Must be between 1970 and 2999',
       })
     })
   })

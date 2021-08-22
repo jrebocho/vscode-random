@@ -45,7 +45,12 @@
         "onCommand:extension.randomHexColor",
         "onCommand:extension.randomRgbColor",
         "onCommand:extension.randomIban",
-        "onCommand:extension.randomRegEx"
+        "onCommand:extension.randomRegEx",
+        "onCommand:extension.randomDateShort",
+        "onCommand:extension.randomDateLong",
+        "onCommand:extension.randomDateISO",
+        "onCommand:extension.randomTime",
+        "onCommand:extension.randomDateTime"
     ],
     "main": "./build/extension",
     "contributes": {
@@ -179,6 +184,26 @@
             {
                 "command": "extension.randomRegEx",
                 "title": "Random: Regular Expression"
+            },
+            {
+                "command": "extension.randomDateShort",
+                "title": "Random: Date (short format)"
+            },
+            {
+                "command": "extension.randomDateLong",
+                "title": "Random: Date (long format)"
+            },
+            {
+                "command": "extension.randomDateISO",
+                "title": "Random: Date (ISO format)"
+            },
+            {
+                "command": "extension.randomTime",
+                "title": "Random: Time"
+            },
+            {
+                "command": "extension.randomDateTime",
+                "title": "Random: DateTime"
             }
         ],
         "menus": {
@@ -326,6 +351,31 @@
                 },
                 {
                     "command": "extension.randomRegEx",
+                    "when": "config.vscodeRandom.contextMenu.enabled",
+                    "group": "vscode-random"
+                },
+                {
+                    "command": "extension.randomDateShort",
+                    "when": "config.vscodeRandom.contextMenu.enabled",
+                    "group": "vscode-random"
+                },
+                {
+                    "command": "extension.randomDateLong",
+                    "when": "config.vscodeRandom.contextMenu.enabled",
+                    "group": "vscode-random"
+                },
+                {
+                    "command": "extension.randomDateISO",
+                    "when": "config.vscodeRandom.contextMenu.enabled",
+                    "group": "vscode-random"
+                },
+                {
+                    "command": "extension.randomTime",
+                    "when": "config.vscodeRandom.contextMenu.enabled",
+                    "group": "vscode-random"
+                },
+                {
+                    "command": "extension.randomDateTime",
                     "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 }

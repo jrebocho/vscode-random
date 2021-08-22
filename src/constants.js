@@ -32,6 +32,11 @@ export const CMD_KEY_RANDOM_HEX_COLOR = 'extension.randomHexColor'
 export const CMD_KEY_RANDOM_RGB_COLOR = 'extension.randomRgbColor'
 export const CMD_KEY_RANDOM_IBAN = 'extension.randomIban'
 export const CMD_KEY_RANDOM_REGEX = 'extension.randomRegEx'
+export const CMD_KEY_RANDOM_DATE_SHORT = 'extension.randomDateShort'
+export const CMD_KEY_RANDOM_DATE_LONG = 'extension.randomDateLong'
+export const CMD_KEY_RANDOM_DATE_ISO = 'extension.randomDateISO'
+export const CMD_KEY_RANDOM_TIME = 'extension.randomTime'
+export const CMD_KEY_RANDOM_DATETIME = 'extension.randomDateTime'
 
 export const MSG_NO_ACTIVE_TEXT_EDITOR = 'No active text editor found!'
 export const MSG_ENTER_STRING_LENGTH = 'Enter the length of the string'
@@ -49,6 +54,10 @@ export const MSG_INPUT_VALUE_MUST_BE_VALID_RANGE =
   'The input value must be a range with a min and max value separated by a hyphen'
 export const MSG_ENTER_REGEX = 'Enter the regular expression'
 export const MSG_ENTER_REGEX_ERROR = 'Invalid regular expression'
+
+export const MSG_ENTER_YEAR = 'Enter the year'
+export const MSG_ENTER_YEAR_ERROR = 'Invalid year. Must be between 1970 and 2999'
+export const MSG_ENTER_YEAR_PLACEHOLDER = 'Leave empty to use current year'
 
 export const VALUE_DEFAULT_STRING_LENGTH = 10
 export const VALUE_DEFAULT_SAMPLE_OPTIONS = 'a,b,c'
