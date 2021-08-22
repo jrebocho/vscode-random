@@ -1,6 +1,15 @@
 # Change Log
 All notable changes to the "vscode-random" extension are documented in this file.
 
+## [1.10.0] - 2021-08-22
+## Added
+- New configuration to change behaviour with multiple edit cursors (Thanks to [@be-codified](https://github.com/be-codified) for the suggestion)
+- New commands to generate date & time (Thanks to [@liqiangsu](https://github.com/liqiangsu) for the suggestion)
+- New configurations to format date & time generated data
+
+## Changed
+- Update dependencies packages
+
 ## [1.9.0] - 2020-11-15
 ## Added
 - Use submenus for context menu items. Submenu enabled by default (Thanks to [@johanhammar](https://github.com/johanhammar) for the suggestion & implementation!)
