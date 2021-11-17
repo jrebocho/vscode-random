@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to the "vscode-random" extension are documented in this file.
 
+## [1.10.1] - 2021-11-19
+## Changed
+- Update dependencies packages
+- Update extension icon
+
 ## [1.10.0] - 2021-08-22
 ## Added
 - New configuration to change behaviour with multiple edit cursors (Thanks to [@be-codified](https://github.com/be-codified) for the suggestion)
