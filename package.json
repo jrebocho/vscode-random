@@ -3,7 +3,7 @@
     "displayName": "vscode-random",
     "description": "Generates random data directly into VS Code",
     "icon": "images/vscode-random-icon.png",
-    "version": "1.10.1",
+    "version": "1.10.0",
     "publisher": "jrebocho",
     "repository": {
         "type": "git",
@@ -423,24 +423,24 @@
         ]
     },
     "devDependencies": {
-        "@babel/cli": "^7.16.0",
-        "@babel/core": "^7.16.0",
+        "@babel/cli": "^7.14.8",
+        "@babel/core": "^7.14.8",
         "@babel/eslint-plugin": "^7.14.5",
         "@babel/polyfill": "^7.12.1",
-        "@babel/preset-env": "^7.16.4",
+        "@babel/preset-env": "^7.14.8",
         "babel-core": "^7.0.0-bridge.0",
-        "babel-jest": "^27.3.1",
+        "babel-jest": "^27.0.6",
         "eslint": "^7.31.0",
         "eslint-config-prettier": "^8.3.0",
-        "eslint-plugin-prettier": "^4.0.0",
-        "jest": "^27.3.1",
-        "prettier": "2.4.1",
+        "eslint-plugin-prettier": "^3.4.0",
+        "jest": "^27.0.6",
+        "prettier": "2.3.2",
         "rimraf": "^3.0.2",
-        "standard": "^16.0.4"
+        "standard": "^16.0.3"
     },
     "dependencies": {
-        "chance": "^1.1.8",
-        "dayjs": "^1.10.7",
+        "chance": "^1.1.7",
+        "dayjs": "^1.10.6",
         "randexp": "^0.5.3"
     },
     "resolutions": {
