@@ -225,173 +225,141 @@
             "editor/context": [
                 {
                     "submenu": "vscode-random",
-                    "group": "navigation"
+                    "group": "vscode-random-group",
+                    "when": "!editorReadonly && editorTextFocus && config.vscodeRandom.contextMenu.enabled"
                 }
             ],
             "vscode-random": [
                 {
                     "command": "extension.randomByte",
-                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomShort",
-                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomInt",
-                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomLong",
-                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomIntCustomRange",
-                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomGuid",
-                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomLettersCustomLength",
-                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomDigitsCustomLength",
-                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomLowercaseLettersCustomLength",
-                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomUppercaseLettersCustomLength",
-                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomLettersDigitsCustomLength",
-                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomLowercaseLettersDigitsCustomLength",
-                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomUppercaseLettersDigitsCustomLength",
-                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomSampleFromInput",
-                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomName",
-                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomStreetAddress",
-                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomCity",
-                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomCountryCode",
-                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomCountryName",
-                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomPhoneNumber",
-                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomEmail",
-                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomIP",
-                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomIPv6",
-                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomUrl",
-                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomHexColor",
-                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomRgbColor",
-                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomIban",
-                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomRegEx",
-                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomDateShort",
-                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomDateLong",
-                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomDateISO",
-                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomTime",
-                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 },
                 {
                     "command": "extension.randomDateTime",
-                    "when": "config.vscodeRandom.contextMenu.enabled",
                     "group": "vscode-random"
                 }
             ]
