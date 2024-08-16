@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to the "vscode-random" extension are documented in this file.
 
+## [1.12.0] - 2024-08-16
+## Changed
+- Moved context menu to sub group (Thanks to [@jackjameshoward](https://github.com/jackjameshoward) for the suggestion & implementation!)
+- Update dependencies packages
+
 ## [1.11.0] - 2021-11-19
 ## Changed
 - Update dependencies packages
